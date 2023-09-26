@@ -1,0 +1,257 @@
+.shado-1{ box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)}
+.shado-2{ box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.04), 0 2px 10px 0 rgba(0, 0, 0, 0.04)}
+.shado-3{ box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.1)}
+
+.cp{cursor: pointer}
+a:hover{ color: #00a685 !important; text-decoration: none;}
+
+body{ font-family: "Open Sans",sans-serif; }
+header{width: 100%;}
+.lin{width: 100%; height: 40px; border-top: 5px solid #00a685;border-bottom: 1px solid #ececec;}
+.container-fluid{padding: 0px;}
+.lin .container{padding: 8px; color: #b2b2b2; font-size: 12px}
+.head-sm li{ float:right; margin-top: -18px; list-style: none; font-size: 15px; margin-right: 40px; }
+.menu{width: 100%; height: 60px;}
+.menu .container i{ font-size: 45px; color: #00a685; margin-top: 5px;}
+.menu .container b{ font-size: 25px; color:  #00a685}
+nav ul {margin-top: -10px;}
+nav ul li{float: right; list-style: none; padding:19px 35px ;
+ font-weight:600; color: #8f8f8f; cursor: pointer; font-size: 12px;}
+ nav ul li a{color: #888}
+.act{ border-bottom: 3px solid #00a685; cursor: pointer}
+nav ul li:hover{border-bottom: 3px solid #00a685; -webkit-transition: all linear 200ms; -moz-transition: all linear 50ms;
+    -o-transition: all linear 50ms; transition: all linear 50ms;}
+.slider{ width: 100%; margin-top: 3px; }
+.flexslider{border:0px !important; margin-top: 3px;}
+.prev{margin-left: 30px !important;}
+.next{margin-right: 30px !important;}
+.flex-control-nav{bottom: 15px !important;}
+.carousel-indicators .active{background-color: #00a685}
+.carousel-caption h1{font-weight: 700; margin-top: -40%; text-align: left; background-color:; padding: 7px; width:  400px; text-align:center}
+.carousel-caption p{ text-indent: 30px; max-width: 460px; background-color: ; font-weight: 600; font-size: 16px; margin-left: 20px; }
+.sec-header h2 {
+    font-size: 48px;
+    line-height: 48px;
+}
+ .sec-header h2 {
+    color: #171717;
+    font-size: 42px;
+    line-height: 42px;
+    margin: 0 0 20px;
+}
+.sec-header p {
+    font-family: "Crete Round",serif;
+    font-size: 24px;
+    font-style: italic;
+    position: relative; color: #00a685;
+}
+.sec-header{text-align: center; margin-top: 30px;}
+.sec-header span {
+    background-color: #aaaaaa;
+    display: inline-block;
+    height: 10px;
+    transform: rotate(45deg);
+    width: 10px;
+}
+.services .header {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.services .header .fa-tablet {
+    color: #ededed;
+    font-size: 190px;
+    line-height: 170px;
+}
+.mega-manu {
+    transition: all 0.3s ease-in-out 0s;
+}
+.subscribe-widget .or, .subscribe-widget a:hover, .questions p {
+    color: #00a685;
+}
+.services .header .inner-icon {
+    font-size: 60px;
+    left: 0;
+    margin: -45px 0 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.inner-icon{color: #00a685;}
+
+.services .text {
+    padding: 0 30px;
+}
+.services .text {
+    float: left;
+    padding: 0 20px;
+    width: 100%;
+}
+.mega-manu {
+    transition: all 0.3s ease-in-out 0s;
+}
+.services .text h3::before {
+    bottom: -15px;
+    content: "";
+    height: 1px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 90px;
+}
+.services .text h3 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0 0 30px;
+}
+h3 a
+{
+    color: #00a685; text-decoration: none;
+}
+
+
+.services .text h3 {
+    display: inline-block;
+    font-family: "Crete Round",serif;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0 0 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+.course{background-color: #FFF;}
+.course img{width: 100%;}
+
+.course .header, .course .course-name {
+    padding: 0 10px;
+}
+.course .text h4 {
+    display: inline-block;
+    font-family: "Crete Round",serif;
+    font-size: 18px;
+    font-weight: normal; color: #00a685;
+}
+
+.course div.rating {
+    float: right;
+    margin: 8px 0;
+    width: auto;
+}
+.course .header, .course .course-name {
+    padding: 0 10px;
+}
+.course .course-name p {
+    display: inline-block;
+}
+.course-detail-btn{padding: 15px; border-top: 1px solid #ececec; color: #CCC}
+.course-detail-btn a{color: #acacac}
+.rating i{ width: 20px; color: #00a685;} }
+.course-name span{color: #00a685;}
+.img-back {
+    background: gray url("../images/succ.jpg") no-repeat fixed center center / 100% auto; height:700px; background-size: cover;
+}
+.inner-by{background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 585px; }
+.card{width: 100%; height: 180px; background-color: #FFF; padding: 10px; border-radius: 5px;}
+.c-img img{width: 100%; border-radius: 50%; margin-top:-4px }
+.card p{padding: 5px; text-indent: 10px;}
+.card b{font-size: 18px}
+.tob-b{ border-top: 5px solid #00a685; height: 123px; background-color: #FFF; margin-top: 30px;}
+.s-l i{background-color: #00a685; color: #FFF; border-radius: 50%; padding: 20px; width: 80px; height: 80px; font-size: 45px}
+footer{width: 100%; background-color:#262626;  }
+.foot-cont{padding: 20px;}
+.foot-cont b{color: #FFF;}
+.wh li{color: #FFF; list-style: none; border-bottom: 1px solid #FFF; padding: 2px;}
+.wh li b { float: right;}
+.smarti{ background-color:#000000;}
+.smarti p{color: #FFF; padding: 15px; font-size: 15px;}
+.fls{float: left;}
+.fls li{color: #FFF; padding: 15px; font-size: 15px; float: left;}
+.fico-s{ float: right; font-size: 21px; width: 40px;}
+.csr li{ list-style: none;}
+.csr li i {width: 20px; color: #00a685; margin-left: -20px;}
+.newimg{  background: gray url("../images/test.jpg") no-repeat fixed center center / 100% auto; height:700px; background-size: cover;}
+.panel-default > .panel-heading{background-image: none; border: 0px; background-color: #FFF; font-size: 13px;}
+.panel-default > .panel-heading h4{font-size: 13px;}
+.panel-heading span{background-color: #00a685; color: #FFF; padding: 10px 17px; margin-left: -15px; width: 30px;}
+.img-sec {
+    border-radius: 50%;
+    display: inline-block;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    width: 270px;
+}
+.img-sec:hover .teach-over {
+    top: 0;
+    transition: all 0.4s ease-in-out 0s;
+}
+.teach-over {
+    background: rgba(0, 166, 133, 0.5) none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    transition: all 0.4s ease-in-out 0s;
+    width: 100%;
+}
+.teach-over a i {
+    color: #fff;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 125px;
+    text-align: center;
+}
+.blog-cont b{ font-size: 18px; color:#00a685 }
+.blog-cont p{ color: #7b7b7b; text-align: justify; text-indent: 25px; margin-top: 5px;}
+.blog-cont button{ background-image: none; background-color:#00a685;} 
+.inner-cint table {
+    margin-top: 10px;
+    width: 100%;
+}
+.inner-cint table tr td {
+    padding: 10px;
+}
+.inner-cint i {
+    color: #00a685;
+    float: right;
+    font-size: 15px;
+    font-weight: 100;
+}
+.btn-success{ background-image: none; background-color:#00a685;} 
+.mob-menu{ position:absolute; top: 0px; left: 0px; height: 240px; width: 100%; background-color:#00a685; color: #FFF; text-align: center; padding: 20px; z-index: 9999; display: none}
+.mob-menu b{ width: 100%; padding: 15px; text-align: center; font-size: 22px;}
+
+.mob-menu i{float: right;}
+.mob-menu ul li{ list-style: none; text-align: left; z-index: 9999; font-size: 18px; font-weight: 600; height: 30px; cursor: pointer}
+.mob-menu ul{padding-left: 0px;}
+.puptab{width: 100%; margin: auto; float: none;}
+.puptab tr td{padding: 3px;}
+
+tbody{width: 100%;}
+.sm-form input{ margin-top: 5px;}
+.sm-form textarea{ margin-top: 5px;}
+.sm-form button{ margin-top: 5px;}
+
+@media screen and (max-width: 400px) {
+
+    .lo-tst{font-size: 18px !important;}
+    h2{font-size: 22px !important;;}
+    .ritonsm ul{ padding-left: 0px; p}
+        .ritonsm b {margin-left: 5% !important ;}
+     .modal-dialog{width: 100% !important;}
+}
+
+@media screen and (max-width: 530px) {
+    .modal-dialog{width: 100% !important;}
+}
+
+.rs-by{font-size: 33px; text-align: center}
+.btn-xl{width: 256px; height: 55px; font-weight: 600; margin-top: 50px;}
+.lff li{list-style:square;}
+.tt-pad{width: 100%;}
+.tt-pad tr td{padding: 10px;}
+.man{color: red;}
+.serr{border-color:red;}
