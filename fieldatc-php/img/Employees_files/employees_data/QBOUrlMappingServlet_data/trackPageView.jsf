@@ -1,0 +1,16 @@
+//
+// Include this file in the body of a page in order to have page views tracked
+//
+
+// jquery should be able to handle delaying the tracking call until page ready...
+$(track.trackPageView());
+
+
+// if the jquery approach (above) has problems, we can always do this ourselves with the following...
+//if (window.addEventListener) {
+//	// W3C standard
+//	window.addEventListener('load', track.trackPageView, false); // NB **not** 'onload'
+//} else if (window.attachEvent) {
+//	// Microsoft
+//	window.attachEvent('onload', track.trackPageView);
+//};

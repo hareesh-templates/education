@@ -1,0 +1,136 @@
+
+
+/**
+ * Popover component
+ */
+jQuery(document).ready(function($){
+	$(document.body).on("click", ".popover-modalBackground-clickCatcher", function(){
+		// close the popup if the user clicks on the modal background
+		$('.popover.open .popoverClose').click();
+	});
+	
+	function escKeyHandler(event) {
+		if(event.which === 27) {
+			// close the popup if the user clicks on the modal background
+			$('.popover.open .popoverClose').click();
+		}
+	}
+	
+	ice.onAfterUpdate(function(){
+		try {
+			var $popover = $('.popover.open');
+			var $settings = $popover.find('.jsPopoverSettings');
+		} catch(e){}
+		
+		if($popover && $settings
+		&& $popover.length > 0 && $settings.length === 1) {
+			$(document).on("keydown.popover", escKeyHandler);
+			cleanStyles();
+			setAnchorClass($popover, $settings, 'popoverAnchor');
+			var $anchor = $('.popoverAnchor');
+			
+			if($anchor && $anchor.length === 1) {
+				reposition($popover, $anchor, $settings);
+				$popover.attr('tabindex', -1);
+				ice.applyFocus($popover.attr('id'));
+			}
+		} else {
+			$(document).off("keydown.popover");
+		}
+	});
+	
+	/* disabled until we can throttle the resize events
+	$(window).resize(function(){
+		try {
+			var $popover = $('.popover.open');
+			var $anchor = $('.popoverAnchor');
+			var $settings = $popover.find('.jsPopoverSettings');
+		} catch(e){}
+		
+		if($popover && $anchor && $settings
+		&& $popover.length > 0 && $anchor.length === 1 && $settings.length === 1) {
+			cleanStyles();
+			reposition($popover, $anchor, $settings);
+		}
+	});
+	*/
+	
+	function cleanStyles() {
+		// ice adds two elements to the page to generate the modal background
+		var $modalBackgroundColor = $('iframe[title="Ice Modal Frame"][id$="popover"]');
+		var $modalBackground = $('iframe[title="Ice Modal Frame"][id$="popover"] + div');
+
+		if($modalBackground && $modalBackground.length > 0) {
+			// set a class so we can use CSS to modify the styles of the background
+			$modalBackground.addClass('popover-modalBackground')
+							.css({overflow:'visible'})
+							.append('<div class="popover-modalBackground-clickCatcher" style="width:100%; height:100%; position:absolute; top:40px">');
+		}
+
+		if($modalBackgroundColor && $modalBackgroundColor.length > 0) {
+			// set a class so we can use CSS to modify the styles of the background
+			$modalBackgroundColor.addClass('popover-modalBackground-color');
+
+			// remove some of the styles that are added inline when the element is
+			// rendered by ice, these can be reapplied using CSS.
+			$modalBackgroundColor.css({
+				'background-color': '',
+				opacity: ''
+			});
+		}
+	}
+	
+	function reposition($popover, $anchor, $pos) {
+		$popover.position({
+			my: $pos.attr('my'),
+			at: $pos.attr('at'),
+			of: $anchor,
+			collision: "none"
+		});
+	}
+	
+	function setAnchorClass($popover, $settings, anchorClass) {
+		// get the element to use as the anchor for the popover
+		var anchor = $settings.attr('anchor');
+		var isManual = anchor === 'manual' || anchor === '';
+		if(anchor && !isManual) {
+			jQuery('.' + anchorClass).removeClass(anchorClass);
+			var anchorEl = null;
+
+			if(anchor === 'before') {
+				try{
+					// find $popover.prev() until its not part of the modal background
+					anchorEl = $popover.prevUntil(':not(.popover-modalBackground, .popover-modalBackground-color)').last().prev();
+				} catch(e){}
+			} else if(anchor === 'after') {
+				anchorEl = $popover.next();
+			} else if(anchor === 'parent') {
+				anchorEl = $popover.parent();
+			} else {
+				try {
+					// find sibling with the given client ID
+					anchorEl = $popover.parent().find('> [id$="' + anchor + '"]');
+				} catch(e){}
+			}
+
+			if(anchorEl && anchorEl.length === 1) {
+				anchorEl.addClass(anchorClass);
+			} else {
+				var clientID = $popover.attr('id');
+				var msg = "";
+				
+				if(anchor === 'before') {
+					msg = "Could not anchor to the sibling element defined before the popover.";
+				} else if(anchor === 'after') {
+					msg = "Could not anchor to the sibling element defined after the popover.";
+				} else if(anchor == 'parent') {
+					msg = "Could not anchor to the parent element of the popover.";
+				} else {
+					msg = "Could not anchor to the sibling component with ID \"" + anchor + "\".";
+				}
+				
+				throw clientID + ": " + msg;
+			}
+		}
+	}
+});

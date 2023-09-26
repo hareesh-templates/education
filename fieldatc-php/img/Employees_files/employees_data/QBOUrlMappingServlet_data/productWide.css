@@ -1,0 +1,664 @@
+/*
+    Document   : productWide.css
+    Created on : 02/01/13
+    Author     : andrewc732
+    Description: Product-wide common CSS relating to fonts, colors, links, 
+				 header area, navigation, footer area, etc. in IFSP and 
+				 JSF-based QBOP/IOP.
+*/
+
+/*----------------------------------------------------------------------------
+ *  CSS layout hacks and tricks (Lines from IFSP base.css 4152-4205)
+ *----------------------------------------------------------------------------*/
+.clearfix:after {
+   content: ".";
+   display: block;
+   clear: both;
+   visibility: hidden;
+   line-height: 0;
+   height: 0;
+}
+
+.clearfix {
+   display: inline-block;
+}
+
+html[xmlns] .clearfix {
+   display: block;
+}
+
+* html .clearfix {
+   height: 1%;
+   overflow: visible;
+}
+
+.emptyTitle {
+    display: none;
+}
+.block {
+    display: block;
+}
+.inline {
+    display: inline;
+}
+
+.floatL {
+    float: left;
+}
+
+.floatR {
+    float: right;
+}
+
+.clearFloats {
+	clear: both;
+	height: 0px;
+}
+
+.singleSubmitDiv {
+    float: left;
+}
+
+.singleSubmitDiv Div {
+    display: inline;
+    float: left;
+    height: 1px;
+}
+
+.linkButton {
+    color: #2B73DD;
+    cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------
+ *  Global attributes (Lines from IFSP base.css 1-30)
+ *----------------------------------------------------------------------------*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	color: #333333;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+a:link,
+a:visited {
+	font-weight: bold;
+	color: #2B73DD;
+	text-decoration: none;
+}
+
+a:link:hover,
+a:visited:hover {
+	font-weight: bold;
+	color: #2B73DD;
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.17em;
+}
+
+h5 {
+	font-size: .83em;
+}
+
+h6 {
+	font-size: .75em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+.strong {
+	font-weight: bolder;
+}
+.normal {
+    font-weight: normal !important;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+li {
+	display: list-item;
+}
+
+/*============================================================================*/
+/*                              FRAMEWORK STYLES                              */
+/*============================================================================*/
+
+/*----------------------------------------------------------------------------
+ *  Header area (Lines from IFSP base.css 38-159)
+ *----------------------------------------------------------------------------*/
+.pageTitle {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 23px;
+    font-weight: bold;
+}
+.pageTitle .smallTitle {
+	font-size: 18px;
+}
+.page-subTitle:not(:empty) {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+#top #topLogoBar {
+    height: 39px;						/* This must be 39px to match the height of the "Intuit Full Service Payroll" logo image height */
+}
+
+#top #topLogoBar .topLogoBarRight {
+    float: right;
+    height: 39px;						/* This should be 39px to match the height of the "Intuit Full Service Payroll" logo image height */
+}
+
+#top #topLogoBar table {
+	height: 39px;						/* For vertically centered links, this must be 39px match the height of the "Intuit Full Service Payroll" logo image height */
+}
+
+#top #topLogoBar .welcome,
+#top #topLogoBar .topHeaderBreak {
+	font-size: 11px;
+	font-weight: bold;
+    color: #50B8FD;
+	vertical-align: middle;
+}
+
+#top #topLogoBar .topHeaderBreak {
+	padding: 0 10px 0 10px;
+}
+
+#top #topLogoBar .topHeaderLinks {
+    color: #FFFFFF;
+	vertical-align: middle;
+}
+
+#top #topLogoBar .topHeaderLinks a,
+#top #topLogoBar .topHeaderLinks a:visited {
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFFFFF;
+    white-space: nowrap;
+	text-decoration: none;
+}
+
+#top #topLogoBar .topHeaderLinks a:hover {
+	font-weight: normal;
+	color: #FFFFFF;
+    text-decoration: none;
+}
+
+#top #topLogoBar .logo {
+	vertical-align: middle;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+#top #topLogoBar .logoExternal {
+    padding-top: 21px;
+}
+
+#top #topLogoBar .topProductName {
+    float: left;
+}
+
+#top #topLogoBar .topProductNameExternal {
+	padding-top: 16px;
+}
+
+#top #topLogoBar .topLogoBarAC {
+    padding-top: 16px;
+    padding-left: 300px;
+}
+
+#top #externalBar {
+    height: 31px;
+}
+
+#top .topMenuBar {
+    height: 31px;						/* overridden in boa skin */
+    border-bottom: 10px solid #ECF4FD;	/* overridden in boa skin */
+/*	border-bottom: 7px solid #ECF4FD;*/	/* Fix this in 2011R11 */
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+#top .topMenuBar ul.tabs {
+	font-family: Trebuchet MS;
+	font-size: 13px;
+    list-style: none;
+    margin-top: 0px;					/* Shifts tab row up to proper vertical alignment with bottom of background gradient color */
+    margin-bottom: 0px;					/* Shifts tab row up to proper vertical alignment with bottom of background gradient color */
+	margin-left: 0px;					/* Required for IE7, or else the tabs are shifted about 40px to the right */
+    padding-left: 0px;					/* Shifts tab row left 40px to proper horizontal location */
+}
+
+#top .topMenuBar ul.tabs li {
+    height: 31px;						/* Matches 31px height of inactive/active tab images */
+    float: left;
+    margin-left: 4px;					/* Results in 6px gap between (two inactive tabs) and (an active tab and inactive tab to its right) */
+}
+
+#top .topMenuBar ul.tabs a {
+    display: block;
+	margin-left: -2px;					/* Shifts inactive tab left to hide straight left edge of "tab_inactive_right.png" image; results in 6px gap left of inactive tab */
+    padding-top: 10px;					/* Controls vertical positioning of tab text */
+    padding-right: 25px;				/* Results in 20px padding between text and tab right edge for both active and inactive tabs*/
+    padding-bottom: 8px;				/* Controls vertical positioning of tab text */
+    padding-left: 20px;					/* Results in 20px padding between text and tab left edge for inactive tabs */
+    text-decoration: none;
+}
+
+#top .topMenuBar #active {
+    margin-left: 6px;					/* Results in 6px gap left of active tab */
+}
+
+#top .topMenuBar #active a {
+    margin-left: -8px;					/* Shifts active tab left to hide straight left edge of "tab_active_right.png" image; results in 6px gap left of active tab */
+	padding-left: 25px;					/* Results in 20px padding between text and tab left edge for active tab */
+}
+
+/*----------------------------------------------------------------------------
+ * Help and Support slider (Lines from IFSP base.css 165-202)
+ *----------------------------------------------------------------------------*/
+#helpSlider {
+	font-size: 11px;
+	color: #333333;
+	width: 198px;
+	float: right;
+    position: relative;
+    z-index: 1;
+	padding-right: 18px;
+}
+
+#helpSlider a {
+	color: #2B73DD;
+	padding: 5px 0px 0px 0px;
+}
+
+#helpBanner {
+     background: url("../resources/images/help/help_bar_bg.gif") repeat;
+}
+
+#helpLogo {
+    float: left;
+}
+
+.helpBody {
+    background-color: #FFF3BE;
+    width: 100%;
+    overflow: auto;
+    margin: 0;
+}
+
+.helpBody #helpContent {
+    padding: 0 10px 0 10px;
+}
+
+.helpBody h2 {
+    border: 2px solid #E3A656;
+    border-width: 0 0 2px 0;
+}
+
+/*----------------------------------------------------------------------------
+ *  Help Window popup (Lines from IFSP base.css 206-221)
+ *----------------------------------------------------------------------------*/
+
+.helpWinPopup {
+	margin-left: 15px;
+}
+
+.helpWinPopup.inline {
+	display: inline;
+}
+
+.helpWinPopup .hicon {
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+.helpWinPopup .htext {
+    font-size: 11px;
+    color: #2A71D9;
+/*	vertical-align: middle;   Commenting this, as this is causing the underline to appear on the top of the hyperlink text in Firefox */
+}
+
+.helpWinPopup .hlink,
+.helpWinPopup .hlink:hover {
+    font-weight: normal;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*----------------------------------------------------------------------------
+ *  Contact Us link (Lines from IFSP base.css 224-254)
+ *----------------------------------------------------------------------------*/
+.contactUsLink .iconSection {
+   float: left;
+   width: 22px;
+   height: 100%;
+}
+
+.contactUsLink .textSection {
+   margin-right: 2px;
+   margin-left: 22px;
+}
+
+.contactusLink .clearfloat {
+    clear: both;
+}
+
+.contactUsLink .icon {
+   vertical-align: middle;
+   border: none;
+}
+
+.contactUsLink .link {
+   font-weight: normal;
+}
+
+.contactUsLinkDiv {
+    float: left;
+}
+
+.contactUsLinkDiv Div {
+    display: inline;
+    float: left;
+    height: 1px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Footer area (Lines from IFSP base.css 261-289)
+ *----------------------------------------------------------------------------*/
+#bottom {
+    padding: 5px;
+    padding-bottom: 0px;
+    clear: both;
+}
+
+#bottom #footer {
+	font-size: 11px;
+	font-weight: bold;
+	color: #76818C;
+	border-top: 1px solid #DFDFDF;
+	padding-top: 5px;
+}
+
+#bottom #footer #copyright {
+	float: left;
+}
+
+#bottom #footer #privacy {
+	float: right;
+}
+
+#bottom #footer #privacy a {
+	color: #76818C;
+}
+
+#bottom #footer .footerDelimiter {
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Content well (Lines from IFSP base.css 293-307)
+ *----------------------------------------------------------------------------*/
+#content {
+    float: left;
+/*    background-color: #FFFFFF;*/
+   	min-width: 620px;
+    padding: 5px;
+}
+
+#content h2,
+#mainContent h2 {							/* Page title */
+	font-size: 18px;
+	font-weight: bold;
+	color: #333333;
+	/*min-width: 500px;*/
+	padding-left: 8px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Content well right-side column (Lines from IFSP base.css 313-353)
+ *----------------------------------------------------------------------------*/
+#rightColContent {
+    float: left;
+	width: 312px;
+	vertical-align: top;
+	padding-top: 75px;
+}
+
+#rightColContent #relatedActivities {
+	font-size: 12px;
+	font-weight: normal;
+	margin-left: 56px;
+}
+
+#rightColContent #relatedActivities #title {
+	font-weight: bold;
+	border-bottom: 2px solid #CCCCCC;
+	margin-right: 20px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+
+#rightColContent #relatedActivities #links {
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+#rightColContent #relatedActivities #links #arrowIcon {
+	float: left;
+	padding-top: 5px;
+}
+
+#rightColContent #relatedActivities #links #linkText {
+	float: left;
+	width: 190px;
+	margin-left: 10px;
+}
+
+#rightColContent #relatedActivities #links #clear {
+	clear: both;
+}
+
+/*----------------------------------------------------------------------------
+ *  Page level error message (Lines from IFSP base.css 4101-4107)
+ *----------------------------------------------------------------------------*/
+.pageError {
+    color: red;
+    font-weight: bold;
+}
+
+.globalErrors {
+}
+
+/*----------------------------------------------------------------------------
+ *  Page Section Titles (Lines from IFSP base.css 4109-4121)
+ *----------------------------------------------------------------------------*/
+.sectionTitle,
+.sectionTitle2 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	margin-right: 5px;
+	margin-bottom: 12px;
+	margin-left: 5px;
+	padding-bottom: 5px;
+}
+
+.sectionTitle {
+	border-bottom: 3px solid #7BB2E3;
+}
+
+/*----------------------------------------------------------------------------
+ * Icefaces bug ICE-8165 fix - Hide datatable row focus outline 
+ * We should be able to remove this once our Icefaces is upgraded to a version
+ * that includes this fix, which should be EE-3.0.0.GA_P01 or newer.
+ *----------------------------------------------------------------------------*/
+.ui-datatable tbody.ui-datatable-data > tr:focus {
+    outline: none;
+}
+
+table.iceDatTbl tbody > tr:focus {
+    outline: none;
+}
+
+.displayBlock {
+	display: block;
+}
+
+.displayInlineBlock {
+	display: inline-block;
+}
+
+/**** CSS to layout content in tabular format *********/
+.table-layout {
+    display: table;
+    border-collapse: collapse;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Error/Info/Warn block message styles common to both harmony and ifsp standalone*/
+body .errorMessageBlock {
+	display: block;
+	width: 720px;
+	border: 1px solid #d40710;
+	border-radius: 2px;
+    padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 40px;
+	margin-bottom: 20px;
+	background: url('../resources/images/harmony/error-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+}
+
+
+body .errorMessageBlock .messageIcon,
+body .informationalMessageBlock .messageIcon {
+	display: none;
+}
+
+body .warningMessageBlock {
+	display: block;
+	width: 720px;
+	border: 1px solid #f2b835;
+	border-radius: 2px;
+    padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 40px;
+	margin-bottom: 20px;
+	background: url('../resources/images/harmony/warn-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+}
+
+body .informationalMessageBlock {
+	display: block;
+	width: 720px;
+	border: 1px solid #1e90ff;
+	border-radius: 2px;
+    padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 40px;
+	margin-bottom: 20px;
+	background: url('../resources/images/harmony/info-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+}
+
+body .confirmMessageBlock {
+	display: block;
+	width: 720px;
+	border: 1px solid #1e90ff;
+	border-radius: 2px;
+    padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	padding-left: 40px;
+	margin-bottom: 20px;
+	background: url('../resources/images/harmony/confirm-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+}
+
+body .combinedMessageBlock {
+	display: block;
+	width: 720px;
+	border: 1px solid #C2C2C2;
+	border-radius: 2px;
+    padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+}
+
+body .combinedMessageBlock .combinedMessageConfirmBlock {
+	display: block;
+	padding-left: 40px;
+	background: url('../resources/images/harmony/confirm-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+	padding-bottom: 5px;
+}
+
+body .combinedMessageBlock .combinedMessageWarningBlock {
+	display: block;
+	padding-left: 40px;
+	background: url('../resources/images/harmony/warn-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+	padding-bottom: 5px;
+}
+
+body .combinedMessageBlock .combinedMessageErrorBlock {
+	display: block;
+	padding-left: 40px;
+	background: url('../resources/images/harmony/error-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+	padding-bottom: 5px;
+}
+
+body .combinedMessageBlock .combinedMessageInfoBlock {
+	display: block;
+	padding-left: 40px;
+	background: url('../resources/images/harmony/info-icon.png') 0 0px no-repeat;
+	background-position: 15px 10px;
+	padding-bottom: 5px;
+}
+body .messageDivider {
+	border: 1px solid #dcdcdc;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+body .message {
+	padding-bottom: 10px;
+}

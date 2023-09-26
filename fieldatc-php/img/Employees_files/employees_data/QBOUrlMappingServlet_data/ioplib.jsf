@@ -1,0 +1,504 @@
+/* jshint laxbreak: true, browser: true */
+/* Only add functions that are absolutely needed to this library and beware of namespace collision.  */
+if (!window.addEventListener) {
+    window.attachEvent("message",function(a){if(a.origin.indexOf("intuit.com", a.origin.length - "intuit.com".length) >= 0&&a.data&&a.data.initXDM)
+        {var b=document.createElement("script");b.setAttribute("type","text/javascript");b.innerHTML=a.data.initXDM;
+         document.getElementsByTagName("head")[0].appendChild(b);}});
+} else {
+    window.addEventListener("message",function(a){if(a.origin.indexOf("intuit.com", a.origin.length - "intuit.com".length) >= 0&&a.data&&a.data.initXDM)
+        {var b=document.createElement("script");b.setAttribute("type","text/javascript");b.innerHTML=a.data.initXDM;
+         document.getElementsByTagName("head")[0].appendChild(b);}});
+}
+
+var qboXDMReady = function() {
+    var qboContext;
+
+    qboXDM.getContext(function(context) {
+       qboContext = context;
+    });
+
+    window.ifsp = $.extend(window.ifsp, {
+        openPONHelp: function(helpPageId, productName, productEdition, PONLinkId, attachPoint, contextTags) {
+            qboXDM.openPONHelp(helpPageId, PONLinkId, attachPoint, contextTags);
+        },
+        openTrowserHelp: function(helpPageId) {
+            qboXDM.openPONHelp(helpPageId);
+        },
+        openTrowser: function(targetUrl) {
+            qboXDM.navigate("xdmtrowser://"+targetUrl);
+        },
+        openTrowserWithoutRecordHistory: function(targetUrl) {
+            qboXDM.navigate("xdmtrowser://"+targetUrl);
+        },
+        closeTrowser: function(targetUrl) {
+            qboXDM.closeTrowser();
+            qboXDM.navigate("xdm://"+targetUrl);
+        },
+        isTrowserActive: function() {
+            return qboContext.trowser;
+        },
+
+        navigateToPartnerPage: function(targetUrl) {
+            qboXDM.navigate(targetUrl);
+        },
+
+        navigateBackOnPartnerPage: function() {
+            qboXDM.back();
+        },
+
+        navigateToLocationAfterOpenTrowser: function(url) {
+            throw "not implemented";
+        },
+
+        navigateToLocation: function(url) {
+            qboXDM.navigate("xdm://"+url);
+        }
+    });
+};
+
+(function(ifsp) {
+    ifsp.DataExporterOpenWindow = function(clientId, path, label, popupBlockerLbl) {
+        if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+            var wdo = window.open(path,'','width=400,height=150');
+
+            if (!wdo || typeof(wdo) == "undefined") {
+                var ele = $(clientId + 'container').firstChild;
+                var lbl = popupBlockerLbl == "null" ? label : popupBlockerLbl;
+                ele.onclick = function() {
+                    window.open(path);
+                };
+
+                if (ele.tagName == "INPUT") {
+                    ele.value = lbl;
+                } else {
+                    if (ele.firstChild.tagName == "IMG") {
+                        ele.firstChild.title = lbl;
+                    } else {
+                        ele.innerHTML = lbl;
+                    }
+                }
+            }
+        } else {
+            Ice.DataExporters[clientId].url(path);
+        }
+    };
+
+    ifsp.HideSupportEmailDialog = function() {
+        var iframe = parent.document.getElementById('supportif');
+        if (iframe) {
+            iframe.style.display='none';
+        }
+        var supportContainer = parent.document.getElementById('supportContainerDiv');
+        if (supportContainer) {
+            supportContainer.style.display='none';
+        }
+        top.document.location.reload();
+    };
+
+    ifsp.HideSupportEmailDialogIAMMigration = function() {
+        document.domain="intuit.com";
+        var iframe = parent.document.getElementById('supportif');
+        if (iframe) {
+            iframe.style.display='none';
+        }
+        var supportContainer = parent.document.getElementById('supportContainerDiv');
+        if (supportContainer) {
+            supportContainer.style.display='none';
+        }
+        top.document.location.reload();
+    };
+
+    ifsp.FileUploader = {
+        fileUploaders: [],
+        createFileUploader: function(id, numInputs) {
+            this.id = id;
+            this.numInputs = numInputs;
+            this.showUploadingMessages = function(formElem, clearMsgs) {
+                $.each($('.fileEntryDiv:visible', formElem), function() {
+                    var textEle = $('.uploadingStatusText', this)[0];
+                    if($("input[type='file'][value!='']", this)[0] != null) {
+                        textEle.style.display = '';
+                    } else {
+                        textEle.style.display = 'none';
+                    }
+                });
+                if(clearMsgs) {
+                    $.each($('.uploadInfoStatus:visible', formElem), function() {
+                        this.hide();
+                    });
+                }
+            };
+            this.addFileInput = function() {
+                if(this.numInputs < 15) {
+                    this.numInputs++;
+                }
+                this.showFileInputs();
+            };
+            this.showFileInputs = function() {
+                var numInputs = this.numInputs;
+                $('.fileEntryDiv').each(function(index){
+                    if(index < numInputs) {
+                        $(this).show();
+                    }
+                });
+            };
+        },
+        getFileUploader: function(id, numInputs) {
+            var uploaderObj = null;
+            for(var i=0; i < this.fileUploaders.length; i++) {
+                if(this.fileUploaders[i].id == id) {
+                    uploaderObj = this.fileUploaders[i];
+                    break;
+                }
+            }
+            if(uploaderObj == null) {
+                uploaderObj = new this.createFileUploader(id, numInputs);
+                this.fileUploaders.push(uploaderObj);
+            }
+            return uploaderObj;
+        }
+    };
+
+    ifsp.addScript = function(url) {
+        jQuery(document).ready(function($) {
+            if (!$("script[src='" + url + "']").length) {
+                $('head').append("<script type='text/javascript' src='" + url + "'></script>");
+            }
+        });
+    };
+
+    ifsp.getCookie = function getCookie(name){
+      var results = document.cookie.match ( '\\b' + name + '=(.*?)(;|$)' );
+
+      if (results) {
+        return (unescape(results[1]));
+        } else {
+        return null;
+        }
+    };
+
+    ifsp.setCookie = function setCookie(name, value, days, path, domain, secure) {
+      var cookie_string = name + "=" + escape ( value );
+
+      if (days) {
+        var today = new Date();
+         var expires = new Date();
+          expires.setTime(today.getTime() + 3600000*24*days);
+          cookie_string += "; expires=" + expires.toGMTString();
+      }
+        if (path) {
+          cookie_string += "; path=" + escape ( path );
+        }
+      if (domain) {
+          cookie_string += "; domain=" + escape ( domain );
+        }
+      if (secure) {
+          cookie_string += "; secure";
+        }
+        document.cookie = cookie_string;
+    };
+
+    ifsp.exposeCookieForPartner = function(realmId, jsessionid) {
+        if (realmId == null || typeof realmId=="undefined") {
+            return;
+        }
+        if(jsessionid && jsessionid != "" && jsessionid.indexOf(realmId) == -1) {
+            this.setCookie("IOPJSESSIONID",jsessionid  + ".s_" + realmId,undefined,"/",".intuit.com");
+        }
+    };
+    ifsp.openPONHelp = function(helpPageId, productName, productEdition, PONLinkId, attachPoint, contextTags) {
+      var notifIf = document.getElementById('partnerNotificationIframe');
+      if (notifIf) {
+        notifIf.src = openPONHelpUrlBase + helpPageId + "&productName=" + productName + "&productEdition=" + productEdition + "&ponId=" + PONLinkId + "&attachPoint=" + attachPoint + "&contextTags=" + contextTags;
+      }
+    };
+    ifsp.openTrowserHelp = function(helpPageId, productName, productEdition) {
+      var notifIf = document.getElementById('partnerNotificationIframe');
+      if (notifIf) {
+        notifIf.src = openTrowserHelpUrlBase + helpPageId + "&productName=" + productName + "&productEdition=" + productEdition;
+      }
+    };
+    ifsp.openTrowser = function(targetUrl) {
+      var notifIf = document.getElementById('partnerNotificationIframe');
+      if (notifIf) {
+        notifIf.src = openTrowserUrlBase + targetUrl;
+      }
+    };
+    ifsp.openTrowserWithoutRecordHistory = function(targetUrl) {
+        var notifIf = document.getElementById('partnerNotificationIframe');
+        if (notifIf) {
+            notifIf.src = openTrowserUrlWithoutRecordHistoryBase + targetUrl;
+        }
+    };
+    ifsp.closeTrowser = function(targetUrl) {
+      var notifIf = document.getElementById('partnerNotificationIframe');
+      if (notifIf) {
+        if(targetUrl) {
+          notifIf.src = closeTrowserUrlBase + targetUrl;
+        } else {
+          notifIf.src = closeTrowserUrlBase;
+        }
+      }
+    };
+    
+    ifsp.isTrowserActive = function() {
+        return  !( isTrowserActive === null
+          || isTrowserActive === ''
+          || isTrowserActive.toLowerCase() === 'false');
+    };
+
+    ifsp.navigateToPartnerPage = function(targetUrl) {
+        if (targetUrl === "") {
+            return;
+        }
+        var notifIf = document.getElementById('partnerNotificationIframe');
+        if (notifIf) {
+            if(targetUrl) {
+                notifIf.src = partnerNavigateUrlBase + targetUrl;
+            } else {
+                notifIf.src = partnerNavigateUrlBase;
+            }
+        }
+    };
+
+    ifsp.navigateBackOnPartnerPage = function() {
+        top.window.postMessage({
+            type:'payroll',
+            message:'msg.history_back'
+        }, partnerBaseUrl);
+    };
+
+    ifsp.navigateToLocationURLAfterOpenTrowser = null;
+
+    ifsp.onloadCallback = function() {
+      if(ifsp.navigateToLocationURLAfterOpenTrowser != null) {
+        var _url = ifsp.navigateToLocationURLAfterOpenTrowser;
+        ifsp.navigateToLocationURLAfterOpenTrowser = null;
+        setTimeout(function(){window.location.href = _url;},2000);
+      }
+    };
+
+    ifsp.navigateToLocationAfterOpenTrowser = function(url) {
+      ifsp.navigateToLocationURLAfterOpenTrowser = url;
+    };
+
+    ifsp.navigateToLocation = function(url) {
+        if (url === "") {
+            return;
+        }
+      window.location.href = url;
+    };
+
+    ifsp.openNewBrowser = function(url) {
+      var left = window.innerWidth - 800;
+      var top = window.innerHeight - 600;
+      window.open(url,'pdf','width=800,height=600,menubar=no,location=no,left='+left+",top="+top);
+    };
+
+    ifsp.listDisplayForComboBox =function(contents) {
+      var items =contents.split(":");
+      var endText = items[items.length - 1];
+      var startText="";
+      var spaceChar = String.fromCharCode(160);
+      for (var i=0; i < items.length-1; i++) {
+        startText = startText + spaceChar + spaceChar + spaceChar;
+      }
+      return startText + endText;
+    };
+
+    ifsp.truncateDisplayForComboBox = function(contents, isOverflowing, maxVisibleCharacters) {
+        if (!isOverflowing) {
+            return contents;
+        }
+        if (contents.length <= maxVisibleCharacters) {
+            //the contents can fit in the box, don't need to truncate
+            return contents;
+        } else {
+            var items =contents.split(":");
+            if (items.length <= 1) {
+                // no children, let CSS truncate
+                return contents;
+            } else {
+                //with children case.
+                var parentItem = items[0];
+                if(parentItem.length > 4) {
+                    //parentitem is more than 4 character, truncate it to 4 character and append '…'
+                    parentItem =parentItem.substr(0,4) +"…:";
+                } else {
+                    //parentitem is less or equal to  4 character, simply append :
+                    parentItem =parentItem +":";
+                }
+                return parentItem + items[items.length - 1];
+            }
+        }
+    };
+    
+    ifsp.formatNumber = function(number, decimals, dec_point, thousands_sep) {
+        // *     example 1: formatNumber(1234.56)               = '1,235'
+        // *     example 2: formatNumber(1234.56, 2, ',', ' ')  = '1 234,56'
+        // *     example 3: formatNumber(1234.5678, 2, '.', '') = '1234.57'
+        // *     example 4: formatNumber(67, 2, ',', '.')       = '67,00'
+        // *     example 5: formatNumber(1000)                  = '1,000'
+        // *     example 6: formatNumber(67.311, 2)             = '67.31'
+        // *     example 7: formatNumber(1000.55, 1)            = '1,000.6'
+        // *     example 8: formatNumber(67000, 5, ',', '.')    = '67.000,00000'
+        // *     example 9: formatNumber(0.9, 0)                = '1'
+        // *    example 10: formatNumber('1.20', 2)             = '1.20'
+        // *    example 11: formatNumber('1.20', 4)             = '1.2000'
+        // *    example 12: formatNumber('1.2000', 3)           = '1.200'
+        var n = !isFinite(+number) ? 0 : +number, 
+            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+            s = '',
+            toFixedFix = function (n, prec) {
+                var k = Math.pow(10, prec);
+                return '' + Math.round(n * k) / k;
+            };
+        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+        if (s[0].length > 3) {
+            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+        }
+        if ((s[1] || '').length < prec) {
+            s[1] = s[1] || '';
+            s[1] += new Array(prec - s[1].length + 1).join('0');
+        }
+        return s.join(dec);
+    }
+
+    ifsp.notifyPageMessages = function(messageCount) {
+      $(ifsp).trigger('ifsp.pageMessages', messageCount);
+    };
+
+    ifsp.showInternalError = function(systemTicket) {
+        if (typeof ifsp.internalDlgOpen == "undefined") {
+            ifsp.internalDlgOpen = false;
+        }
+        var $errorDialog = $("#internal-err-dialog");
+        if ($errorDialog == null) {
+            return;
+        }
+        $errorDialog.find("#systkt").text(systemTicket);
+        $errorDialog.dialog({
+            autoOpen: false,
+            dialogClass: 'no_close',
+            width: 500,
+            modal: true,
+            buttons: [
+            {
+                text: "OK",
+                click: function() {
+                    $(this).dialog("close");
+                    ifsp.internalDlgOpen = false;
+                }
+            }
+            ]
+        });
+
+        //check to see dialog already open to prevent multiple dialog
+        if (ifsp.internalDlgOpen === true) {
+            return;
+        } else {
+            $(".ui-dialog-buttonset .ui-button").removeClass('ui-corner-all');
+            $errorDialog.dialog("open");
+            $(".ui-widget-overlay").css({"z-index": "30000"});
+            ifsp.internalDlgOpen = true;
+        }
+    };
+    ifsp.onServerError = function(errorText) {
+        var tkt = "";
+        try {
+            var result = errorText.match(/"systkt"\:("[0-9].*")/gm);
+            if (result != null) {
+                tkt = result[0].match(/(\d+)-(\d+)-(\d+)/gm);
+            }
+        }catch(e){}
+        ifsp.showInternalError(tkt);
+    };
+    /** Runs given function if namespace has been loaded, otherwise register
+     *  namespace load event on window.loadCallbacks.
+     */
+    ifsp.runOnNamespaceLoad = function(func, namespaceName, namespaceLoadEventName) {
+        if (this.getNamespace(namespaceName)) {
+            func();
+        } else {
+            window.loadCallbacks.on(namespaceLoadEventName, func);
+        }
+    };
+    ifsp.getNamespace = function(namespaceName) {
+        var namespaces = namespaceName.split('.'), context = window;
+        for (var i=0, len=namespaces.length; i < len; i++) {
+            context = context[namespaces[i]];
+            if (!context) {
+                return context;
+            }
+        }
+        return context;
+    };
+    /**
+     * @return Existing namespace, otherwise newly created namespace
+     */
+    ifsp.createNamespace = function(namespaceName) {
+        var namespaces = namespaceName.split('.'), context = window;
+        var i=0;
+        for (var len=namespaces.length; i < len; i++) {
+            var namespace = context[namespaces[i]];
+            context[namespaces[i]] = namespace || {};
+            context = namespace || context[namespaces[i]];
+        }
+        return context;
+    };
+    ifsp.support = (function(support){
+        support.placeholder = 'placeholder' in document.createElement('input');
+        return support;
+    })(ifsp.support || {});
+    /** Simple placeholder polyfill. Does not remove value on form submits. */
+    ifsp.placeholder = function($input) {
+        if (ifsp.support.placeholder) {
+            return;
+        }
+        turnOnPlaceholder();
+        $input.on({
+            'blur.placeholder': turnOnPlaceholder,
+            'focus.placeholder': turnOffPlaceholder
+        });
+        function turnOnPlaceholder() {
+          if (!$input.val()) {
+            $input.val($input.attr('placeholder'));
+            $input.addClass('placeholder');
+          }
+        }
+        function turnOffPlaceholder() {
+          if ($input.val() === $input.attr('placeholder')) {
+            $input.val('');
+            $input.removeClass('placeholder');
+          }
+        }
+    };
+    ifsp.jq = function( eid ) {
+
+        return "#" + eid.replace( /(:|\.|\[|\])/g, "\\$1" );
+
+    }
+    ifsp.hideError = function(elementId) {
+        var el = $(ifsp.jq(elementId));
+        var forEl = $('label[for="' + elementId + '"]');
+        var imgEl = $('img[data-client="' + elementId + '"]');
+        imgEl.hide();
+        forEl.removeClass('fieldError');
+        el.removeClass('fieldError');
+
+    };
+    ifsp.showError = function(elementId) {
+        var el = $(ifsp.jq(elementId));
+        var forEl = $('label[for="' + elementId + '"]');
+        var imgEl = $('img[data-client="' + elementId + '"]');
+        imgEl.show();
+        forEl.addClass('fieldError');
+        el.addClass('fieldError');
+
+    };
+
+    })(window.ifsp || (window.ifsp = {}));
+window.loadCallbacks = window.loadCallbacks || $({});

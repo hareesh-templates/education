@@ -1,0 +1,3 @@
+/* Copyright (c) 2014 Intuit Inc. All rights reserved. Unauthorized reproduction is a violation of applicable law. This material contains certain confidential and proprietary information and trade secrets of Intuit Inc. *///>>built
+define("qbo/widgets/acl/AclCache",["dojo/_base/declare"],function(c){var a;a={data:null,timeStamp:null};return new (c(null,{setCache:function(b){a.data=b.data;a.timeStamp=b.timeStamp},getCache:function(){return a}}))});
+//@ sourceMappingURL=AclCache.js.map

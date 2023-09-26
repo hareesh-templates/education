@@ -1,0 +1,594 @@
+/* 
+ * This should only contains codes that support harmony components
+ */
+
+$(document).ready(function($){
+	$(ifsp).on('ifsp.pageMessages', function(event, messageCount){
+		if(messageCount.newerror > 0) {
+			// scroll to the top of the message block
+			var container, offset;
+			var messageBlock = $('.pageLevelMessages');
+			
+			if(ifsp.isTrowserActive()) {
+				container = $('#trowserScrollPanel');
+				offset = container.scrollTop() + messageBlock.offset().top - container.offset().top;
+			} else {
+				// In some browsers the scrollbar is on the html element, others it's on the body element
+				// Chrome: body
+				// FireFox: html
+				// Other browsers: ???
+				container = $('html, body');
+				offset = messageBlock.offset().top;
+			}
+
+			var paddingTop = 10;
+			var messagesScrollPosition = offset - paddingTop;
+			container.animate({scrollTop:messagesScrollPosition}, 'fast');
+		}
+	});
+});
+
+$(document).ready(function($){
+	
+	function hasVerticalScrollBar(jQueryObj) {
+		var containerHeight = jQueryObj.innerHeight();
+		var contentHeight = jQueryObj[0].scrollHeight;
+		return contentHeight > containerHeight;
+	}
+	
+	function verticalScrollBarWidth(jQueryObj) {
+		var widthWithScrollbar = jQueryObj.innerWidth();
+		var widthWithOutScrollbar = jQueryObj[0].clientWidth;
+		return widthWithScrollbar - widthWithOutScrollbar;
+	}
+    
+    function styleCheckedRows() {
+        $("input[type=checkbox]").parents("tr").removeClass("checked");
+        $("input:checked").parents("tr").addClass("checked");
+    }
+    
+    function isAlreadyInitialized($thisObj) {
+        if ($thisObj.data("initialized") == "true") {
+            return true;
+        } else {
+            $thisObj.data("initialized","true");
+            return false;
+        }
+    }
+    var storeComboBoxWidth = {};
+    function synchWidth($selectDiv, $ul) {
+        if (!$selectDiv || !$ul) {
+            return;
+        }
+        var divId = $selectDiv.attr("id");
+        if (divId && divId != "") {
+            var previousWidth = storeComboBoxWidth[divId];
+            if (previousWidth) {
+                $selectDiv.width(previousWidth);
+                $ul.width(previousWidth - 2);
+                return;
+            }
+        }
+        var selectDivWidth = $selectDiv.width();
+        $ul.width('auto');
+        var divWidth = $ul.width() + 30;
+        var ulWidth = divWidth - 2;
+        $selectDiv.width(divWidth);
+        $ul.width(ulWidth);
+        if ($selectDiv.width() < selectDivWidth) {
+            $selectDiv.width(selectDivWidth);
+            $ul.width(selectDivWidth - 2);
+        }
+        if (divId && divId != "") {
+            storeComboBoxWidth[divId] = $selectDiv.width();
+        }
+    }
+    /** Takes core HTML object (not jQuery). */
+    function fireChangeEventOn(element) {
+        if ("fireEvent" in element) {
+            element.fireEvent("onchange");
+        } else {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", true, false);
+            element.dispatchEvent(evt);
+        }
+    }
+    // Data binding...
+    function setupBindings() {
+		// PD-55443: Temporary fix for chromium bug # 244645 ( http://code.google.com/p/chromium/issues/detail?id=244645 )
+		// Turn off auto-complete for input controls to prevent radio & state selectors from being reset
+		$(':input').attr('autocomplete','off');
+        $(".select").filter(":not(.dark,.batch)").each(function() {
+            var $select = null;
+            if (isAlreadyInitialized($(this))) {
+                $(this).off("click");
+                $select = $(this).find("select").eq(0);
+                var $span = $select.next();//span
+                var $ul = $span.next();//ul
+                $ul.remove();
+                $span.remove();
+            }
+            var $this = $(this);
+            
+            $select = $this.find("select").eq(0);
+            $select.attr('tabindex', '-1');
+            var $options = $select.children("option");
+            var optionsLength = $options.length;
+            var selectedOptionIndex = $select[0].selectedIndex;
+            var $selectedOption = $options.eq(selectedOptionIndex);
+            var selectedOptionText = $selectedOption.text();
+            if ($select.attr('disabled') == 'disabled') {
+                $(this).addClass('disabled');
+            } else {
+                $(this).removeClass('disabled');
+			}
+            // Build the markup that will mimic the SELECT and OPTION elements
+            var $fauxSelect = $("<span/>",{
+                text: selectedOptionText
+            });
+
+            var $fauxOptionBlock = $("<ul/>");
+            var $fauxOptionItems = [];
+
+            for (var i = 0; i < optionsLength; i++) {
+                $fauxOptionItems.push(
+                    $("<li/>",
+                    {
+                        "data-index": i,
+                        text: $options[i].text,
+						"disabled":$options[i].disabled,
+                        click: function(e) {
+                            if ($select.attr('disabled') == 'true') {
+                                return;
+                            }
+                            e.stopPropagation();                                                 
+                            var $this = $(this);
+                            var optionValue = $this.text();
+                            var optionIndex = $this.data("index");
+							var optionDisabled = $this.attr("disabled");
+							if (optionDisabled === 'disabled'){
+								return;
+							}
+							
+                            $fauxSelect.text(optionValue);
+                            $(".select").removeClass("open");
+
+                            $select[0].selectedIndex = optionIndex;
+                            // Must use native events for JSF JS to interpret event correctly
+                            fireChangeEventOn($select[0]);
+                        }
+                    })
+                    );
+            }
+
+            $fauxOptionBlock.append($fauxOptionItems);
+            // Add the new elements to the page
+            $this.append($fauxSelect, $fauxOptionBlock);
+            var $selectDiv = $this;
+            synchWidth($selectDiv, $fauxOptionBlock);
+
+            $this.attr("tabIndex",0);
+            $this.on(
+                "click",
+                function(e){
+                    if ($select.attr('disabled') == 'disabled') {
+                        return;
+                    }
+                    e.preventDefault();
+                    var $this = $(this);
+                    // Show/hide the options
+                    if ($this.hasClass("open")) {
+                        $this.removeClass("open");
+                        $this.removeClass("nooutline");
+                    } else {
+                        $this.addClass("open");
+                        $this.addClass("nooutline");
+                    }
+
+					var $ul = $this.find('ul');
+					var $contentPane = $('.harmony.trowserBody');
+					var needToOpenListUpward = false;
+					
+					// only if we're in the trowser, because non-trowser is too difficult right now
+					if($contentPane.size() > 0) {
+						var contentPaneBottom = $contentPane.offset().top + $contentPane.height();
+						var dropDownBottom = $this.offset().top + $this.height() + $ul.outerHeight();
+						
+						// +5 extra pixels to give a little padding at the bottom of the list
+						needToOpenListUpward = (dropDownBottom + 5) > contentPaneBottom;
+					}
+
+					// open the list upward if needed
+					if(needToOpenListUpward) {
+						// +2 for the box shadow on $ul, and +2 to make a small gap between the box and list
+						var offset = $this.outerHeight() + ($ul.outerHeight() + 2) + 2;
+						$ul.css('margin-top','-' + offset + 'px');
+					} else {
+						$ul.css('margin-top', '0');
+					}
+
+                    // adjust the width of the drop down list if the vertical scroll bar is visible
+                    $ul.width('auto');
+                    if(hasVerticalScrollBar($ul)) {
+						$ul.width($ul.width() + verticalScrollBarWidth($ul));
+					}
+                    synchWidth($selectDiv, $ul);
+                }
+                );
+                        
+            $this.blur(function() {
+                $this.removeClass("open");
+                $this.removeClass("nooutline");
+            })    
+
+        }
+        );
+
+
+		$(".select.dark, .select.batch").each(function() {
+			if (isAlreadyInitialized($(this))) {
+				$(this).off("click");
+				$select = $(this).find("select").eq(0);
+				var $span = $select.next();//span
+				var $ul = $span.next();//ul
+				$ul.remove();
+				$span.remove();
+			}
+			
+			
+			var $this = $(this);
+
+			var $select = $this.find("select").eq(0);
+			$select.attr('tabindex', '-1');
+			var $options = $select.children("option");
+			var optionsLength = $options.length;
+			var selectedOptionIndex = $select[0].selectedIndex;
+			var $selectedOption = $options.eq(selectedOptionIndex);
+			var selectedOptionText = $selectedOption.text();
+			var currentSelectIndex;
+			var currentSelectOptionText;
+			var isDefaultOptionClicked = false;
+			// Build the markup that will mimic the SELECT and OPTION elements
+			var $fauxSelect = $("<span/>",{
+				text: selectedOptionText,
+				click: function(e) {
+					isDefaultOptionClicked = true;
+					$select[0].selectedIndex = 0;
+					// Must use native events for JSF JS to interpret event correctly
+					fireChangeEventOn($select[0]);
+				}
+			});
+
+			var $fauxOptionBlock = $("<ul/>");
+			var $fauxOptionItems = [];
+			for (var i = 0; i < optionsLength; i++) {
+				if(selectedOptionText == $options[i].text) {
+					currentSelectIndex = i;
+					currentSelectOptionText = selectedOptionText;
+					$select[0].selectedIndex = currentSelectIndex;
+					continue;
+				}
+				$fauxOptionItems.push(
+					$("<li/>",
+					{
+						"data-index": i,
+						text: $options[i].text,
+						"disabled":$options[i].disabled,
+						click: function(e) {
+							if ($select.attr('disabled') == 'disabled') {
+								return;
+							}
+							e.stopPropagation();
+							var $this = $(this);
+							var optionValue = $this.text();
+							var optionIndex = $this.data("index");
+							var optionDisabled = $this.attr("disabled");
+							if (optionDisabled === 'disabled'){
+								return;
+							}
+							//$fauxSelect.text(optionValue); //we don't want to change selection on select
+							$(".select").removeClass("open");
+
+							$select[0].selectedIndex = optionIndex;
+							//$this.text(currentSelectOptionText); //we don't want to change selection on select
+							currentSelectOptionText = optionValue;
+							currentSelectIndex = optionIndex;
+							// Must use native events for JSF JS to interpret event correctly
+							fireChangeEventOn($select[0]);
+						}
+					})
+					);
+			}
+
+			$fauxOptionBlock.append($fauxOptionItems);
+
+			// Add the new elements to the page
+			$this.append($fauxSelect, $fauxOptionBlock);
+			synchWidth($this, $fauxOptionBlock);
+
+			$this.on("click", function(e){
+				if ($select.attr('disabled') == 'disabled') {
+					return;
+				}
+				e.preventDefault();
+				var $this = $(this);
+				// Show/hide the options
+				if ($this.hasClass("open")) {
+					$this.removeClass("open");
+				} else {
+					if(!isDefaultOptionClicked) {
+						$this.addClass("open");
+					}
+					isDefaultOptionClicked = false;
+				}
+				synchWidth($this, $fauxOptionBlock);
+			});
+		});
+
+        var sectionHeaderMaker = $(".section-header-marker");
+        if(!sectionHeaderMaker) {
+            $(".section-header").off('click').on('click', function(e){
+                $(this).nextUntil(".section-header").toggle();
+                $(this).toggleClass("open");
+                e.stopPropagation();
+            });
+        } else {
+            $(".section-header-marker").off('click').on('click', function(e){
+                if(!$(this).hasClass("section-empty")) {
+                    $(this).nextUntil(".section-header-marker").toggle();
+                    $(this).toggleClass("open");
+                }
+                e.stopPropagation();
+            });
+        }
+        $('.pulltab').off('click').on('click', function(e) {
+            $(this).toggleClass("open");
+            if ($(this).hasClass("open")) {
+                $('.stage').addClass("chart");
+                $('.stage').removeClass("close");
+				$('.stageHeaderPayrollButton').removeClass("open");
+            } else {
+                $('.stage').removeClass("chart");
+                $('.stage').addClass("close");
+				$('.stageHeaderPayrollButton').addClass("open");            }
+            $('.stageContent').slideToggle(500);
+            e.stopPropagation();
+        });
+
+        $('.ui-sortable-column-icon a').each(function() {
+            if (!isAlreadyInitialized($(this))) {
+                if($(this).hasClass('ui-toggled')) {
+                    if ($(this).hasClass('ui-icon-triangle-1-n')) {
+                        $(this).addClass('sort-asc');
+                    } else {
+                        $(this).addClass('sort-desc');
+                    }
+                    return;
+                }
+            }
+        });
+
+        $('.harmony .clearFieldErrorOnBlur input').blur(function() {
+            $(this).removeClass('fieldError');
+            var id = $(this).attr("id");
+            if (id) {
+                var index = id.lastIndexOf(":");
+                if (index > 0) {
+                    var idPrefix = id.substring(0, index);
+                    $("label[id^='" + idPrefix+ "']").removeClass('fieldError');
+                }
+            }
+        });
+
+        // Hide Harmony styles on radio buttons and checkboxes in IE for v1
+        if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+            $('input[type=radio], input[type=checkbox]').addClass('ieOnly');
+            $('.alignToRadioLinedirection').addClass('ieOnly');
+        }
+
+        $('.expandCollapseSection').each(function() {
+            if ($(this).children().length == 1) {
+                var style = "expandCollapseCollapseIcon";
+                if ($(this).data('style') === 'open') {
+                    style = "expandCollapseExpandIcon";
+                }
+                if (style === "expandCollapseCollapseIcon") {
+                    $($(this).children()[0]).hide();
+                }
+
+                $("<div class='expandCollapseIcon'><div class='" + style + "'></div><div class='expandCollapseHeader'>" + $(this).data('header') + "</div></div>").prependTo($(this)).click(function() {
+                    $(this).next().slideToggle();
+                    var $icon = $($(this).children()[0]);
+                    if ($icon.hasClass('expandCollapseExpandIcon')) {
+                        $icon.removeClass('expandCollapseExpandIcon');
+                        $icon.addClass('expandCollapseCollapseIcon');
+                    } else {
+                        $icon.removeClass('expandCollapseCollapseIcon');
+                        $icon.addClass('expandCollapseExpandIcon');
+                    }
+                });
+            }
+        });
+        $('.expandCollapseIcon').each(function() {
+            var $icon = $($(this).children()[0]);
+            if ($icon.hasClass("expandCollapseCollapseIcon")) {
+                $(this).next().hide();
+            } else if ($icon.hasClass("expandCollapseExpandIcon")) {
+                $(this).next().show();
+            }
+        });
+    }
+    // End of data binding function...
+    // Execute binding
+    setupBindings();
+    // Initializing.....
+    $(".section-header.close").each(function() {
+        $(this).nextUntil(".section-header").toggle();
+    });
+    // Initializing for sortable table
+    $('.ui-sortable-column .ui-sortable-control').each(function(index) {
+        if(index == 0) {
+            $(this).find('.ui-icon-triangle-1-n').addClass('sort-asc');
+        }
+    });
+    $('#autoOpenURLOnLoad').each(function() {
+        ifsp.openNewBrowser($(this).val())
+    })
+    
+    // Rebinding after an ajax event...
+    ice.onAfterUpdate(function() {
+        //Rebinding if needed
+        setupBindings();
+    });
+
+    var builtinAjaxRequestFunction = jsf.ajax.request;
+    var _dialogClass = null;
+    jsf.ajax.request = function(c,e,o) {
+        if (typeof o.dialogClass != 'undefined') {
+            $('.' + o.dialogClass).show();
+            _dialogClass = o.dialogClass;
+        } else if (typeof o.nonBlocking == 'undefined' || o.nonBlocking == 'false') {
+            if(typeof iopspinner != 'undefined') {
+                iopspinner.show({
+                    after:1000
+                });
+                setTimeout(iopspinner.hide,600000);//hide spinner after 10 minutes
+            }
+        }
+        builtinAjaxRequestFunction(c,e,o)
+    }
+
+    var builtinAjaxResponseFunction = jsf.ajax.response;
+    jsf.ajax.response = function(r,c) {
+        var isRedirect = r.responseText != null && r.responseText.indexOf('</redirect>') > -1;
+        //Do not hide spinner for redirect page until the page is unloaded.
+        if (typeof iopspinner != 'undefined' && !isRedirect) {
+            iopspinner.hide();
+        }
+        if (_dialogClass != null) {
+            $('.' + _dialogClass).hide();
+            _dialogClass = null;
+        }
+        builtinAjaxResponseFunction(r,c)
+    }
+
+    //setup message handler
+    window.addEventListener("message", function (evt) {
+        if (evt.data.type && evt.data.type === 'qbo') {
+            var message = evt.data.message;
+            if (message.cmd === "getPageId") {
+                top.window.postMessage({
+                    type:'getPageIdResult',
+                    message:{
+						pageId: helpPageId,
+						productName: helpProductName,
+						productEdition: helpProductEdition,
+						opaqueData: message.opaqueData
+                    }
+                }, partnerBaseUrl);
+        }
+    }
+    });
+
+}
+);
+
+//initialized spinner code if it's not yet defined
+if(typeof iopspinner == 'undefined') {
+    iopspinner = (function () {
+        var maskingDiv;
+        function init() {
+            maskingDiv = document.getElementById('iopMaskingDiv');
+            initialized = true;
+        }
+
+        function showDiv() {
+            if(maskingDiv) {
+                maskingDiv.style.display = "block";
+            }
+        }
+
+        function hideDiv() {
+            if(maskingDiv) {
+                maskingDiv.style.display = "none";
+            }
+        }
+
+        function getViewPort() {
+            var viewportwidth = 1024;
+            var viewportheight = 728;
+            // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
+            if (typeof window.innerWidth != 'undefined') {
+                viewportwidth = window.innerWidth,
+                viewportheight = window.innerHeight
+            } else if (typeof document.documentElement != 'undefined'
+                && typeof document.documentElement.clientWidth !=
+                'undefined' && document.documentElement.clientWidth != 0) {
+                // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+                viewportwidth = document.documentElement.clientWidth,
+                viewportheight = document.documentElement.clientHeight
+            } else { // older versions of IE
+                viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
+                viewportheight = document.getElementsByTagName('body')[0].clientHeight
+            }
+            return {
+                w:viewportwidth,
+                h:viewportheight
+            };
+        }
+
+        var initialized = false;
+        var isShowing = false;
+        var donotHide = false;
+        var delayHide = null;
+
+        function _show(info) {
+            if(!initialized) {
+                init();
+            }
+            isShowing = true;
+            donotHide = false;
+            if(info) {
+                if(info.donotHide === 'true') {
+                    donotHide = true;
+                }
+                if(info.delayHide) {
+                    delayHide = info.delayHide;
+                }
+            }
+            if(info && info.after) {
+                setTimeout(function(){
+                    if(isShowing){
+                        showDiv();
+                    }
+                },info.after);
+        } else {
+            showDiv();
+        }
+    }
+
+    function _hide(forceHide) {
+        isShowing = false;
+        if(!initialized) {
+            //nothing to hide
+            return;
+        }
+        if(forceHide || !donotHide) {
+            if (delayHide != null && !forceHide) {
+                setTimeout(hideDiv,delayHide);
+            } else {
+                hideDiv();
+            }
+        }
+        delayHide = null;
+    }
+
+
+    return {
+        show:_show,
+        hide:_hide
+    }
+
+
+    }());
+}

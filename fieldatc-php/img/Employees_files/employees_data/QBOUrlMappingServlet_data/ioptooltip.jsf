@@ -1,0 +1,169 @@
+var iopToolTip=(function(){
+    var iopToolTip={
+        initTip:function initTip(tip){
+            $("body").attr('title','');
+            var elem='';
+            if(tip.byId.length>0){
+                elem='#'+tip.byId;
+            }else if(tip.byClass.length>0){
+                elem='.'+tip.byClass;
+            }else if(tip.byAttr.length>0){
+                elem='['+tip.byAttr+']';
+            }else if(tip.byTag.length>0){
+                elem=tip.byTag;
+            }else{
+                elem='.iopTooltip';
+            }
+            tip.type=tip.type.toLowerCase();
+            if(tip.type=="hint"){
+                $(''+elem).hint("iopHint");
+            }else{
+                if(tip.reset=="true"){
+                    $(''+elem).removeAttr('bt-xTitle');
+                };
+                if(tip.reset == "false" && !$('' + elem).hasClass('fieldError')){
+                    $(''+elem).removeAttr('bt-xTitle');
+                }
+               
+                if (typeof tip.contentSelector == 'undefined' || tip.contentSelector.length == 0) {
+                    tip.contentSelector="$(this).attr('title');";
+                }
+                if(tip.width.length==0){
+                    tip.width=250;
+                }
+              
+                //TODO:HARMONY - Make this dynamic once sorting things out with XD
+                tip.fillColor='rgba(31, 50, 70, 1)';
+                tip.strokeStyle='#1f3246';         
+
+                if(tip.showIcon=="true"){
+                    if(tip.type=="warning"){
+                        tip.icon=tip.warnIcon;
+                    }else if(tip.type=="error"){
+                        tip.icon=tip.errorIcon;
+                    }
+                    if(tip.content.length>0){
+                        tip.content="<img src=\""+tip.icon+"\" valign=top>"+tip.content;
+                    }else{
+                        tip.contentSelector="'<img src=\""+tip.icon+"\" valign=top  style=\"float:left;\"><div style=\"margin-left:15px;margin-top:0;\">' + $(this).attr('title') + '</div>'";
+                    }
+                }
+                
+                var pos;
+                if(typeof(tip.position) === 'undefined' || tip.position === '') {
+                    pos = ['most'];
+                } else {
+                    pos = $.map(tip.position.split(" "), $.trim)
+                }
+                
+                if (typeof(tip.trigger) === 'undefined') {
+                    tip.trigger = ['focus','blur'];
+                }
+                
+                var $el = $(''+elem);
+                var tagName = $el.prop('tagName');
+                if (tagName == 'IMG' || tagName == 'A') {
+                    tip.trigger = ['mouseover','mouseout'];
+                }
+                if(tip.content.length>0){
+                    var opts = {
+                        padding:10,
+                        positions:pos,
+                        width:tip.width,
+                        spikeLength:10,
+                        spikeGirth:15,
+                        cornerRadius:2,
+                        fill:tip.fillColor,
+                        strokeWidth:1,
+                        strokeStyle:tip.strokeStyle,
+                        cssStyles:{color:'#fff'},
+                        cssClass:'tooltip',
+                        trigger: tip.trigger
+                        }
+						
+					if(tip.overlap) opts.overlap = tip.overlap;
+						
+					$el.bt(tip.content, opts);
+                }else{
+                    var opts = {
+                        padding:10,
+                        positions:pos,
+                        contentSelector:tip.contentSelector,
+                        width:tip.width,
+                        spikeLength:10,
+                        spikeGirth:15,
+                        cornerRadius:2,
+                        fill:tip.fillColor,
+                        strokeWidth:1,
+                        strokeStyle:tip.strokeStyle,
+                        cssStyles:{color:'#fff'},
+                        cssClass:'tooltip',
+                        trigger: tip.trigger
+                        }
+					
+					if(tip.overlap) opts.overlap = tip.overlap;
+					
+                    $el.bt(opts);
+                }
+            }
+        }
+    }
+    return iopToolTip;
+})();
+_iopi_tip={
+    tipId:"_iopi_",
+    byId:"",
+    byClass:"_iopi_tt_",
+    byAttr:"",
+    byTag:"",
+    type:"error",
+    content:"",
+    width:"",
+    fillColor:"rgba(31, 50, 70, 1)",
+    styleObj:"",
+    strokeStyle:"#1f3246",
+    showIcon:"false",
+    warnIcon:"",
+    errorIcon:"",
+    reset:"true",
+    trigger: ['focus', 'blur']
+};
+_iopi_tip_icon_={
+    tipId:"_iopi_icon_",
+    byId:"",
+    byClass:"fieldMessageIcon",
+    byAttr:"",
+    byTag:"",
+    type:"error",
+    content:"",
+    contentSelector: "$(this).attr('alt')",
+    width:"",
+    fillColor:"rgba(31, 50, 70, 1)",
+    styleObj:"",
+    strokeStyle:"#1f3246",
+    showIcon:"false",
+    warnIcon:"",
+    errorIcon:"",
+    reset:"true",
+    trigger: ['mouseover', 'mouseout']
+};
+jQuery(document).ready(function(){
+    ice.onAfterUpdate((function(options){
+        function updateBeforeInitTip() {
+			//update input field for date time entry so error tooltip is correctly rendered
+            jQuery('.calendar').each(function() {
+                if ($(this).hasClass('fieldError')) {
+                    $(this).children('input').addClass('_iopi_tt_ fieldError');
+                } else {
+                    $(this).removeClass('_iopi_tt_ fieldError');
+                }
+            });
+		}
+        return function(){
+            updateBeforeInitTip();
+            iopToolTip.initTip(options);
+            iopToolTip.initTip(_iopi_tip_icon_);
+            };
+        
+    })(_iopi_tip));
+});

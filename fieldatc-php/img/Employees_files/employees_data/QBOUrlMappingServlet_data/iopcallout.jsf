@@ -1,0 +1,116 @@
+var iopCallout=(function(){
+    var iopCallout={        
+        initCallout:function initCallout(callout, $closeButton){
+            $("body").attr('title','');
+            var elem='';
+            if(callout.byId.length>0){
+                elem='#'+callout.byId;
+            }else if(callout.byClass.length>0){
+                elem='.'+callout.byClass;
+            }else if(callout.byAttr.length>0){
+                elem='['+callout.byAttr+']';
+            }else if(callout.byTag.length>0){
+                elem=callout.byTag;
+            }else{
+                elem='.iopCallout';
+            }
+            var $elem = $(''+elem);
+            if (!$elem.length) {
+                if (!!console && console.log) {
+                    console.log('Callout target not found for: '+elem);
+                }
+                return;
+            }
+            
+            callout.type=callout.type.toLowerCase();
+            
+            if(callout.reset=="true"){
+                $elem.removeAttr('bt-xTitle');
+            }
+            var resultingStyles={
+                color:'#333333',
+                fontSize:'11px',
+                fontFamily:'Arial'
+            };
+            
+            $.extend(resultingStyles, callout.styleObj);
+            callout.styleObj = resultingStyles;
+            
+            // shiftY, strokeStyle, and strokeWidth differ from the usual for the terminationStatus callout.
+            if(!callout.shiftY) { callout.shiftY = -10; }
+            if(!callout.strokeStyle) { callout.strokeStyle = "#CCCCCC"; }
+            if(!callout.strokeWidth) { callout.strokeWidth = 1; }
+            
+            if(callout.type=="warning"){
+                callout.strokeStyle="#FEC829";
+                callout.fillColor='rgba(255,251,204,1)';
+            }else if(callout.type=="error"){
+                	callout.strokeStyle="#CC0000";
+			callout.fillColor='rgba(252,227,227,1)';
+            }else if(callout.type=="info"){
+			callout.fillColor='rgba(255,255,255,1)';
+            }
+            callout.position = new Array(callout.position);
+
+            if(callout.width.length==0){
+                callout.width=200;
+            }
+            var gradient;
+            if(callout.gradientStartColor && callout.gradientEndColor){
+                
+                gradient = {
+                    enable:true,
+                    x0:0,
+                    y0:0,
+                    x1:0,
+                    y1:100,
+                    startColor: callout.gradientStartColor,
+                    endColor:callout.gradientEndColor
+                };
+            }
+            $elem.bt({
+                clickAnywhereToClose: false,
+                padding:2,
+                positions: callout.position,
+                contentSelector:'$("[id=\'' + callout.clientId + '\']")',
+                width: callout.width,
+                spikeLength:8,
+                spikeGirth:12,
+                cornerRadius:6,
+                strokeWidth: callout.strokeWidth,
+                strokeStyle: callout.strokeStyle,
+                fill: callout.fillColor,
+                trigger:callout.trigger,  
+                gradient:gradient,
+                shiftY: callout.shiftY,
+                cssStyles: callout.styleObj,
+                fixPos: true
+            }          
+            );
+
+            //Hide callout when it's dismissed
+            // Insert btOff into closure in case the element it's stored on is wiped by ajax
+            $closeButton.click((function(btOff){
+                return function() {
+                    var sourceElement = $elem[0];
+                    if (!sourceElement.btOff) {
+                        sourceElement.btOff = btOff;
+                    }
+                    sourceElement.btOff();
+                };
+            })($elem[0].btOff));
+
+            if (callout.trigger == 'none') {
+                //put the content in the right place first
+				if (callout.contentId != '') {
+					$('#' + callout.contentId + '_holder').html(
+						$('#' + callout.contentId + '_data').html()
+					);
+				}
+				$elem.btOn();
+            }
+        }
+    };
+    return iopCallout;
+})();
+

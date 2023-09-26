@@ -1,0 +1,1495 @@
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.8.2r1
+*/
+.yui-button  {
+
+    display: -moz-inline-box; /* Gecko */
+    display: inline-block; /* IE, Opera and Safari */
+    vertical-align: text-bottom;
+    
+}
+
+.yui-button .first-child {
+
+    display: block;
+    *display: inline-block; /* IE */
+
+}
+
+.yui-button button,
+.yui-button a {
+
+    display: block;
+    *display: inline-block; /* IE */
+    border: none;
+    margin: 0;
+
+}
+
+.yui-button button {
+
+    background-color: transparent;
+    *overflow: visible; /* Remove superfluous padding for IE */
+    cursor: pointer;
+
+}
+
+.yui-button a {
+
+    text-decoration: none;
+
+}
+/*
+ * jQuery UI CSS Framework 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled { cursor: default !important; }
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/*
+ * jQuery UI Resizable 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}/*
+ * jQuery UI Selectable 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Selectable#theming
+ */
+.ui-selectable-helper { position: absolute; z-index: 100; border:1px dotted black; }
+/*
+ * jQuery UI Button 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Button#theming
+ */
+.ui-button { display: inline-block; position: relative; padding: 0; margin-right: .1em; text-decoration: none !important; cursor: pointer; text-align: center; zoom: 1; overflow: visible; } /* the overflow property removes extra width in IE */
+.ui-button-icon-only { width: 2.2em; } /* to make room for the icon, a width needs to be set here */
+button.ui-button-icon-only { width: 2.4em; } /* button elements seem to need a little more width */
+.ui-button-icons-only { width: 3.4em; } 
+button.ui-button-icons-only { width: 3.7em; } 
+
+/*button text element */
+.ui-button .ui-button-text { display: block; line-height: 1.4;  }
+.ui-button-text-only .ui-button-text { padding: .4em 1em; }
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
+.ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 2.1em; }
+.ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 2.1em .4em 1em; }
+.ui-button-text-icons .ui-button-text { padding-left: 2.1em; padding-right: 2.1em; }
+/* no icon support for input elements, provide padding by default */
+input.ui-button { padding: .4em 1em; }
+
+/*button icon element(s) */
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon { position: absolute; top: 50%; margin-top: -8px; }
+.ui-button-icon-only .ui-icon { left: 50%; margin-left: -8px; }
+.ui-button-text-icon-primary .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary { left: .5em; }
+.ui-button-text-icon-secondary .ui-button-icon-secondary, .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+.ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+
+/*button sets*/
+.ui-buttonset { margin-right: 7px; }
+.ui-buttonset .ui-button { margin-left: 0; margin-right: -.3em; }
+
+/* workarounds */
+button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */
+/*
+ * jQuery UI Slider 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Slider#theming
+ */
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 1.2em; height: 1.2em; cursor: default; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+
+.ui-slider-horizontal { height: .8em; }
+.ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+.ui-slider-vertical { width: .8em; height: 100px; }
+.ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
+.ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
+.ui-slider-vertical .ui-slider-range-min { bottom: 0; }
+.ui-slider-vertical .ui-slider-range-max { top: 0; }/*
+ * jQuery UI Datepicker 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+.ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; }
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
+.ui-datepicker .ui-datepicker-prev { left:2px; }
+.ui-datepicker .ui-datepicker-next { right:2px; }
+.ui-datepicker .ui-datepicker-prev-hover { left:1px; }
+.ui-datepicker .ui-datepicker-next-hover { right:1px; }
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { display: block; position: absolute; left: 50%; margin-left: -8px; top: 50%; margin-top: -8px;  }
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select { font-size:1em; margin:1px 0; }
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;}
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 49%;}
+.ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
+.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
+.ui-datepicker td { border: 0; padding: 1px; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi { width:auto; }
+.ui-datepicker-multi .ui-datepicker-group { float:left; }
+.ui-datepicker-multi .ui-datepicker-group table { width:95%; margin:0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width:50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.3%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width:25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear:left; }
+.ui-datepicker-row-break { clear:both; width:100%; font-size:0em; }
+
+/* RTL support */
+.ui-datepicker-rtl { direction: rtl; }
+.ui-datepicker-rtl .ui-datepicker-prev { right: 2px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next { left: 2px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-prev:hover { right: 1px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next:hover { left: 1px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane { clear:right; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button { float: left; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}/*
+ * jQuery UI Progressbar 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Progressbar#theming
+ */
+.ui-progressbar { height:2em; text-align: left; }
+.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
+/*
+ * jQuery UI Accordion 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Accordion#theming
+ */
+/* IE/Win - Fix animation bug - #4615 */
+.ui-accordion { width: 100%; }
+.ui-accordion .ui-accordion-header { cursor: pointer; position: relative; margin-top: 1px; zoom: 1; }
+.ui-accordion .ui-accordion-li-fix { display: inline; }
+.ui-accordion .ui-accordion-header-active { border-bottom: 0 !important; }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em .7em; }
+.ui-accordion-icons .ui-accordion-header a { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
+.ui-accordion .ui-accordion-content { padding: 1em 2.2em; border-top: 0; margin-top: -2px; position: relative; top: 1px; margin-bottom: 2px; overflow: auto; display: none; zoom: 1; }
+.ui-accordion .ui-accordion-content-active { display: block; }
+/*
+ * jQuery UI Autocomplete 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Autocomplete#theming
+ */
+.ui-autocomplete { position: absolute; cursor: default; }
+
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+
+/*
+ * jQuery UI Menu 1.8.16
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Menu#theming
+ */
+.ui-menu {
+	list-style:none;
+	padding: 2px;
+	margin: 0;
+	display:block;
+	float: left;
+}
+.ui-menu .ui-menu {
+	margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+	margin:0;
+	padding: 0;
+	zoom: 1;
+	float: left;
+	clear: left;
+	width: 100%;
+}
+.ui-menu .ui-menu-item a {
+	text-decoration:none;
+	display:block;
+	padding:.2em .4em;
+	line-height:1.5;
+	zoom:1;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+}
+/*
+ * jQuery UI Dialog 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Dialog#theming
+ */
+.ui-dialog { position: absolute; padding: .2em; overflow: hidden; }
+.ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; }
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.ui-dialog .ui-dialog-content { position: relative; border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.ui-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { float: right; }
+.ui-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; }
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+.ice-checkboxbutton .yui-button{
+	margin:auto .25em;}
+	
+.ice-checkboxbutton .yui-button .first-child{
+	margin:0 -1px;
+    _margin: 0;
+	}
+	
+.ice-checkboxbutton .yui-button button,.ice-checkboxbutton .yui-button a{
+	padding:0 2px;
+	font-size:93%;
+	line-height:2;
+	*line-height:1.7;
+	min-height:2em;
+	*min-height:auto;
+	margin:auto .25em;
+	}
+	
+.ice-checkboxbutton .yui-button a{
+	*line-height:1.875;
+	*padding-bottom:1px;
+	}
+
+.ui-icon-unchecked { background-position: -160px 0; }
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+.ui-datatable { line-height: 1; }
+.ui-datatable table {
+    border-collapse:collapse;
+    width:100%;
+}
+
+.ui-datatable .ui-datatable-header,.ui-datatable .ui-datatable-footer {
+    text-align:center;
+    padding:4px 10px;
+}
+
+.ui-datatable .ui-header-text {
+    font-weight:bold;
+}
+.ui-datatable th,.ui-datatable tfoot td {
+    position:relative;
+    text-align:center;
+    margin:0;
+    padding:0;
+}
+
+.ui-datatable th .ui-header-column {
+    position:relative;
+}
+
+.ui-datatable .ui-header-column, .ui-datatable .ui-footer-column { padding:4px 10px; }
+.ui-datatable div.ui-header-column, .ui-datatable div.ui-footer-column { border:none; }
+
+.ui-datatable tbody.ui-datatable-data > tr > td,.ui-datatable tbody.ui-datatable-data-empty > tr > td {
+    border-color:inherit;
+    border-style:solid;
+    border-width:1px;
+    padding:4px 10px;
+    text-align: center;
+}
+
+.ui-datatable .ui-paginator {
+    text-align:center;
+    margin:0;
+    padding:2px;
+}
+
+.ui-datatable .ui-header-right {
+    white-space: nowrap;
+    position: relative;
+}
+
+.ui-tableconf-sort-cont {
+    position: absolute;
+    top:0;
+}
+
+.ui-sortable-control {
+    cursor:pointer;
+}
+
+.ui-tableconf-button a {
+    display:inline-block;
+    padding:2px 4px 4px 2px;
+    margin:0px 5px 0px 5px;
+    text-align:left;
+    vertical-align:middle;
+}
+
+.ui-sortable-column-order {
+    font-family: Verdana, Arial, sans-serif;
+    display: inline;
+    width:2em;
+    line-height: 22px;
+    font-weight: normal;
+    margin-top: 1px;
+    position:relative;
+    text-align: right;
+}
+
+.ui-tableconf-sort-cont {
+    position: relative;
+}
+.ui-tableconf-body .ui-sortable-column-order {
+    text-align: left;
+    top:-4px;
+}
+
+.ui-datatable .ui-sortable-column .ui-sortable-column-icon {
+    vertical-align: middle;
+    /*float:right;*/
+    display: inline-block;
+    width:16px;
+    height:1.7em;
+    margin-left: 5px;
+    position:relative;
+}
+.ui-tableconf-body .ui-sortable-column-icon {
+    display: inline-block;
+    height:2em;
+
+}
+.ui-tableconf-body .ui-sortable-column-icon .ui-icon-triangle-1-n {
+    position:relative;
+    top:1px;
+}
+.ui-tableconf-body .ui-sortable-column-icon .ui-icon-triangle-1-s {
+    position:relative;
+    bottom:-1px;
+}
+.ui-sortable-column-icon .ui-icon-triangle-1-n {
+    position:absolute;
+    top:-3px;
+    left:1px;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    /* IE 5-7 */
+    filter: alpha(opacity=20);
+    /* Netscape */
+    -moz-opacity: 0.33;
+    /* Safari 1.x */
+    -khtml-opacity: 0.33;
+    /* Good browsers */
+    opacity: 0.33;
+}
+.ui-sortable-column-icon .ui-icon-triangle-1-n.ui-toggled {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.ui-sortable-column-icon .ui-icon-triangle-1-s {
+    position:absolute;
+    bottom:0;
+    *left:0px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    -moz-opacity: 0.33;
+    -khtml-opacity: 0.33;
+    opacity: 0.33;
+}
+.ui-sortable-column-icon .ui-icon-triangle-1-s.ui-toggled {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+.ui-disabled {
+    cursor: default !important;
+}
+.ui-opacity-40 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    -moz-opacity: .4;
+    -khtml-opacity: .4;
+    opacity: .4;
+}
+
+.ui-datatable .ui-column-filter {
+    width:100%;
+    display:block;
+    margin:auto;
+    margin-top:.2em;
+}
+
+.ui-datatable .ui-cell-editor.ui-state-highlight { padding: 6px; }
+
+.ui-datatable .ui-selection-column {
+    width:20px;
+}
+
+.ui-datatable-scrollable-body {
+    overflow:auto;
+    position: relative; /* IE7 nested table positioning fix */
+}
+
+.ui-datatable-scrollable-footer {
+    margin-top:-1px; /* Easy fix for double border in scrollable mode */
+}
+
+.ui-datatable-scrollable .ui-datatable-scrollable-body table {
+    table-layout: fixed;
+}
+
+.ui-datatable-scrollable .ui-datatable-scrollable-header, .ui-datatable-scrollable .ui-datatable-scrollable-footer {
+    overflow:hidden;
+    position: relative;
+}
+
+.ui-datatable-scrollable .ui-datatable-scrollable-header table,.ui-datatable-scrollable .ui-datatable-scrollable-footer table {
+    width:auto;
+}
+
+.ui-datatable .ui-column-resizer {
+    width:2px;
+    height:20px;
+    cursor:col-resize;
+    position:absolute;
+    top:0;
+    right:0;
+    background:transparent;
+    margin:0;
+    padding:0;
+}
+
+.ui-datatable .ui-sortable-column.clickable { cursor: pointer; }
+.ui-datatable .ui-sortable-column.clickable span { cursor: pointer; }
+.ui-datatable .ui-sortable-column.clickable a { cursor: pointer; }
+
+.ui-datatable .ui-datatable-header,.ui-datatable .ui-paginator-top,.ui-datatable .ui-expanded-row {
+    border-bottom:0 none #AAA;
+}
+
+.ui-datatable .ui-datatable-footer,.ui-datatable .ui-paginator-bottom,.ui-datatable .ui-expanded-row-content {
+    border-top:0 none #AAA;
+}
+
+.ui-datatable .ui-reorderable-col {
+    cursor:move;
+}
+.ui-datatable .ui-reorderable-col span {
+    cursor:default;
+}
+.ui-datatable thead {
+    vertical-align: bottom;
+}
+
+.ui-datatable .ui-row-toggler,
+.ui-datatable .ui-row-panel-toggler,
+.ui-datatable .ui-row-editor .ui-icon,
+.ui-datatable tr.ui-state-highlight,
+.ui-datatable tr.ui-state-active {
+    cursor:pointer;
+}
+.ui-datatable .ui-row-toggler, .ui-datatable .ui-row-panel-toggler, .ui-datatable .ui-icon-pencil, .ui-datatable .ui-icon-check, .ui-datatable .ui-icon-close {
+    margin-left:auto;
+    margin-right:auto;
+}
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+.ui-inputfield{margin:0;outline:medium none;padding:4px;}.ui-inputtextarea-resizable{display:block;overflow:auto;}.ui-selectonelistbox, .ui-selectmanymenu{width:100px;}.ui-selectonelistbox ul, .ui-selectmanymenu ul{list-style-type:none;margin:0;padding:0;}.ui-selectlistbox-item{margin:2px;border:0 !important;cursor:pointer;}.ui-selectlistbox-item.ui-state-hover,.ui-selectlistbox-item.ui-state-active{font-weight:normal;}.ui-checkbox{position:relative;margin:3px 0;line-height:16px;width:16px;}.ui-checkbox .ui-checkbox-inputwrapper{width:0;height:0;overflow:hidden;}.ui-checkbox .ui-checkbox-box{position:absolute;bottom:0;left:0;width:16px;height:16px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;margin-right:3px;}.ui-checkbox .ui-checkbox-relative{position:relative;float:left;margin-right:3px;}.ui-selectmanycheckbox label,.ui-selectoneradio label{display:block;margin-top:4px;}.ui-radiobutton{position:relative;margin:3px 0;width:16px;line-height:16px;}.ui-radiobutton .ui-radiobutton-inputwrapper{width:0;height:0;overflow:hidden;}.ui-radiobutton .ui-radiobutton-box{position:absolute;bottom:0;left:0;width:16px;height:16px;line-height:16px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}.ui-radiobutton .ui-radiobutton-relative{position:relative;float:left;margin-right:3px;}.ui-radiobutton-icon{margin-left:1px;}.ui-selectonemenu{display:inline-block;position:relative;width:auto;zoom:1;cursor:pointer;*display:inline;}.ui-selectonemenu .ui-selectonemenu-trigger{border-right:none;border-top:none;border-bottom:none;cursor:pointer;width:16px;height:100%;position:absolute;right:0;top:0;padding:0 3px;}.ui-selectonemenu .ui-selectonemenu-trigger  .ui-icon{margin-top:3px;}.ui-selectonemenu .ui-selectonemenu-label{display:block;padding:3px 26px 3px 5px;width:auto;border:none;cursor:pointer;}.ui-selectonemenu.ui-state-disabled .ui-selectonemenu-trigger,.ui-selectonemenu.ui-state-disabled .ui-selectonemenu-label{cursor:auto}.ui-selectonemenu .ui-selectonemenu-panel{position:absolute;margin-left:-1px;}.ui-selectonemenu .ui-selectonemenu-panel .ui-selectonemenu-list{padding:0.4em;border:0 none;}.ui-selectonemenu .ui-selectonemenu-panel .ui-selectonemenu-list-item{border:0px none;cursor:pointer;font-weight:normal;margin:1px 0;padding:3px 5px;text-align:left;}.ui-selectonemenu .ui-selectonemenu-panel .ui-selectonemenu-table{border-collapse:collapse;width:100%;}.ui-selectonemenu .ui-selectonemenu-panel .ui-selectonemenu-table td{border-width:1px;border-style:solid;border-color:inherit;padding:4px 10px 4px 10px;}.ui-selectonemenu .wijmo-wijsuperpanel-vbarcontainer.ui-widget-header,.ui-selectonemenu .wijmo-wijsuperpanel-hbarcontainer.ui-widget-header,.ui-selectlistbox .wijmo-wijsuperpanel-hbarcontainer.ui-widget-header{background-image:none;}/* css for timepicker */.ui-timepicker-div .ui-widget-header{margin-bottom:8px;}.ui-timepicker-div dl{text-align:left;}.ui-timepicker-div dl dt{height:25px;}.ui-timepicker-div dl dd{margin:-25px 0 10px 65px;}.ui-timepicker-div td{font-size:90%;}
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+
+.ice-linkbutton .yui-button{
+    border: 1px solid transparent;
+    margin:auto .25em;
+	}
+	
+.ice-linkbutton .yui-button .first-child{
+	border-width:0px;
+	margin:0 -1px;
+    _margin: 0;
+	}
+	
+.ice-linkbutton .yui-button button,.ice-linkbutton .yui-button a{
+
+	padding:0 10px;
+	line-height:2;
+	*line-height:1.7;
+	min-height:2em;
+	*min-height:auto;
+	margin:auto .25em;
+	
+	}
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+.ui-notificationbar{position:fixed;width:100%;height:100px;display:none;background-color:#000000;color:#FFFFFF;padding:10px;}.ui-notificationbar-close{position:absolute;right:3em;top:1em;cursor:pointer;font-size:24px;}
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+.ui-paginator{display:block;margin:6px 0;white-space:nowrap;}.ui-paginator-page,.ui-paginator-pages,.ui-paginator-next,.ui-paginator-last,.ui-paginator-first,.ui-paginator-previous,.ui-paginator-current{display:inline-block;padding:2px 6px;zoom:1;margin-left:1px;margin-right:1px;text-decoration:none;outline:none;}.ui-paginator-current,.ui-paginator-rpp-options{margin-left:1em;margin-right:1em;}.ui-paginator-next .ui-icon,.ui-paginator-previous .ui-icon,.ui-paginator-first .ui-icon,.ui-paginator-last .ui-icon{height:auto;overflow:inherit;}
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+.ui-panel{padding:0.2em;}.ui-panel .ui-panel-titlebar{padding:0.5em 1em 0.3em;position:relative;}.ui-panel .ui-panel-title{margin:0.1em 16px 0.2em 0;}.ui-panel .ui-panel-titlebar-icon{float:right;}.ui-panel .ui-panel-titlebar-icon,.ui-panel .ui-panel-titlebar-icon:hover,.ui-panel .ui-panel-titlebar-icon:focus{margin-left:0.2em;margin-top:-0.2em;*margin:-1.8em 0.3em 0em 0em;}.ui-panel .ui-panel-content{border:0;background:none;padding:0.5em 1em;}.ui-panel .ui-panel-footer{border-width:1px 0 0;margin:0.5em 0 0;padding:0.5em 1em;text-align:left;}
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+
+.ice-pushbutton .yui-button{
+	margin:auto .25em;}
+	
+.ice-pushbutton .yui-button .first-child{
+	margin:0 -1px;
+    _margin: 0;
+	}
+	
+.ice-pushbutton .yui-button button,.ice-pushbutton .yui-button a{
+	padding:0 10px;
+	font-size:93%;
+	line-height:2;
+	*line-height:1.7;
+	min-height:2em;
+	*min-height:auto;
+	margin:auto .25em;
+	}
+		
+.ice-pushbutton .yui-button a{
+	*line-height:1.875;
+	*padding-bottom:1px;
+	}
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+.ui-tableconf {
+    width:500px;
+    position: absolute;
+    left:50%;
+    top:20%;
+    margin-left:-250px !important;
+    z-index:5;
+}
+
+.ui-tableconf-header {
+    padding: 4px;
+}
+
+.ui-tableconf-body {
+    text-align:center;
+    border-top: 0;
+}
+.ui-tableconf-body > table {
+    width:100%;
+}
+.ui-tableconf-body > table > thead > tr > th {
+    font-size:12pt;
+    padding: 3px 10px;
+}
+.ui-tableconf-body > table > tbody > tr > td {
+    background-color: white;
+    overflow:hidden;
+}
+.ui-tableconf-body > table {
+    border-collapse: collapse;
+}
+.ui-tableconf-body > table td, .ui-tableconf-body > table th {
+    border: 1px solid #AAA;
+}
+.ui-tableconf-body > table > thead > tr:first-child th {
+    border: 0;
+}
+.ui-tableconf-body > table tr:first-child th {
+    border-top: 0;
+}
+.ui-tableconf-body > table tr:last-child td {
+    border-bottom: 0;
+}
+.ui-tableconf-body > table tr td:first-child,
+.ui-tableconf-body > table tr th:first-child {
+    border-left: 0;
+}
+.ui-tableconf-body > table tr td:last-child,
+.ui-tableconf-body > table tr th:last-child {
+    border-right: 0;
+}
+
+.ui-tableconf-button {
+    position: absolute;
+    top:50%;
+    margin-top: -12px !important;
+}
+
+.ui-header-right .ui-tableconf-button {
+    top:0;
+    position: static;
+    margin-top:0;
+}
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+ 
+/* ----- YUI tabview structural styling ----- */
+
+.yui-navset .yui-nav li,.yui-navset .yui-navset-top .yui-nav li,.yui-navset .yui-navset-bottom .yui-nav li {
+display:inline;
+vertical-align:bottom;
+cursor:pointer;
+margin:0 .5em 0 0;
+}
+
+.yui-navset-left .yui-nav li,.yui-navset-right .yui-nav li {
+display:block;
+margin:0 0 .5em;
+}
+
+.yui-navset .yui-content .yui-hidden {
+border:0;
+height:0;
+width:0;
+position:absolute;
+left:-999999px;
+overflow:hidden;
+visibility:hidden;
+padding:0;
+}
+
+.yui-navset .yui-hidden { display:none; }
+
+.yui-navset .yui-navset-left .yui-nav,.yui-navset .yui-navset-right .yui-nav,.yui-navset-left .yui-nav,.yui-navset-right .yui-nav {
+width:6em;
+position:absolute;
+z-index:1;
+}
+
+.yui-navset-top .yui-nav,.yui-navset-bottom .yui-nav {
+width:auto;
+position:static;
+}
+
+.yui-navset .yui-navset-left,.yui-navset-left {
+padding:0 0 0 6em;
+}
+
+.yui-navset-right {
+padding:0 6em 0 0;
+}
+
+.yui-navset-top,.yui-navset-bottom {
+padding:auto;
+}
+
+.yui-nav,.yui-nav li {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.yui-navset li em {
+font-style:normal;
+}
+
+.yui-navset {
+position:relative;
+}
+
+.yui-navset .yui-content:after {
+content:'';
+display:block;
+clear:both;
+}
+
+.yui-navset .yui-nav a {
+position:relative;
+}
+
+.yui-navset .yui-nav li a,.yui-navset-top .yui-nav li a,.yui-navset-bottom .yui-nav li a {
+display:inline-block;
+vertical-align:bottom;
+}
+
+.yui-navset-bottom .yui-nav li a {
+vertical-align:text-top;
+}
+
+.yui-navset .yui-navset-left .yui-nav,.yui-navset-left .yui-nav {
+left:0;
+right:auto;
+}
+
+.yui-navset .yui-navset-right .yui-nav,.yui-navset-right .yui-nav {
+right:0;
+left:auto;
+}
+
+/* ----- JQuery-UI tabview structural styling ----- */
+
+.ui-tabset {
+position:relative;
+padding:.2em;
+}
+
+.ui-tabset .ui-tabs-nav {
+margin:0;
+padding:.2em .2em 0;
+}
+
+.ui-tabset .ui-tabs-nav li  {
+list-style:none;
+float:left;
+position:relative;
+margin:0 .2em 0 0;
+padding:0;
+}
+
+.ui-tabset .ui-tabs-nav div { /* added */
+float:left;
+position:relative;
+border-bottom:0 !important;
+white-space:nowrap;
+padding:0;
+margin: 0;
+}
+
+.ui-tabset .ui-tabs-nav div em { /* added */
+float:left;
+text-decoration:none;
+padding:0.5em 1em;
+margin: 0;
+}
+
+.ui-tabset .ui-tabs-nav li.ui-tabs-selected,
+.ui-tabset .ui-tabs-nav div.ui-tabs-selected { /* added */
+margin-bottom:0;
+}
+
+.ui-tabset .ui-tabs-nav li.ui-tabs-selected a,.ui-tabs .ui-tabs-nav li.ui-state-disabled a,.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+cursor:text;
+}
+
+.ui-tabset .ui-tabs-nav li a,.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+cursor:pointer;
+}
+
+.ui-tabset .ui-tabs-panel {
+display:block;
+background:none;
+border-width:0;
+padding:1em 1.4em;
+}
+
+.ui-tabset .ui-tabs-hide {
+display:none !important;
+}
+
+/* ----- overrides ----- */
+
+.yui-navset-left {
+padding:0;
+}
+
+.yui-navset-left .yui-content div {
+padding-left: 4em;
+}
+
+.yui-navset-right {
+padding:0;
+}
+
+.yui-navset-right .yui-content div {
+padding-right: 4em;
+}
+
+.yui-navset .yui-nav li a,.yui-navset-top .yui-nav li a,.yui-navset-bottom .yui-nav li a {
+vertical-align:baseline;
+}
+
+/* ----- custom rules ----- */
+
+.ui-tabs-vertical {
+height:100%;
+}
+
+.ui-tabs-content-vertical {
+height:100%;
+}
+
+/* ----- vertical tabs styling ----- */
+
+
+.ui-tabset-vertical {
+
+}
+
+.ui-tabset-vertical .ui-tabs-nav {
+
+}
+
+.ui-tabset-vertical .ui-tabs-nav li {
+list-style:none;
+}
+
+.ui-tabset-vertical .ui-tabs-nav div { /* added */
+margin:0.2em; /* new */
+text-align: center; /* new */
+border:0 !important;
+}
+
+.ui-tabset-vertical .ui-tabs-nav div em { /* added */
+text-decoration:none;
+padding:0.5em 1em;
+display: block;
+border:0 !important;
+}
+
+.ui-tabset-vertical .ui-tabs-nav li.ui-tabs-selected,
+.ui-tabset-vertical .ui-tabs-nav div.ui-tabs-selected { /* added */
+margin-bottom:0;
+padding-bottom:1px;
+}
+
+.ui-tabset-vertical .ui-tabs-nav li.ui-tabs-selected a,.ui-tabs .ui-tabs-nav li.ui-state-disabled a,.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+cursor:text;
+}
+
+.ui-tabset-vertical .ui-tabs-nav li a,.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+cursor:pointer;
+}
+
+.ui-tabset-vertical .ui-tabs-panel {
+display:block;
+background:none;
+border-width:0;
+padding:1em 1.4em;
+}
+
+.ui-tabset-vertical .ui-tabs-hide {
+display:none !important;
+}
+/*
+ * Copyright 2004-2012 ICEsoft Technologies Canada Corp.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an "AS
+ * IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+.ui-helper-horizontal > DIV,
+.ui-helper-horizontal > LI,
+.ui-helper-horizontal > SPAN,
+.ui-helper-horizontal > LABEL,
+.ui-helper-horizontal > H1,
+.ui-helper-horizontal > H2,
+.ui-helper-horizontal > H3,
+.ui-helper-horizontal > H4
+{
+    float: left;
+    clear: none;
+    display: block;
+}
+
+/* SuperPanel
+----------------------------------*/
+.wijmo-wijsuperpanel
+{
+    overflow: hidden;
+    outline: none;
+    background-image: none;
+}
+.wijmo-wijsuperpanel-statecontainer
+{
+    overflow: hidden;
+    position: relative;
+    zoom:1;
+}
+.wijmo-wijsuperpanel-contentwrapper
+{
+    position: absolute;
+    overflow: hidden;
+
+}
+.wijmo-wijsuperpanel-hbarcontainer, .wijmo-wijsuperpanel-vbarcontainer
+{
+    font-size: 0px;
+    border:0;
+}
+.wijmo-wijsuperpanel-templateouterwrapper
+{
+    position: relative; 
+    /*    overflow:auto; */
+    zoom: 1;
+}
+
+.wijmo-wijsuperpanel-vbarcontainer .ui-state-default, .wijmo-wijsuperpanel-hbarcontainer .ui-state-default
+{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+.wijmo-wijsuperpanel .wijmo-wijsuperpanel-vbarcontainer
+{
+    position: absolute;
+    width: 18px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border: none;
+}
+.wijmo-wijsuperpanel .wijmo-wijsuperpanel-hbarcontainer
+{
+    position: absolute;
+    height: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border: none;
+}
+.wijmo-wijsuperpanel-handle
+{
+    position: absolute;
+    font-size:0px;
+    overflow:hidden;
+}
+.wijmo-wijsuperpanel-handle *
+{
+    font-size:0px;
+}
+.wijmo-wijsuperpanel-helper
+{
+    border-style: dotted;
+    background: transparent;
+}
+
+.wijmo-wijsuperpanel-button
+{
+    position: absolute;
+    padding: 4px;
+}
+.wijmo-wijsuperpanel .ui-icon-gripsmall-diagonal-se
+{
+    background: none;
+    width: 7px;
+    height: 7px;
+}
+.wijmo-wijsuperpanel-hbar-buttonleft
+{
+    left: 0;
+}
+.wijmo-wijsuperpanel-hbar-buttonright
+{
+    right: 0;
+}
+.wijmo-wijsuperpanel-vbar-buttontop
+{
+    top: 0;
+}
+.wijmo-wijsuperpanel-vbar-buttonbottom
+{
+    bottom: 0;
+}
+
+.wijmo-wijmenu {
+    width:150px;
+    padding:0.3em;
+    position:relative;
+}
+
+.wijmo-wijmenu .wijmo-wijsuperpanel {
+    border:none;
+    background: inherit;
+    padding:0;
+}
+
+.wijmo-wijmenu-list {
+    position:static;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-parent .wijmo-wijmenu-child {
+    display:none;
+    width:150px;
+    padding:0.3em;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-parent {
+    position:relative;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-child {
+    position:relative;
+    left:150px;
+    top:0;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-item {
+    width:100%;
+    float:left;
+    clear:both;
+    margin:1px 0;
+    padding:0;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-list .wijmo-wijmenu-item {
+    background:none;
+    border:none;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-link {
+    display:block;
+    width:92%;
+    outline:none;
+    text-decoration:none;
+    font-weight:400;
+    border:solid 1px transparent;
+    float:left;
+    line-height:16px;
+    padding:0.3em;
+}
+
+.wijmo-wijmenu-horizontal {
+    width:auto;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-item {
+    width:auto;
+    clear:none;
+    margin-right:3px;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-child .wijmo-wijmenu-item {
+    width:100%;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-child {
+    top:25px;
+    left:0;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-link {
+    width:auto;
+    padding:0.4em 0.3em;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-child .wijmo-wijmenu-link {
+    width:92%;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-list .ui-widget-header {
+    clear:both;
+    float:left;
+    width:98%;
+    font-size:12px;
+    margin:1px 0;
+}
+
+.wijmo-wijmenu-horizontal .ui-widget-header {
+    clear:none;
+    width:auto;
+    margin:0 3px 0 0;
+}
+
+.wijmo-wijmenu .ui-widget-header h1,.wijmo-wijmenu .ui-widget-header h2,.wijmo-wijmenu .ui-widget-header h3,.wijmo-wijmenu .ui-widget-header h4,.wijmo-wijmenu .ui-widget-header h5,.wijmo-wijmenu .ui-widget-header h6 {
+    float:left;
+    display:block;
+    font-size:1em;
+    margin:0 auto;
+    padding:0.3em 3%;
+}
+
+.wijmo-wijmenu-horizontal .ui-widget-header h1,.wijmo-wijmenu-horizontal .ui-widget-header h2,.wijmo-wijmenu-horizontal .ui-widget-header h3,.wijmo-wijmenu-horizontal .ui-widget-header h4,.wijmo-wijmenu-horizontal .ui-widget-header h5,.wijmo-wijmenu-horizontal .ui-widget-header h6 {
+    padding:0.4em 0.3em;
+}
+
+.wijmo-wijmenu a.ui-state-default:link,.wijmo-wijmenu a.ui-state-default:visited,.wijmo-wijmenu a.ui-state-default:hover,.wijmo-wijmenu a.ui-state-default:active,.wijmo-wijmenu a.ui-state-hover:link,.wijmo-wijmenu a.ui-state-hover:visited,.wijmo-wijmenu a.ui-state-hover:hover,.wijmo-wijmenu a.ui-state-hover:active,.wijmo-wijmenu a.ui-state-active:link,.wijmo-wijmenu a.ui-state-active:visited,.wijmo-wijmenu a.ui-state-active:hover,.wijmo-wijmenu a.ui-state-active:active {
+    font-weight:400;
+    border-style:solid;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-child .ui-state-hover {
+    font-weight:400;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-separator {
+    clear:both;
+    float:left;
+    height:1px;
+    text-indent:-9999px;
+    width:98%;
+    margin:1px 0;
+    font-size:0;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-separator {
+    height:auto;
+    clear:none;
+    width:1px;
+    text-indent:-9999px;
+    margin:0 3px 0 0;
+    padding:0.4em 0;
+}
+
+.wijmo-wijmenu-horizontal .wijmo-wijmenu-child .wijmo-wijmenu-separator {
+    clear:both;
+    float:left;
+    height:1px;
+    text-indent:-9999px;
+    width:98%;
+    margin:1px 0;
+    padding:0;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-group {
+    clear:both;
+    float:left;
+    width:98%;
+    margin:3px 0;
+    padding:0 0.4em;
+}
+
+.wijmo-wijmenu-ipod {
+    width:180px;
+}
+
+.wijmo-wijmenu-container {
+    overflow:hidden;
+}
+
+.wijmo-wijmenu-ipod .wijmo-wijmenu-list {
+    background:inherit;
+    position:absolute;
+    border-width:0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow:none;
+}
+
+.wijmo-wijmenu-breadcrumb {
+    margin:0;
+    padding:0;
+}
+
+.wijmo-wijmenu-footer {
+    margin-top:3px;
+}
+
+.wijmo-wijmenu-footer .ui-icon {
+    margin:3px 0;
+}
+
+.wijmo-wijmenu-header {
+    margin-bottom:3px;
+}
+
+.wijmo-wijmenu-breadcrumb li {
+    float:left;
+    list-style:none;
+    font-size:.9em;
+    margin:0;
+    padding:0 .2em;
+}
+
+.wijmo-wijmenu-breadcrumb li.wijmo-wijmenu-prev-list,.wijmo-wijmenu-breadcrumb li.wijmo-wijmenu-current-crumb {
+    clear:left;
+    float:none;
+    opacity:1;
+}
+
+.wijmo-wijmenu-breadcrumb li.wijmo-wijmenu-current-crumb {
+    padding-top:.2em;
+}
+
+.wijmo-wijmenu-footer a:link,.wijmo-wijmenu-footer a:visited {
+    float:left;
+    width:100%;
+    text-decoration:none;
+}
+
+.wijmo-wijmenu-footer a span {
+    float:left;
+    cursor:pointer;
+    margin-top:.4em;
+}
+
+.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-prev-list a:link,.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-prev-list a:visited,.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-prev-list a:hover,.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-prev-list a:active {
+    background-image:none;
+    text-decoration:none;
+}
+
+.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-prev-list a {
+    float:left;
+    padding-right:.4em;
+}
+
+.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-current-crumb a:link,.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-current-crumb a:visited,.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-current-crumb a:hover,.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-current-crumb a:active {
+    display:block;
+    background-image:none;
+    font-size:1.3em;
+    text-decoration:none;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-parent .ui-icon,.wijmo-wijmenu-horizontal .wijmo-wijmenu-child .ui-icon,.wijmo-wijmenu-ipod .ui-icon-triangle-1-e {
+    float:right;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-item .wijmo-wijmenu-text,.wijmo-wijmenu-horizontal .wijmo-wijmenu-parent .ui-icon,.wijmo-wijmenu-breadcrumb a,.wijmo-wijmenu-breadcrumb span,.wijmo-wijmenu-breadcrumb .wijmo-wijmenu-prev-list a .ui-icon {
+    float:left;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-link .wijmo-wijmenu-icon-left {
+    display:inline-block;
+    float:left;
+}
+
+.wijmo-wijmenu .wijmo-wijmenu-link .wijmo-wijmenu-icon-right {
+    display:inline-block;
+    float:right;
+}
+
+/* Custom Extensions */
+.wijmo-wijsuperpanel-vbarcontainer.ui-widget-header,
+.wijmo-wijsuperpanel-hbarcontainer.ui-widget-header {
+    background-image: none;
+}
+/*
+.wijmo-wijmenu-list {
+    font-size: 100%;
+    line-height: 1.3;
+    list-style: none outside none;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    text-decoration: none;
+}*/

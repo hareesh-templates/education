@@ -1,0 +1,488 @@
+var track = {
+
+	action: config.action,
+	area: config.area,
+
+	MAX_LENGTH: 255,
+
+	/*
+	 * API to track Page Views
+	 */
+	trackPageView: function() {
+
+		var eventProps = this.getDefaultProps();
+		var	pageName = this.getProperPageName();
+	
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+		// delay actual tracking call.
+		window.setTimeout(function() {
+			wa.trackPage(pageName, null, eventProps);
+		}.bind(this), 1000);
+
+	},
+			
+	setPageActivityInfo: function(actionObject, fromPage) {
+		ifsp.setCookie('scmPageActivityClickObj', actionObject, 1,'/');
+		ifsp.setCookie('scmPageActivityFromPage', fromPage, 1, '/');
+	},
+
+	setWorkflowStartInfo: function(actionObject, fromPage) {
+		ifsp.setCookie('scmWorkflowStartClickObj', actionObject, 1,'/');
+		ifsp.setCookie('scmWorkflowStartFromPage', fromPage, 1, '/');
+	},
+
+	setWorkflowEndInfo: function(actionObject, fromPage) {
+		ifsp.setCookie('scmWorkflowEndClickObj', actionObject, 1,'/');
+		ifsp.setCookie('scmWorkflowEndFromPage', fromPage, 1, '/');
+	},
+
+	setLinearFlowInfo: function(actionObject, fromPage) {
+		ifsp.setCookie('scmLinearFlowClickObj', actionObject, 1,'/');
+		ifsp.setCookie('scmLinearFlowFromPage', fromPage, 1, '/');
+	},
+
+	completeTrackPageActivity: function(action, activity, activityDetails, area) {
+		var scmClickObj = ifsp.getCookie('scmPageActivityClickObj');
+		var scmFromPage = ifsp.getCookie('scmPageActivityFromPage');
+		
+		if (null === scmClickObj || null === scmFromPage) {
+			return;
+		};
+		
+		if (null === activity) {
+			activity = scmClickObj;
+		}
+		
+		this.trackPageActivity(action, activity, activityDetails, area);
+		
+		this.clearPageActivityInfo();
+	},
+	
+	completeTrackWorkflowStart: function(action, workflow, workflowDetails, area) {
+		var scmClickObj = ifsp.getCookie('scmWorkflowStartClickObj');
+		var scmFromPage = ifsp.getCookie('scmWorkflowStartFromPage');
+		
+		if (null === scmClickObj || null === scmFromPage) {
+			return;
+		};
+
+		if (null === workflow) {
+			workflow = scmFromPage;
+		}
+
+		if (null === action) {
+			action = scmClickObj;
+		}
+
+		this.trackWorkflowStartAction(action, workflow, workflowDetails, area);
+		
+		this.clearWorkflowStartInfo();
+	},
+
+	completeTrackWorkflowEnd: function(action, workflow, workflowDetails, area) {
+		var scmClickObj = ifsp.getCookie('scmWorkflowEndClickObj');
+		var scmFromPage = ifsp.getCookie('scmWorkflowEndFromPage');
+
+		if (null === scmFromPage) {
+			return;
+		};
+
+		if (null === workflow) {
+			workflow = scmFromPage;
+		}
+
+		if (null === action) {
+			action = scmClickObj;
+		}
+
+		this.trackWorkflowEndAction(action, workflow, workflowDetails, area);
+
+		this.clearWorkflowEndInfo();
+	},
+
+	completeTrackLinearFlow: function(currStepDetails, nextStep) {
+		var action = ifsp.getCookie('scmLinearFlowClickObj');
+		var currStep = ifsp.getCookie('scmLinearFlowFromPage');
+		
+		if (null === action || null === currStep) {
+			return;
+		};
+		
+		this.trackLinearFlowAction(action, currStep, currStepDetails, nextStep);
+		
+		this.clearLinearFlowInfo();
+	},
+	
+	/*
+	 * API to track Page Activity
+	 * @param action - create, send, delete, print, edit, filter, search, attach etc - as defined in config.action
+	 * @param activity - the "what" or the "task" or the workflow.
+	 * @param activityDetails -  Include details about the activity. Must be in json key-value pair format or null
+	 * @param area - rowaction, drawer, feed, batchaction - as defined in config.area
+	 */
+	trackPageActivity: function(action, activity, activityDetails, area) {
+
+		var props = {};
+
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+
+		if (!this.isValidString(action) || !this.isValidString(activity)) {
+			return;
+		}
+		props.PageActivity = this.getPageActivityValue(action, activity, activityDetails, area);
+
+		this.initiateEventTracking("D=PageActivity", props);
+
+	},
+
+	/**
+	 *
+	 * @param target - Indicate what is being searched upon. e.g., 'transactions', or 'bills' or 'help' or 'Customers'
+	 * @param filterCriteria - Specify additional filter criteria in a json name value pair. e.g., {amount:equals, date:today}
+	 * @param area - Specify the area where the search was made. E.g., topnav, assistanceCenter or null. If null, then area will be derived from the page name
+	 * @param keyword - If you want to capture user entered search term. This will be stored in a separate sitecatalyst property.
+	 */
+	trackSearchActivity: function(target, filterCriteria, area, keyword) {
+		var props = {};
+
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+
+		// Need to have a valid search target
+		if (!this.isValidString(target)) {
+			return;
+		}
+		props.PageActivity = this.getPageActivityValue(this.action.search, target, filterCriteria, area);
+
+		if (keyword) {
+			props.search_keyword = keyword;
+		}
+
+		this.initiateEventTracking("D=PageActivity", props);
+
+	},
+
+	/**
+	 * API to track Navigate Action - actions that takes a user to a new page that is not a workflow page.
+	 * These are mostly the links on the menu.
+	 * The page name is automatically added.
+	 * @param dest - destination page/workflow
+	 * @param area - leftNav, topNav etc as defined in config.area.
+	 * @param navigationDetails - Additional details about the navigate action. Must be in json key-value pair format or null
+	 */
+	trackNavigateAction: function(dest, area, navigationDetails) {
+		var details,
+			props = {},
+			navigateActionValue;
+
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+
+		if (!this.isValidString(dest)) {
+			return;
+		}
+		if (!this.isValidString(area)) {
+			area = this.getProperPageName();
+		}
+		details = this.parseAndGetDetails(navigationDetails);
+
+		if (details !== "") {
+			dest += details;
+		}
+		navigateActionValue  = this.getFinalTrackingValue(this.action.navigate + "_" + dest +  "_" + area + "_" + this.getProperPageName());
+		props.NavigateAction = navigateActionValue;
+
+		this.initiateEventTracking("D=NavigateAction", props);
+
+	},
+
+	/**
+	 * API to track Workflow Start action - actions that define a beginning of a workflow. The page name is automatically added.
+	 * @param action - create, send, delete, print etc as defined in config.action
+	 * @param workflow - invoice, statement, customer etc
+	 * @param workflowDetails -  Include details about the workflow start action. Must be in json key-value pair format or null
+	 * @param area - globaladd or createnew or workflow or dialogName (fulladd, quickadd, etc) as defined in config.area
+	 */
+	trackWorkflowStartAction: function(action, workflow, workflowDetails, area) {
+
+		var details,
+			props = {},
+			workflowActionValue;
+
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+		if (!this.isValidString(action)) {
+			return;
+		}
+		if (!this.isValidString(workflow)) {
+			workflow = this.getProperPageName();
+		}
+		if (!this.isValidString(area)) {
+			area = this.getProperPageName();
+		}
+
+		details = this.parseAndGetDetails(workflowDetails);
+
+		if (details !== "") {
+			workflow += details;
+		}
+
+		workflowActionValue  = this.getFinalTrackingValue(action + "_" + workflow +  "_" + area + "_" + this.getProperPageName());
+		props.WorkflowStartPoint = workflowActionValue;
+
+		this.initiateEventTracking("D=WorkflowStartPoint", props);
+
+	},
+
+	/**
+	 * Used to track actions that defines a end of a workflow. The page name is automatically added.
+	 * @param action - create, send, delete, print etc as defined in config.action
+	 * @param workflow - invoice, check, setup, statement, customer etc
+	 * @param workflowDetails -  Include details about the workflow end action. Must be in json key-value pair format or null
+	 * @param area - stickyfooter or workflow or dialogName (customerfulladd, vendorfulladd, etc) as defined in config.area
+	 */
+	trackWorkflowEndAction: function(action, workflow, workflowDetails, area) {
+		var details,
+			props = {},
+			workflowActionValue;
+
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+		if (!this.isValidString(action)) {
+			return;
+		}
+		if (!this.isValidString(workflow)) {
+			workflow = this.getProperPageName();
+		}
+		if (!this.isValidString(area)) {
+			area = this.getProperPageName();
+		}
+
+		details = this.parseAndGetDetails(workflowDetails);
+
+		if (details !== "") {
+			workflow += details;
+		}
+
+		workflowActionValue = this.getFinalTrackingValue(action + "_" + workflow +  "_" + area + "_" + this.getProperPageName());
+		props.WorkflowEndPoint = workflowActionValue;
+
+		this.initiateEventTracking("D=WorkflowEndPoint", props);
+
+	},
+
+	/**
+	 * API to track actions/activity in a Linear Flow
+	 * @param action - next, back, continue, skipandcontinue as defined in config.action
+	 * @param currStep - The current step in the linear flow
+	 * @param currStepDetails - Any details associated with the current step. Must be in json key-value pair format or null
+	 * @param nextStep - The next step in the linear flow
+	 */
+	trackLinearFlowAction: function(action, currStep, currStepDetails, nextStep) {
+
+		var details,
+			props = {},
+			linearflowActionValue;
+
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+		if (!this.isValidString(action) || !this.isValidString(currStep) || !this.isValidString(nextStep)) {
+			return;
+		}
+
+		details = this.parseAndGetDetails(currStepDetails);
+
+		if (details !== "") {
+			currStep += details;
+		}
+
+		linearflowActionValue = this.getFinalTrackingValue(action + "_" + currStep +  "_" + nextStep + "_" + this.getProperPageName());
+		props.LinearFlow = linearflowActionValue;
+
+		this.initiateEventTracking("D=LinearFlow", props);
+
+	},
+
+	/**
+	 * API to track In Product Discovery Start Action - actions that define an IPD Access Point clickthru. The page location name is automatically added.
+	 * Tracking tokens are in the format: startipd_{offer}_{placement}_{area}_{location}
+	 * Example: startipd_upgrade_bill_globaladdexpanded_homepage
+	 * @param workflow - target workflow, for example activatepayments
+	 * @param area - clickthru area as defined in config.area
+	 * @param accessPoint - misc access point parameter value pairs.  example - ppcode:activityfeed
+	 */
+	trackIpdStartAction: function(workflow, area, accessPoint) {
+
+		var props = {},
+			ipdActionValue;
+
+		// if tracking disabled, return
+		if (false === iopCtx.trackingEnabled || wa === null || wa === undefined) {
+			return;
+		}
+		if (!this.isValidString(workflow)) {
+			console.warn("invalid IPD workflow token " + workflow);
+			return;
+		}
+
+		if (!this.isValidString(area)) {
+			area = this.getProperPageName();
+		}
+
+
+		ipdActionValue = this.getFinalTrackingValue(this.action.startIpd + "_" + workflow + "_" + area + "_" + this.getProperPageName());
+
+		props.WorkflowStartPoint = ipdActionValue;
+		props.xSellAccessPoint = this.parseAndGetDetails(accessPoint);
+
+		this.initiateEventTracking("D=WorkflowStartPoint", props);
+	},
+
+	/*
+	 *  Helper methods
+	 */
+
+	clearPageActivityInfo: function() {
+		ifsp.setCookie('scmPageActivityClickObj', null, -1,'/');
+		ifsp.setCookie('scmPageActivityFromPage', null, -1, '/');
+	},
+
+	clearWorkflowStartInfo: function() {
+		ifsp.setCookie('scmWorkflowStartClickObj', null, -1,'/');
+		ifsp.setCookie('scmWorkflowStartFromPage', null, -1, '/');
+	},
+
+	clearWorkflowEndInfo: function() {
+		ifsp.setCookie('scmWorkflowEndClickObj', null, -1,'/');
+		ifsp.setCookie('scmWorkflowEndFromPage', null, -1, '/');
+	},
+
+	clearLinearFlowInfo: function() {
+		ifsp.setCookie('scmLinearFlowClickObj', null, -1,'/');
+		ifsp.setCookie('scmLinearFlowFromPage', null, -1, '/');
+	},
+
+	initiateEventTracking: function(genericEventValue, customProps) {
+		var pageName = this.getProperPageName();
+		// if tracking disabled, return
+		if (wa === null || wa === undefined) {
+			return;
+		}
+		// delay actual tracking call. Check if tracking is enabled here.
+		window.setTimeout(function() {
+			wa.trackEvent(genericEventValue, customProps, pageName);
+		}.bind(this), 400); // this should be <= the delay for trackPage. Other wise, the s.pageName captured will be incorrect.
+
+	},
+
+	getPageActivityValue: function(action, activity, activityDetails, area) {
+		var details;
+
+		if (!this.isValidString(area)) {
+			area = this.getProperPageName();
+		}
+		details = this.parseAndGetDetails(activityDetails);
+		if (details !== "") {
+			activity += details;
+		}
+
+		return this.getFinalTrackingValue(action + "_" + activity + "_" + area + "_" + this.getProperPageName());
+	},
+
+	getProperPageName: function() {
+		var path = window.location.pathname;
+
+		if (null !== path) {
+			return path;
+		} else {
+			return "";
+		}
+	},
+
+	/* These props are set on page view only. */
+	getDefaultProps: function() {
+		var props = {
+                companyId: iopCtx.companyId
+//               site_locale: qbo.companyL10nAttribs.locale,
+//                userType: qbo.sitecatalyst.userType,
+//                companyAge: qbo.sitecatalyst.companyAge,
+//                sku: qbo.sku.mnemonic,
+//                customerType: qbo.sitecatalyst.customerType,
+//                apdUidHash: qbo.sitecatalyst.globalAuthIdHash,
+//                device: qbo.sitecatalyst.device
+		};
+		return props;
+	},
+
+	getSitecatalyst: function() {
+		var s = null,
+			def = new Deferred();
+		if (iopCtx.sitecatalyst.enabled) {
+			require(["libs/sitecatalyst"], function (scode) {
+				s = scode.wa;
+				if (s) {
+					def.resolve(s);
+				} else {
+					def.reject(s);
+				}
+			});
+		}
+
+		return def;
+	},
+
+	isValidString: function(param) {
+		if (param && (typeof (param) !== "string" || (param.indexOf("_") === -1 && param.indexOf(".") === -1 && param.indexOf(":") === -1)))  {
+			return true;
+		}
+		return false;
+	},
+
+	parseAndGetDetails: function (details) {
+		var detailStr = "",
+			key;
+		if (details && typeof (details) === "object")
+		{
+			for (key in details)
+			{
+				if (details.hasOwnProperty(key))
+				{
+					if (this.isValidString(details[key])){
+						detailStr += ".";
+						detailStr += key;
+						detailStr += ":" + details[key];
+					}
+
+				}
+			}
+		}
+		return detailStr;
+	},
+
+	getFinalTrackingValue: function (trackingValue) {
+		if (trackingValue.length > this.MAX_LENGTH) {
+			// truncate - Exceeded max length allowed by sitecatalyst.
+			trackingValue = trackingValue.substring(0, this.MAX_LENGTH);
+		}
+		trackingValue = trackingValue.toLowerCase();
+
+		return trackingValue;
+	}
+
+};

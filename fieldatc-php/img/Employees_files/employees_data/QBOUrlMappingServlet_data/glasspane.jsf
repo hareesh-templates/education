@@ -1,0 +1,24 @@
+(function($) {
+    $.intuit = $.intuit || {};
+    (function(n) {
+        n.showGlassPane = function(evt) {
+            if (typeof (iopspinner) != "undefined") {
+                iopspinner.show();
+            } else {                                           
+                n.timeoutId = window.setTimeout(function(){n.$glasspane.show();}, n.delayBeforeShowing);
+            }
+        };
+        n.hideGlassPane = function() {
+            if (typeof (iopspinner) != "undefined") {
+                iopspinner.hide();
+            } else {
+                window.clearTimeout(n.timeoutId);
+                n.$glasspane.hide();
+            }
+        };
+        $(function(){
+            n.$glasspane = $('span.glasspane').first();
+            ice.onAfterUpdate(n.hideGlassPane);
+        });
+    })($.intuit.glasspane = $.intuit.glasspane || {});
+})(jQuery);

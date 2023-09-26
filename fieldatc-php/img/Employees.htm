@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="dj_windows is-not-mobile is-firefox dj_gecko dj_ff29 dj_contentbox has-mozilla has-no-quirks"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="application-name" content="QuickBooks">
+        <meta name="google-site-verification" content="hiEXDzwqUxxMY5KZkAkeHBn6J0gy2Ne1gJdm77RkGbk">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta id="viewPortMetaTag" name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+        <meta name="apple-mobile-web-app-title" content="QuickBooks">
+        <meta name="msapplication-TileColor" content="#0098cd">
+        <meta name="msapplication-square150x150logo" content="https://prod-qbo.intuitcdn.net/c30/v74.210/scripts/dojo/qbo/harmony/images/QB_logo_tile.png">
+
+        <title>Employees</title>
+
+        
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwMAWV9aGwEJUVhbBwk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><link rel="apple-touch-icon icon shortcut" type="image/png" href="https://prod-qbo.intuitcdn.net/c30/v74.210/scripts/dojo/qbo/harmony/images/QBOlogo.png">
+        <link rel="stylesheet" type="text/css" href="Employees_files/harmony.css">
+
+        
+            
+                <link rel="stylesheet" type="text/css" href="Employees_files/ff_sprites.css">
+            
+            
+        
+
+        
+
+        
+
+        <script crossorigin="anonymous" src="Employees_files/boot.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/dojoDeps.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/widgets.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/dashboard.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/charts.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/reports.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/sitecatalyst.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/GlobalMessagesViewController.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/setup.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/universal.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/centers.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/lists.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/help.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/LegacyViewController.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/navigateApp.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/AclViewController.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/AclCache.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/AclService.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/Acl_002.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/Acl.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/Acl_003.js" charset="utf-8" type="text/javascript"></script><script crossorigin="anonymous" src="Employees_files/PayrollAddOnController.js" charset="utf-8" type="text/javascript"></script><script src="Employees_files/dojo.js" data-dojo-config="has:{
+                        'qbo-mac':false,
+                        'qbo-layers':true,
+                        'qbo-partner':'NONE',
+                        'app-channel':'NONE',
+                        'qbo-partner-channel-mac':false,
+                        'qbo-error-logging':false,
+                        'qbo-error-logging-ttime':0,
+                        'qbo-error-logging-tcount':0
+                    },
+                    
+                    locale:'en-us',
+                    async:1,
+                    dojoBlankHtmlUrl:'/c30/v74.210/scripts/dojo/dojo/resources/blank.html'">
+        </script>
+
+    </head>
+    <body class="en-us">
+        <script>
+            var qbo = {
+                mobile: false,
+                embedded: false,
+                neoEmbedded: false,
+                environment: "prod",
+                cookiePrefix: "qbo",
+                versionedUrl: "/c30/v74.210/",
+                releaseVersion: "74.210",
+                staticHost: "https://prod-qbo.intuitcdn.net",
+                nodeJsHost: "",
+                servletRoot: "/qbo30",
+                clusterId: "30",
+                serverGroup: "2261595321",
+                companyName: "florian kipeta&#x27;s Company",
+                user: {"lastName":"kipeta","phone":"","email":"florianephraim@gmail.com","name":"florian kipeta","isAdmin":true,"firstName":"florian"},
+                serverGroupCompanyId: "1221536900",
+                backToVO: "",
+                isQBOLite: "",
+                isVO: "",
+                sku: {"isClassicMigrator":false,"isSimpleStartSku":false,"id":7,"isGlobalCompany":false,"isBasicSku":false,"mnemonic":"PLUS","isUsingFY14DTX":true,"name":"QuickBooks Online Plus","isPlusSku":true,"isAccountantSku":false,"isPayrollSku":true,"isEligibleForDesktopImport":true},
+                companyL10nAttribs: {"region":"US","currencyDisplayName":"United States Dollar","dateFormatDelimiter":"/","currencySymbolPos":"BEFORE","defaultDateFormat":"MM/dd/yyyy","locale":"en-us","isMulticurrencyAvailable":false,"shortDateFormat":"M/d/yy","digitGroupSeparator":",","isMulticurrencyEnabled":false,"printFormDateFormat":"MM/dd/yyyy","decimalSeparator":".","mediumTimeFormat":"HH:mm:ss","currencyIsoCode":"USD","currencySymbol":"$","digitGroupSize":3,"mediumDateFormat":"M/d/yyyy","shortTimeFormat":"hh:mm a","qboaClientCollaboratorEnabled":true,"dateFormatYearIndex":2,"printCheckDateFormat":"M M D D Y Y Y Y","defaultDateTimeFormat":"MM/dd/yyyy hh:mm:ss a","dateFormatDateIndex":1,"dateFormatMonthIndex":0},
+                token: {"Customers":"Customers","sales_receipt":"sales receipt","Balance_Sheet":"Balance Sheet","Balance_Sheet's":"","a_Sales_Receipt":"a Sales Receipt","customer":"customer","a_sales_receipt's":"a sales receipt's","Statements":"Invoices","A_customer's":"A customer's","income":"income","Expenses":"Expenses","Profit_and_Loss's":"","a_profit_and_loss's":"","a_profit_and_loss":"","invoice's":"invoice's","An_income":"An income","Expense's":"Expense's","a_balance_sheet":"","a_department":"a location","an_income's":"an income's","an_invoice":"an invoice","A_department":"A location","an_invoice's":"an invoice's","income's":"income's","A_department's":"A location's","Incomes":"Incomes","Customer's":"Customer's","a_statement":"an invoice","an_Expense":"an Expense","profit_and_loss":"profit and loss","A_statement":"An invoice","An_invoice":"An invoice","Departments":"Locations","An_expense's":"An expense's","Department's":"Location's","Profit_and_Loss":"Profit and Loss","prodname.prls":"Online Plus","prodname.prlm":"QuickBooks Online Payroll","expense":"expense","profit_and_loss's":"","a_Customer":"a Customer","A_profit_and_loss":"","Income's":"Income's","invoice":"invoice","Sales_Receipt":"Sales Receipt","expenses":"expenses","a_Statement":"an Invoice","an_expense's":"an expense's","balance_sheet":"balance sheet","statement's":"invoice's","customer's":"customer's","sales_receipt's":"sales receipt's","invoices":"invoices","An_invoice's":"An invoice's","incomes":"incomes","a_statement's":"an invoice's","Invoice":"Invoice","Sales_Receipt's":"Sales Receipt's","Statement's":"Invoice's","A_statement's":"An invoice's","an_income":"an income","a_Balance_Sheet":"","statement":"invoice","A_customer":"A customer","an_Invoice":"an Invoice","a_Department":"a Location","A_balance_sheet":"","a_Profit_and_Loss":"","an_expense":"an expense","A_profit_and_loss's":"","department":"location","department's":"location's","Statement":"Invoice","prodname.s":"QuickBooks","departments":"locations","balance_sheet's":"","Profits_and_Losses":"","a_balance_sheet's":"","Income":"Income","prodname.m":"QuickBooks Online Plus","a_sales_receipt":"a sales receipt","A_balance_sheet's":"","A_sales_receipt's":"A sales receipt's","statements":"invoices","a_customer":"a customer","Department":"Location","Invoice's":"Invoice's","profits_and_losses":"","Customer":"Customer","Expense":"Expense","An_expense":"An expense","Balance_Sheets":"","An_income's":"An income's","customers":"customers","sales_receipts":"sales receipts","A_sales_receipt":"A sales receipt","expense's":"expense's","an_Income":"an Income","Invoices":"Invoices","Sales_Receipts":"Sales Receipts","a_department's":"a location's","a_customer's":"a customer's","balance_sheets":""},
+                isRUMEnabled: true,
+                userLoginTimeout: 60,
+                captchaLoginFailureCount: 5,
+                ticketServerLife: 60,
+                adminServerUrl: "",
+                sitecatalyst: {"enabled":true,"customerType":"trialer","device":"Microsoft Windows Mozilla Firefox","companyAge":"day 1","globalAuthIdHash":"12083818512215","userType":"Regular user"},
+                experiments: {"apexInvoiceFTUSurvey":{"cell":1},"assistanceCenterCommunityCallout":{"cell":0},"trialerSupport":{"cell":0},"mumbleFTUPExperiment":{"cell":0},"ftuHomePage1":{"cell":9},"nala":{"cell":3},"IPD_4th_Link_Standard":{"cell":2},"menuStyle":{"cell":0},"payrollFTUSurvey":{"cell":2}},
+                menus: {"19":"h","24":"h","26":"h"},
+                ipd: {"hasPaymentBundle":true,"MASEntitlements":{"Check":false,"GoPayment":false,"CreditCard":false},"hasMAS":false,"hasMASAccountToMigrate":false,"isFingerprintsEnabled":true,"hasIPNAccountToMigrate":false,"hasPaymentsAccountToMigrate":false,"isCmtEnabled":true,"fingerprintsUrls":{"activityfeed":"https://personalization.intuit.com/v1/recommendations/contexts/QBOHarmony/ActivityFeed","leftnav":"https://personalization.intuit.com/v1/recommendations/contexts/QBOHarmony/LeftNav"},"cmtLocalFallback":false,"payments":true,"xdmTimeout":3000,"recommendations":{"square":{"enabled":true}},"isAppsAvailable":true},
+                ippAppEntitlements: {"hasBeenIntializedWithSubscriptionInfo":false,"Applications":{"unified_self_help":{"pluginId":"unified_self_help","plugin":true,"canonicalName":"unified_self_help","allowedOrigins":["*"],"baseSourceUrl":"https://contactus.intuit.com","intuit":true,"accessPoints":[{"attachPoint":"helpAssistanceCenterContainer","isNative":true,"sourcePath":"/qbo/help/HelpCenterController.js","position":0}]},"us_payroll":{"pluginId":"us_payroll","plugin":true,"activated":true,"sourceUrl":"request/payroll/pthr/company/harmony/preferences","regions":["US"],"intuit":true,"group":"payroll","acl":{"PAYROLL_CHECK":["CREATE"]},"accessPoints":[{"attachPoint":"_apCompanyPayrollSettingsDiv","vc":"qbo/addon/AddOnViewController"}]},"sangria":{"pluginId":"sangria","plugin":true,"intuit":true,"allowedOrigins":["*"],"regions":["US"],"isNative":true,"baseSourceUrl":"https://matchbox.intuitlabs.com","sourcePath":"/main.js","accessPoints":[{"attachPoint":"_apCustomerHeader","isNative":true,"position":0,"sourcePath":"/main.js","widgetClassName":"qbo/lists/name/base/BaseNameDialogViewController"},{"attachPoint":"_apVendorHeader","isNative":true,"position":0,"sourcePath":"/main.js","widgetClassName":"qbo/lists/name/base/BaseNameDialogViewController"}]},"b7n95wtiw4":{"pluginId":"b7n95wtiw4","plugin":true,"postActivation":{"sourceUrl":"","accessPoints":[{"attachPoint":"_apSalesImportPaymentsDropDown","vc":"qbo/widgets/plugins/MenuItemPluginAPViewController","linkText":"Square"}],"uiConfig":{"salesTxns":{"columnSettings":{"paymentMethodName":{"hidden":false,"unhidable":false},"txOriginType":{"hidden":false,"unhidable":false},"dueDate":{"hidden":true,"unhidable":false}}},"expenseTxns":{"columnSettings":{"paymentMethodName":{"hidden":false,"unhidable":false},"txOriginType":{"hidden":false,"unhidable":false},"dueDate":{"hidden":true,"unhidable":false}}}}},"allowedOrigins":["*"],"intuit":true,"name":"Square","canonicalName":"square","ipdTrackingId":"square","group":"payments","trowser":true,"sourceUrl":"https://www.quickbooksmerchantservice.com/ipd/qboe/harmony/index.php?p_prioritycode=leftnav","regions":["US"],"accessPoints":[{"attachPoint":"_apSalesImportPaymentsDropDown","sourceUrl":"https://www.quickbooksmerchantservice.com/ipd/qboe/harmony/index.php?p_prioritycode=leftnav&src=square","vc":"qbo/widgets/plugins/MenuItemPluginAPViewController","linkText":"Square"}]},"b7pavhzww6":{"pluginId":"b7pavhzww6","plugin":true,"allowedOrigins":["*"],"intuit":true,"canonicalName":"1099-efile","name":"1099 EFile"}}},
+                isSampleCompany: false,
+                //TODO : Explicit UGC Experiment. Find a better approach - perhaps, reading it from experiment cell config.
+                saveCompanySetupEnabled: "none",
+                isParentCompany: false,
+                isClientCompany: false,
+                useNewSettings: true,
+                useObill: false,
+                isInternalPartner: false,
+                //TODO : Remove this in v75
+                printChecksConfig: {"useNew":true,"showInLeftNav":false}
+            }
+
+
+            require(["qbo/boot"], function() {
+                require(["qbo/base/app"], function(app) {
+                    app.setAccessDeniedPages([]);
+                    app.setHiddenPages([]);
+                    app.render();
+                });
+
+            });
+        </script>
+    
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"2959908,3361095,2959641","applicationTime":905,"beacon":"beacon-4.newrelic.com","queueTime":0,"licenseKey":"5cf15eb17b","transactionName":"MVVUZEBWXBBQVkZeXwgfYVVQZFcRR1xRUh8FX1seW1lGFlhBHEdcB0RQX0BaHBBUR0ReUwNDGEFQWRwKXEVeGVETRF4ec0JGC3xUXFZXA0JlVUBBWwBUGlVSRCNIQlVcU1cHeFFXWUQPRE92QFhfIFBWWlI=","agent":"js-agent.newrelic.com\/nr-411.min.js","errorBeacon":"bam.nr-data.net"}</script>
+
+<div widgetid="uniqName_4_0" id="uniqName_4_0" class="shell stretch">
+    <div class="voHeader">
+        <div class="qbo-logo logo" data-dojo-attach-event="onclick:clientsButtonClicked"></div>
+        <div class="companyTitle" data-dojo-attach-point="_companyTitle2">florian kipeta's Company</div>
+        <div class="rightHeader">
+            <a href="https://qbo.intuit.com/c1/v0/0/login/logout">Sign out</a>
+        </div>
+    </div>
+
+    <div class="main stretch" data-dojo-attach-point="_main">
+    <div class="tableCell nav">
+        <nav style="height: 637px;" class="scroller" data-dojo-attach-point="_leftNavScroller" data-qbo-trackarea="leftnav" role="navigation">
+            <div class="qbo-logo logo"></div><div class="primaryNavItem"><a class="homepage" href="https://qbo.intuit.com/app/homepage">Home</a></div><div class="primaryNavItem"><a class="customers" href="https://qbo.intuit.com/app/customers">Customers</a></div><div class="primaryNavItem"><a class="vendors" href="https://qbo.intuit.com/app/vendors">Vendors</a></div><div class="primaryNavItem selected"><a class="employees" href="https://qbo.intuit.com/app/employees">Employees</a></div><div class="primaryNavItem partiallySelected"><a class="transactions" data-type="hasSecondary" href="https://qbo.intuit.com/app/transactions">Transactions<span class="arrow-sprite down-arrow"></span></a></div><div data-dojo-attach-point="_leftNavTransactionsSecondary" class="secondaryNavItem items4 selected"><div class="primaryNavItem"><a class="banking" href="https://qbo.intuit.com/app/banking">Banking</a></div><div class="primaryNavItem"><a class="sales" href="https://qbo.intuit.com/app/sales">Sales</a></div><div class="primaryNavItem"><a class="expenses" href="https://qbo.intuit.com/app/expenses">Expenses</a></div><div class="primaryNavItem"><a class="registers" href="https://qbo.intuit.com/app/registers">Registers</a></div></div><div class="primaryNavItem"><a class="reports" href="https://qbo.intuit.com/app/reports">Reports</a></div><div class="primaryNavItem"><a class="taxes" data-type="hasSecondary" href="https://qbo.intuit.com/app/taxes">Taxes<span class="arrow-sprite down-arrow"></span></a></div><div data-dojo-attach-point="_leftNavTaxesSecondary" class="secondaryNavItem items2"><div class="primaryNavItem"><a class="salestax" href="https://qbo.intuit.com/app/salestax">Sales Tax</a></div><div class="primaryNavItem"><a class="payrolltax" href="https://qbo.intuit.com/app/payrolltax">Payroll Tax</a></div></div><div class="primaryNavItem"><a class="appcenter" href="https://qbo.intuit.com/app/appcenter">Apps</a></div>
+        </nav>
+    </div>
+    <div class="tableCell width100Percent">
+        <header class="topNavWrapper" data-dojo-attach-point="_topNavWrapper" data-qbo-trackarea="topnav">
+    <nav class="topNav table stretch" role="navigation">
+        <div class="tableCell flexCell"><div class="inlineBlock quickJump" data-dojo-attach-point="_quickJump"></div></div>
+        <div class="tableCell globalButtons">
+            <div class="table">
+                <div class="tableRow primaryNavItem" data-dojo-attach-point="_topNavGlobalButtons">
+                    <div accesskey="f" role="button" tabindex="0" aria-haspopup="true" class="tableCell menu search" data-type="search">
+                        <div class="menuIconWrapper left">
+                            <div class="secondary-sprite menuIcon"></div>
+                        </div>
+                        <div class="menuTip"></div>
+                    </div>
+                    <div role="button" tabindex="0" aria-haspopup="true" class="tableCell menu create" data-type="create">
+                        <div class="menuIconWrapper middle">
+                            <div class="secondary-sprite menuIcon"></div>
+                        </div>
+                        <div class="menuTip"></div>
+                    </div>
+                    <div role="button" tabindex="0" aria-haspopup="true" class="tableCell menu recents" data-type="recents">
+                        <div class="menuIconWrapper right">
+                            <div class="secondary-sprite menuIcon"></div>
+                        </div>
+                        <div class="menuTip"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tableCell">
+            <div class="table globalSettings">
+                <div class="tableRow" data-dojo-attach-point="_topNavRightButtons">
+                    <div role="button" tabindex="0" aria-haspopup="true" class="tableCell menu settings" data-type="settings">
+                        <div class="companyTitle" data-dojo-attach-point="_companyTitle">florian kipeta's Company</div>
+                        <div class="secondary-sprite settingsIcon">
+                            <div class="tooltipNode"></div>
+                        </div>
+                    </div>
+                    <div role="button" aria-haspopup="true" class="tableCell menu openable messages hide" data-type="messages"><div style="margin-left: auto;" class="secondary-sprite menuIcon"><span class="chatcount" data-dojo-attach-point="_chatcount">123</span></div></div>
+                    <div accesskey="h" role="button" tabindex="0" aria-haspopup="true" class="tableCell menu help" data-type="help">
+                        <div class="secondary-sprite menuIcon">
+                            <div class="tooltipNode"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div widgetid="uniqName_19_0" id="uniqName_19_0" class="scroller topNavContent messages" style="display:none">
+    <h3 class="subsection20TitleText title">New Messages</h3>
+    <div class="recentMsgList applyWidth topNavContentSection">
+        <div data-dojo-attach-point="recentMsgList"></div>
+    </div>
+</div><div widgetid="uniqName_19_1" id="uniqName_19_1" class="scroller topNavContent search" style="display: none; left: 361.5px; width: 356px;" data-dojo-attach-point="_searchFormPluginPlaceholder">
+    <h3 class="tableCell title subsection20TitleText">Search Transactions</h3>
+    <div style="width: 356px;" class="search applyWidth" data-dojo-attach-point="_searchFormPlaceholder"><div widgetid="uniqName_4_16" id="uniqName_4_16" class="holder">
+	<div class="helpSearchBoxContainer">
+	    <div widgetid="dijit_form_TextBox_0" class="dijitInline searchValue dijitTextBox" id="widget_dijit_form_TextBox_0" role="presentation"><input kl_virtual_keyboard_secure_input="on" placeholder="Txn no., mm/dd/yyyy, $no." title="Enter Transaction Number or Date(mm/dd/yyyy) or Amount($#, #.#)" data-qbo-bind="value: searchValue" id="dijit_form_TextBox_0" tabindex="0" class="dijitReset dijitInputInner" data-dojo-attach-point="textbox,focusNode" autocomplete="off" type="text"></div>
+	    <button class="tertiary-sprite searchIcon searchGo" title="Click to go to the transaction" data-dojo-attach-event="onclick:go"></button>
+	</div>
+
+    <div class="advancedSearch">
+    	<a href="https://qbo.intuit.com/app/search">Advanced Search</a>
+	</div>
+
+</div></div>
+</div><div widgetid="uniqName_51_0" id="uniqName_51_0" class="scroller topNavContent settings" style="display: none; right: 0px; width: 859px;">
+    <div style="width: 859px;" class="table applyWidth">
+        <div class="tableRow topNavContentSection">
+
+            <div style="display: none;" data-qbo-bind="visible: showAccountantSettings" class="tableCell accountantSection">
+
+                <div class="subTitle">Accountant</div>
+                <ul>
+                    <li><a href="https://qbo.intuit.com/app/reclassifyTransactions">Reclassify Transactions</a></li>
+                    <li><a href="https://qbo.intuit.com/app/auditlog?activityType=2&amp;txnType=deletedVoided">Voided/Deleted Transactions</a></li>
+                    <li><a href="https://qbo.intuit.com/app/writeoffinvoices">Write Off Invoices</a></li>
+                    <li><a href="javascript:void(0)" onclick="window.open(top.location.href);">New Window</a></li>
+                    <li><a target="qboaccountant" href="http://proadvisor.intuit.com/">Become a ProAdvisor</a></li>
+                    <li style="display: none;" data-qbo-bind="visible: saveCompanySetupEnabled"><a href="https://qbo.intuit.com/app/templategallery">Company Templates</a></li>
+                </ul>
+
+            </div>
+
+            <div class="tableCell mainSettingsSection">
+
+                <h3 class="tableCell title subsection20TitleText">florian kipeta's Company</h3>
+                <div class="table width100Percent">
+
+                    <div class="tableRow">
+
+                        <div data-qbo-bind="hidden: showAccountantSettings" class="tableCell thinnerCell">
+
+                            <div class="subTitle">Settings</div>
+                            <ul data-dojo-attach-point="_apSettingsSettingsList">
+                                <li style="display: none;" data-qbo-bind="visible: showClassicPreferences"><a href="https://qbo.intuit.com/app/preferences" data-nav-item="settings">Company Settings</a></li>
+                                <li data-qbo-bind="visible: showNewSettings"><a href="https://qbo.intuit.com/app/settings" data-nav-item="settings">Company Settings</a></li>
+                                <li data-qbo-bind="css: coa"><a href="https://qbo.intuit.com/app/chartofaccounts">Chart of Accounts</a></li>
+                                <li data-qbo-bind="visible: payrollsettings"><a href="https://qbo.intuit.com/app/payrollsettings">Payroll Settings</a></li>
+                                <li class="hide" data-qbo-bind="css: currency"><a href="https://qbo.intuit.com/app/currencycenter">Currency Center</a></li>
+                            </ul>
+
+                        </div>
+
+                        <div class="tableCell">
+
+                            <div style="display: none;" data-qbo-bind="visible: showAccountantSettings">
+
+                                <div class="subTitle">Settings</div>
+                                <ul data-dojo-attach-point="_apSettingsSettingsListAccountants">
+                                    <li style="display: none;" data-qbo-bind="visible: showClassicPreferences"><a href="https://qbo.intuit.com/app/preferences" data-nav-item="settings">Company Settings</a></li>
+                                    <li data-qbo-bind="visible: showNewSettings"><a href="https://qbo.intuit.com/app/settings" data-nav-item="settings">Company Settings</a></li>
+                                    <li data-qbo-bind="css: coa"><a href="https://qbo.intuit.com/app/chartofaccounts">Chart of Accounts</a></li>
+                                    <li data-qbo-bind="visible: payrollsettings"><a href="https://qbo.intuit.com/app/payrollsettings">Payroll Settings</a></li>
+                                    <li class="hide" data-qbo-bind="css: currency"><a href="https://qbo.intuit.com/app/currencycenter">Currency Center</a></li>
+                                </ul>
+
+                            </div>
+
+                            <div class="subTitle">Lists</div>
+                            <ul>
+                                <li><a href="https://qbo.intuit.com/app/lists">All Lists</a></li>
+                                <li><a href="https://qbo.intuit.com/app/items">Products and Services</a></li>
+                                <li data-qbo-bind="css: memorizedtemplate"><a href="https://qbo.intuit.com/app/recurring">Recurring Transactions</a></li>
+                                <li data-qbo-bind="css: attachments"><a href="https://qbo.intuit.com/app/attachments">Attachments</a></li>
+                            </ul>
+
+                        </div>
+
+                        <div class="tableCell needsRightPadding">
+
+                            <div class="subTitle">Tools</div>
+                            <ul>
+                                <li><a href="https://qbo.intuit.com/app/importdata">Import Data</a></li>
+                                <li data-qbo-bind="visible: importdesktop"><a href="https://qbo.intuit.com/app/importquickbooksdesktop">Import Desktop Data</a></li>
+                                <li data-qbo-bind="visible: exportdesktop"><a href="https://qbo.intuit.com/app/exportquickbooksdesktop">Export Data</a></li>
+                                <li data-qbo-bind="css: reconcile"><a href="https://qbo.intuit.com/app/reconcile">Reconcile</a></li>
+                                <li data-qbo-bind="css: budget"><a href="https://qbo.intuit.com/app/budgets">Budgeting</a></li>
+                                <li data-qbo-bind="css: auditlog"><a href="https://qbo.intuit.com/app/auditlog">Audit Log</a></li>
+                                <li class="hide" data-qbo-bind="css: gopayment"><a href="https://qbo.intuit.com/app/gopayment">Import GoPayment</a></li>
+                            </ul>
+
+                        </div>
+
+                        <div class="tableCell companySection lastSection">
+
+                            <div class="subTitle">Your Company</div>
+                            <ul>
+                                <li data-qbo-bind="css: youraccount"><a href="https://qbo.intuit.com/app/billing">Your Account</a></li>
+                                <li data-qbo-bind="css: usermanagement"><a href="https://qbo.intuit.com/app/usermgt">Manage Users</a></li>
+                                <li><a href="javascript:void(0);" data-dojo-attach-event="onclick:feedback">Feedback</a></li>
+                                <li><a href="http://security.intuit.com/privacy/" target="_blank" data-qbo-trackarea="topnavprivacy">Privacy</a></li>
+                                <li class="hide" data-qbo-bind="css: switchcompany"><a href="https://qbo.intuit.com/c30/v74.210/2261595321/companysel?neo=true&amp;region=US">Switch Company</a></li>
+                                <li class="logout"><a class="logoutIcon" href="https://qbo.intuit.com/c30/v74.210/2261595321/login/logout"><div class="tertiary-sprite"></div>Sign Out</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+        <div style="height: 587px; width: 859px;" class="body scroller" data-dojo-attach-point="_mainScroller" role="main"><div widgetid="uniqName_17_0" id="uniqName_17_0" class="stretch addon">
+<iframe id="addonframe" name="addonframe" src="Employees_files/employees.htm" data-dojo-attach-point="_iframe" scrolling="no" noresize="" marginwidth="0" marginheight="0" class="dblScrollFix" frameborder="0" height="582" width="100%"></iframe>
+</div></div>
+    </div>
+</div>
+
+    <div class="trowser stretch" data-dojo-attach-point="_trowser">
+    <div class="body stretch"></div>
+</div>
+
+    <div class="universalStatus" data-dojo-attach-point="_universalStatus">
+        <div class="tableRow">
+            <div class="tableCell statusImage">
+                <div class="secondary-color-sprite status"></div>
+            </div>
+            <div class="tableCell message" data-dojo-attach-point="_universalStatusMessage"></div>
+            <div class="tableCell closeImage" data-dojo-attach-event="onclick: showHideStatus">
+                <div class="close-sprite close"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="busyIndicatorWrapper stretch">
+        <div class="busyIndicator spinner"></div>
+    </div>
+
+<iframe style="display: none;" src="Employees_files/activityi.htm"></iframe><img style="display: none;" src="activityi_data/t.png"></div><script src="QBOUrlMappingServlet_data/nr-411.js"></script><script src="Employees_files/5cf15eb17b" type="text/javascript"></script><div style="" widgetid="dijit__MasterTooltip_0" class="dijitTooltip dijitTooltipBelow dijitTooltipABRight" id="dijit__MasterTooltip_0"><div class="dijitTooltipConnector" data-dojo-attach-point="connectorNode"></div><div class="dijitTooltipContainer dijitTooltipContents" data-dojo-attach-point="containerNode" role="alert" align="left"></div></div><div style="position: fixed; max-width: 525px; height: auto; opacity: 1; left: 249.5px; top: 222px; z-index: 950; display: none;" widgetid="uniqName_7_0" id="uniqName_7_0" class="qboDialog messageDialog dijitDialogFixed dijitDialog" role="dialog" aria-labelledby="uniqName_7_0_title">
+    <div data-dojo-attach-point="_horizontalScroller">
+    	<div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+    		<span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="uniqName_7_0_title" role="heading" level="1">Ready to import your data? Cool!</span>
+    		<span style="display: none;" data-dojo-attach-point="closeButtonNode" class="close-sprite dijitDialogCloseIcon" data-dojo-attach-event="ondijitclick: onCancel" title="Cancel" role="button" tabindex="0">
+    			<span data-dojo-attach-point="closeText" class="closeText" title="Cancel">x</span>
+    		</span>
+    	</div>
+        <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent"><div class="messageContainer "><div class="dialogIconWrapper hide"><div class="secondary-color-sprite undefined"></div></div><div class="message ">You can import your QuickBooks for Windows or Mac company file and skip this setup. Click Continue to get started.</div></div><div class="buttons "><div><button class="button" type="button">Return to setup</button></div><div></div><div><button class="button primary" type="button">Continue</button></div></div></div>
+    </div>
+</div><div style="z-index: 949; display: none; top: 0px; left: 0px;" widgetid="dijit_DialogUnderlay_0" id="dijit_DialogUnderlay_0" class="dijitDialogUnderlayWrapper"><div style="width: 1024px; height: 637px;" id="uniqName_7_0_underlay" class="dijitDialogUnderlay _underlay" tabindex="-1" data-dojo-attach-point="node"></div></div><div widgetid="dijit_DialogUnderlay_1" id="dijit_DialogUnderlay_1" class="dijitDialogUnderlayWrapper"><div class="dijitDialogUnderlay" tabindex="-1" data-dojo-attach-point="node"></div></div></body></html>

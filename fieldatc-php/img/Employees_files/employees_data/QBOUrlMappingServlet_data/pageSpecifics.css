@@ -1,0 +1,7022 @@
+/*
+    Document   : pageSpecifics.css
+    Created on : 02/01/13
+    Author     : andrewc732
+    Description: CSS for specific tabs, pages, components, elements, etc.
+				 in IFSP and JSF-based QBOP/IOP.
+*/
+
+/**
+ This is shared across products both IFSP and Harmony includes it ..
+If you need to override the style for harmony add a .harmony and put the style in harmony/pageSpecifics.css
+**/
+
+/*============================================================================*/
+/*                            PAGE SPECIFIC STYLES                            */
+/*============================================================================*/
+
+/*----------------------------------------------------------------------------
+ *  Login page (Lines from IFSP base.css 3521-3592)
+ *----------------------------------------------------------------------------*/
+#loginFrameDiv {
+	min-width: 700px;
+}
+
+#loginFrame {
+	width: 250px;
+	margin-left: 20px;
+	vertical-align: top;
+	float: left;
+}
+
+#loginFrameForgot {
+	font-size: 11px;
+	float: left;
+	vertical-align: top;
+	margin-right: 40px;
+	height: 190px;
+}
+
+#loginFrameForgot .loginLinks {
+	font-weight: normal;
+}
+
+#loginFrameHelp {
+	float: left;
+}
+
+.changeAccessTable {
+	width: 840px;
+	margin-top: 20px;
+	margin-left: 20px;
+	vertical-align: top;
+}
+
+.changeAccessTableCol1 {
+	padding: 2px;
+}
+
+.changeAccessTableCol2 {
+	padding: 2px;
+}
+
+.changeAccessTableButtons {
+	margin-top: 15px;
+}
+
+.label {
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.logoutMessage {
+	margin: 10px;
+}
+
+.separatorLeft {
+	border-left: 1px solid #EAEAEA;
+	padding: 0px;
+}
+
+.marketingLink {
+	padding-left: 18px;
+	padding-bottom: 10px;
+}
+
+.marketingLink span,
+.marketingLink a {
+	vertical-align: top;
+}
+
+/*----------------------------------------------------------------------------
+ *  Home page (Lines from IFSP base.css 1774-1870)
+ *----------------------------------------------------------------------------*/
+.payForm {
+	font-size: 12px;
+	color: #333333;
+}
+
+.payForm .infoRoundedBox {
+	padding-left: 5px;
+}
+
+.payForm .infoRoundedBox .infoRoundedBoxContent .messageText {
+	padding-top: 4px;
+}
+
+.payForm .infoRoundedBox .infoRoundedBoxContent .payDateChange {
+    padding-top: 4px;
+	float: left;
+	width: 262px;
+	line-height: 17px;
+}
+
+.payForm #selectRow {
+	background-color: #EEEEEE;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+.payForm #selectDesc {
+	font-weight: bold;
+}
+
+.payForm select {
+	font-size: 12px;
+}
+
+.payForm .horizLine {
+	border-bottom: 2px solid #CCCCCC;
+}
+
+.payForm .calendarTable,
+.payForm .paymentTable {
+	margin-left: 5px;
+}
+
+.payForm .calendarTable td,
+.payForm .paymentTable td {
+	vertical-align: middle;									/* Override "vertical-align: baseline" in reset.css */
+}
+
+.payForm .calendarTable td#pushButton {
+	vertical-align: top;
+}
+
+.payForm .calendarTable #payYourText,
+.payForm .paymentTable #payYourText {
+	font-size: 14px;
+	max-width: 75px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.payForm .calendarTable #arrowImage,
+.payForm .paymentTable #arrowImage {
+	padding-right: 10px;
+}
+
+.payForm .calendarTable #payYourText .payYourEmployees,
+.payForm .paymentTable #payYourText .payYourContractors {
+	font-weight: bold;
+}
+
+.payForm .calendarTable .homeDefaultButton {
+	padding-left: 25px;
+	float:none; 
+	display: inline-block;
+}
+.payForm .calendarTable .homePayrollNote {
+	padding-left: 25px;
+	padding-top: 33px;
+	display: block;
+}
+
+.payForm .paymentTable .homeDefaultButton {
+	padding-left: 8px;
+}
+
+.payForm .otherPayments {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.payForm .unscheduledCheckSection {
+	margin-left: 10px;
+	float: left;
+}
+
+.missingpayroll {
+    font-size: 12px;
+    font-weight: bold; 
+    float: left;
+    padding-top: 8px;
+}
+
+.missingpayroll_1 {
+    font-size: 12px; 
+    float: left;
+    padding-left: 40px; 
+    padding-bottom: 15px;
+}
+
+.missingPayrollIcon {
+    float:left;
+    padding: 8px 8px 0px 8px;
+}
+
+.payForm .contractorSection {
+	margin-left: 15px;
+	float: left;
+}
+
+.payForm .bonusCheckSection {
+	margin-left: 15px;
+	float: left;
+}
+
+.payForm .bulletIcon {
+	padding-bottom: 2px;
+	padding-right: 4px;
+}
+
+#nextPayrollDiv, #upcomingTaxPayments {
+	margin-bottom: 45px;
+}
+
+#recentPayments {
+	margin-bottom: 15px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Home page - Panel Confirmation (Lines from IFSP base.css 2377-2385)
+ *----------------------------------------------------------------------------*/
+ .icePnlCnf {
+     width: 200px;
+     background-color: white;
+ }
+
+
+.icePnlCnfBtns input {
+     background-color: #3A93D6;
+ }
+ 
+/*----------------------------------------------------------------------------
+ *  Home page - Upcoming Tax Payments table (Lines from IFSP base.css 1873-1920)
+ *----------------------------------------------------------------------------*/
+#upcomingTaxPayments .listTable th.withdrawalDateColHdr {
+	text-align: left;										/* Not technically necessary since the default is left text alignment for header row columns, */
+	min-width: 125px;										/* but to be explicitly clear, set left text alignment for header row column */
+	width: 125px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#upcomingTaxPayments .listTable th.typeColHdr {
+	text-align: left;										/* Not technically necessary since the default is left text alignment for header row columns, */
+	min-width: 200px;										/* but to be explicitly clear, set left text alignment for header row column */
+	width: 200px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#upcomingTaxPayments .listTable th.periodColHdr {
+	text-align: left;										/* Override default left text alignment for header row column */
+	min-width: 75px;
+	width: 75px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#upcomingTaxPayments .listTable th.amountColHdr {
+	text-align: right;										/* Override default left text alignment for header row column */
+	min-width: 75px;
+	width: 75px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#upcomingTaxPayments .listTable td.withdrawalDateCol {		/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows Employee Name column */
+}
+
+#upcomingTaxPayments .listTable td.typeCol {				/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows Employee Name column */
+}
+
+#upcomingTaxPayments .listTable td.periodCol {				/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows Employee Name column */
+}
+
+#upcomingTaxPayments .listTable td.amountCol {
+	text-align: right;										/* Override default left text alignment for data row dollar value column */
+}
+
+#upcomingTaxPayments .listTable td.amountDescCol {
+	font-size: 11px;
+	color: #999999;
+	min-width: 75px;
+	width: 75px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+	text-align: right;
+	padding-left: 5px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Home page - Recent Payments table (Lines from IFSP base.css 1923-1973)
+ *----------------------------------------------------------------------------*/
+#recentPayments .listTable th.withdrawalDateColHdr {
+	text-align: left;										/* Not technically necessary since the default is left text alignment for header row columns, */
+	min-width: 125px;										/* but to be explicitly clear, set left text alignment for header row column */
+	width: 125px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#recentPayments .listTable th.typeColHdr {
+	text-align: left;										/* Not technically necessary since the default is left text alignment for header row columns, */
+	min-width: 100px;										/* but to be explicitly clear, set left text alignment for header row column */
+	width: 100px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#recentPayments .listTable th.paychecksColHdr {
+	text-align: center;										/* Override default left text alignment for header row column */
+	min-width: 75px;
+	width: 75px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#recentPayments .listTable th.amountColHdr {
+	text-align: right;										/* Override default left text alignment for header row column */
+	min-width: 100px;
+	width: 100px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#recentPayments .listTable th.statusColHdr {				/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows column */
+	min-width: 75px;
+	width: 75px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+	padding-left: 30px;
+}
+
+#recentPayments .listTable td.withdrawalDateCol {			/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows column */
+}
+
+#recentPayments .listTable td.typeCol {						/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows column */
+}
+
+#recentPayments .listTable td.paychecksCol {
+	text-align: center;										/* Override default left text alignment for data row dollar value column */
+}
+
+#recentPayments .listTable td.amountCol {
+	text-align: right;										/* Override default left text alignment for data row dollar value column */
+}
+
+#recentPayments .listTable td.statusCol {					/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows column */
+	padding-left: 30px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Home page - QuickBooks Export modal popup dialog (Lines from IFSP base.css 1976-2160)
+ *----------------------------------------------------------------------------*/
+#exportQuickBooksPopup,
+#exportQuickBooksNotSetupPopup,
+#exportQuickBooksNoTransPopup,
+#exportQuickBooksQBOSuccess,
+#exportQuickBooksIPPError,
+#exportQuickBooksIPPReconnectFailure,
+#exportQuickBooksIPPReconnectError,
+#exportQuickBooksIPPReconnectConfirmation,
+#exportQuickBooksQBOFailed {
+	font-size: 12px;
+	color: #333333;
+}
+
+#exportQuickBooksPopup .indentedParagraph {
+	padding-bottom: 10px;
+	padding-left: 35px;
+}
+
+#exportQuickBooksPopup #mainContent,
+#exportQuickBooksNotSetupPopup #mainContent,
+#exportQuickBooksNoTransPopup #mainContent,
+#exportQuickBooksQBOSuccess #mainContent,
+#exportQuickBooksIPPError #mainContent,
+#exportQuickBooksIPPReconnectError #mainContent,
+#exportQuickBooksIPPReconnectConfirmation #mainContent,
+#exportQuickBooksIPPReconnectFailure #mainContent,
+#exportQuickBooksQBOFailed #mainContent {
+    border-width: 0;
+    min-width: 0;
+}
+
+#exportQuickBooksPopup #mainContent .paragraph .numTxns {
+	font-weight: bold;
+}
+
+#exportQuickBooksNotSetupPopup .paragraph {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#exportQuickBooksNotSetupPopup #mainContent {
+	margin-right: 15px;
+	margin-left: 15px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+    border-width: 0;
+    min-width: 0;
+}
+
+#exportQuickBooksNotSetupPopup #mainContent #textContent {
+	float: right;
+	width: 80%;
+    padding-left: 5px;
+}
+
+#exportQuickBooksNotSetupPopup #mainContent .exportImage {
+    float: left;
+}
+
+#exportQuickBooksNotSetupPopup #mainContent #textContent .sectionTitle {
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+#exportQuickBooksNotSetupPopup #bottom {
+	clear: both;
+	height: 0px;
+}
+
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection a:link:hover,
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection a:visited:hover {
+	text-decoration: none;
+}
+
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection a:link:hover #description,
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection a:visited:hover #description {
+	text-decoration: underline;
+}
+
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection .iifSteps {
+	padding-left: 25px;
+}
+
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection .iifSteps .icons {
+	vertical-align: middle;
+}
+
+#exportQuickBooksNoTransPopup #mainContent .iifStepsSection .iifSteps .stepText {
+	padding-left: 10px;
+}
+
+#exportQuickBooksPopup .paragraph,
+#exportQuickBooksNoTransPopup .paragraph,
+#exportQuickBooksQBOSuccess .paragraph,
+#exportQuickBooksIPPReconnectError .paragraph,
+#exportQuickBooksIPPReconnectConfirmation .paragraph,
+#exportQuickBooksIPPReconnectFailure .paragraph,
+#exportQuickBooksIPPError .paragraph {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#exportQuickBooksNoTransPopup #mainContent .paragraph .noNewTxns,
+#exportQuickBooksNoTransPopup #mainContent .paragraph .lastExportDate {
+	font-weight: bold;
+}
+
+#exportQuickBooksIPPReconnectError #mainContent .listspace,
+#exportQuickBooksIPPReconnectConfirmation #mainContent .listspace,
+#exportQuickBooksIPPReconnectFailure #mainContent .listspace,
+#exportQuickBooksIPPError #mainContent .listspace {
+	padding-right: 20px;
+}
+
+#exportQuickBooksPopup #mainContent #fillerSpace,
+#exportQuickBooksNoTransPopup #mainContent #fillerSpace,
+#exportQuickBooksQBOSuccess #mainContent #fillerSpace,
+#exportQuickBooksIPPReconnectError #mainContent #fillerSpace, 
+#exportQuickBooksIPPReconnectConfirmation #mainContent #fillerSpace, 
+#exportQuickBooksIPPReconnectFailure #mainContent #fillerSpace, 
+#exportQuickBooksIPPError #mainContent #fillerSpace {
+	height: 75px;
+}
+
+#exportQuickBooksPopup #mainContent #spacerLine,
+#exportQuickBooksNotSetupPopup #mainContent #textContent #spacerLine,
+#exportQuickBooksNoTransPopup #mainContent #spacerLine,
+#exportQuickBooksQBOSuccess #mainContent #spacerLine,
+#exportQuickBooksIPPReconnectError #mainContent #spacerLine,
+#exportQuickBooksIPPReconnectConfirmation #mainContent #spacerLine,
+#exportQuickBooksIPPReconnectFailure #mainContent #spacerLine,
+#exportQuickBooksIPPError #mainContent #spacerLine {
+	clear: both;
+	border-bottom: 1px solid #CCCCCC;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+
+#exportQuickBooksPopup #mainContent #spacerDiv,
+#exportQuickBooksNotSetupPopup #mainContent #textContent #spacerDiv,
+#exportQuickBooksNoTransPopup #mainContent #spacerDiv,
+#exportQuickBooksQBOSuccess #mainContent #spacerDiv,
+#exportQuickBooksIPPReconnectError #mainContent #spacerDiv,
+#exportQuickBooksIPPReconnectConfirmation #mainContent #spacerDiv,
+#exportQuickBooksIPPReconnectFailure #mainContent #spacerDiv,
+#exportQuickBooksIPPError #mainContent #spacerDiv {
+	clear: both;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+
+#exportQuickBooksQBOSuccess .paragraph .successMsg {
+	font-size: 16px;
+	font-weight: normal;
+	color: #669900;
+	padding-right: 60px;
+	padding-left: 8px;
+}
+
+#exportQuickBooksQBOSuccess #mainContent {
+	margin-right: 15px;
+	margin-left: 15px;
+	padding-bottom: 10px;
+}
+
+#exportQuickBooksQBOSuccess #mainContent #numTxnsTable {
+	width: 100%;
+}
+
+#exportQuickBooksQBOSuccess #mainContent #numTxnsTable .header {
+	font-size: 12px;
+	font-weight: bold;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+
+#exportQuickBooksQBOSuccess #mainContent #numTxnsTable .numTxns {
+	font-size: 18px;
+	font-weight: bold;
+	color: #666666;
+	text-align: center;
+}
+
+#exportQuickBooksQBOFailed #mainContent .paragraph .messageIcon {
+	float: left;
+	width: 24px;
+	padding-right: 5px;
+}
+
+#exportQuickBooksQBOFailed #mainContent .paragraph img {
+	padding-top: 5px;
+}
+
+#exportQuickBooksQBOFailed #mainContent .paragraph .messageText {
+	float: right;
+	width: 445px;
+}
+
+#exportQuickBooksQBOFailed #mainContent .paragraph .title {
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+
+#exportQuickBooksQBOFailed #mainContent .paragraph .message {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+}
+
+#exportQuickBooksQBOFailed #mainContent .paragraph .messageEnd {
+	clear: both;
+}
+
+.exportProgressMsg {
+    width: 600px;
+    padding-bottom: 5px; 
+    margin-left: 5px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Pay Dates Help modal popup (Lines from IFSP base.css 2211-2223)
+ *----------------------------------------------------------------------------*/
+.payDatesHelp {
+	font-size: 12px;
+	color: #333333;
+}
+
+.payDatesHelp .paragraph {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.payDatesHelp .payTerm {
+	 font-weight: bold;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Abandon Payday popup dialog (Lines from IFSP base.css 2164-2202)
+ *----------------------------------------------------------------------------*/
+#abandonPayDayPopup {
+	font-size: 12px;
+	color: #333333;
+}
+
+#abandonPayDayPopup .indentedParagraph {
+	padding-bottom: 10px;
+	padding-left: 35px;
+}
+
+#abandonPayDayPopup #mainContent {
+    border-width: 0;
+    min-width: 0;
+}
+
+#abandonPayDayPopup .paragraph {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#abandonPayDayPopup #mainContent #fillerSpace {
+	height: 50px;
+}
+
+#abandonPayDayPopup #mainContent #spacerLine {
+	clear: both;
+	border-bottom: 1px solid #CCCCCC;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+
+#abandonPayDayPopup #mainContent #spacerDiv {
+	clear: both;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Enter Compensation and Preview & Submit Payroll pages Calendar area (Lines from IFSP base.css 2229-2372)
+ *----------------------------------------------------------------------------*/
+
+.tableRowIcons {
+	vertical-align: middle;
+	padding-left: 5px;					/* Icons rendered to the right of input edit controls need a little padding for spacing */
+	height: 13px;
+	width: 13px;
+}
+
+.calendarTable .headerRow {
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.calendarTable .homeSubmissionTimeMessage {
+    color:gray;
+    display:block;
+    padding-bottom:10px;
+}
+
+.calendarTable .helpIcon {
+	vertical-align: top;
+	padding-top: 2px;
+	padding-left: 25px;
+}
+
+.calendarTable .helpText {
+	width: 200px;
+	min-width: 50px;
+	vertical-align: top;
+}
+
+.calendarTable .helpText a,
+.calendarTable .helpText a:visited {
+	font-size: 11px;
+	font-weight: normal;
+	color: #2B73DD;
+}
+
+.calendarTable .helpText a:hover {
+	text-decoration: none;
+}
+
+.calendarTable .deadlineText {
+	color: red;
+}
+
+.calendarTable .verticalSep {
+    background: url("../resources/images/divider.gif") repeat-y center center;
+	min-width: 35px;										/* Required min-width 40px for whitespace padding */
+	width: 35px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+.calendarTable .horizontalBar {
+    background: url("../resources/images/grayBar.gif") no-repeat center center;
+	min-width: 12px;										/* Required min-width 12px since image is 12px wide */
+	width: 12px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+.calendarTable .dayOfWeekCol {
+	font-size: 10px;
+	font-weight: normal;
+	color: #666666;
+	text-align: center;
+	padding-top: 6px;
+	padding-bottom: 2px;
+}
+
+.calendarTable .calendarText {
+	text-align: center;
+	vertical-align: middle;									/* Override "vertical-align: baseline" in reset.css */
+}
+
+.calendarTable .calendarBox {
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	height: 60px;
+}
+
+.calendarTable .calendarTime {
+	line-height: 60px;
+	float: left;
+}
+
+.calendarTable .calendarBlue {
+    background: url("../resources/images/calendarBlue.gif") no-repeat center 0px;
+/*Removed the below lines, since it works ok on IE7/IE8/IE9/FF with out them*/
+/*	min-width: 50px;										/* Required min-width 50px since image is 50px wide */
+/*	width: 50px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+.calendarTable .calendarBlueSingle {
+    background: url("../resources/images/calendarBlue.gif") no-repeat center 0px;
+	min-width: 50px;										/* Required min-width 50px since image is 50px wide */
+	width: 50px;											/* Required for IE7 since this selector is used inside a <TABLE> tag */
+	margin-left: 15px;										/* Used in contractor payments preview page */
+}
+
+.calendarTable .calendarRed {
+    background: url("../resources/images/calendarRed.gif") no-repeat center 0px;
+	min-width: 50px;										/* Required min-width 50px since image is 50px wide */
+/*	width: 50px;*/		/* NOTE: Normally required for IE7, but given the text involved, adding it causes red calendar box to shift left in Firefox/IE8 and IE7 doesn't need it */
+	margin-left: 60px;
+	float: left;
+}
+
+.calendarTable .calendarPastDeadline {
+    background: url("../resources/images/CalendarPastDeadline.gif") no-repeat center 0px;
+	min-width: 55px;										/* Required min-width 50px since image is 50px wide */
+/*	width: 50px;*/		/* NOTE: Normally required for IE7, but given the text involved, adding it causes red calendar box to shift left in Firefox/IE8 and IE7 doesn't need it */
+	margin-left: 60px;
+	padding-right: 2px;
+	float: left;
+}
+
+.calendarTable .calendarBox .month {
+	position: relative;
+	top: 6px;
+}
+
+.calendarTable .calendarBox .date {
+	font-family: Times;
+	font-size: 22px;
+	font-weight: bold;
+	color: #9C9A9C;
+	position: relative;
+	top: 17px;
+}
+
+.calendarTable .calendarBox .time {
+    font-size: 10px;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: left;
+}
+
+.calendarTable .calendarBox .pastDeadlineTime {
+    font-size: 10px;
+	font-weight: bold;
+	color: red;
+	text-align: left;
+}
+
+/*----------------------------------------------------------------------------
+ *  Pay Employees or Contractors page (Lines from IFSP base.css 2389-2408)
+ *----------------------------------------------------------------------------*/
+#payEmployeesContractors {
+	 font-size: 12px;
+	 color: #333333;
+	 padding-left: 5px;
+}
+
+#payEmployeesContractors .selectRadioTable tr {
+	line-height: 32px;										/* Row height for each radio button item */
+}
+
+#payEmployeesContractors .tableDefaultButton {
+	padding-top: 5px;
+	padding-left: 0px;
+	float: none;											/* Force Continue button position to the far left */
+}
+
+#payEmployeesContractors .saveChangesPopupButtons .tableDefaultButton {
+	padding-top: 0px;
+	padding-left: 5px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Enter Compensation page (Lines from IFSP base.css 2412-2586)
+ *----------------------------------------------------------------------------*/
+#enterCompDiv .emptyIconDiv{
+    margin-left:12px;
+}
+#enterCompDiv #processBar #step_main {
+	 margin-left: 0px;
+ }
+#processBar.noLeftMargin #step_main {
+	 margin-left: 0px;
+ }
+ 
+#enterCompDiv .listTable .listTableCol input {				/* Right-align text (hours and dollar values) inside <INPUT> edit controls (only wage item columns have <INPUT> edit controls) */
+    font-size: 12px;
+	text-align: right;
+}
+
+#enterCompDiv .listTable .listTableCol input[type=text] {
+	width: 60px;
+}
+
+#enterCompDiv .listTable .listTableCol input.invalidEntry {	/* When input control contains an invalid entry, set border to 1px solid red */
+	border: 1px solid #CC0000;
+}
+
+#enterCompDiv .listTable .eeIsPaidColHdr,
+#enterCompDiv .listTable .ctIsPaidColHdr {					/* Not technically necessary since the default is left text alignment for header row columns, but to be */
+	text-align: left;										/* explicitly clear, set it here again so it's more obvious how to override this */
+	min-width: 30px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 40px */
+	padding-left:5px;
+	padding-right: 5px;
+}
+
+#enterCompDiv .listTable .eeDisplayNameColHdr {				/* Not technically necessary since the default is left text alignment for header row columns, but to be */
+	text-align: left;										/* explicitly clear, set it here again so it's more obvious how to override this */
+	min-width: 170px;
+	/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 170px */
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#enterCompDiv .listTable .ctDisplayNameColHdr {				/* Not technically necessary since the default is left text alignment for header row columns, but to be */
+	text-align: left;										/* explicitly clear, set it here again so it's more obvious how to override this */
+	min-width: 225px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 225px */
+	padding-left:10px;
+}
+
+#enterCompDiv .listTable .eePayMethodColHdr {
+	text-align: right;										/* Override default left text alignment */
+	min-width: 100px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 170px */
+	padding-right: 5px;									/* Since eePayMethodColHdr is right aligned, add right padding to give it some space from the column to its right */
+	padding-left: 5px;
+    vertical-align: baseline;
+}
+#enterCompDiv .listTable .eePayMethodColHdr span {
+    float:left;
+}
+
+#enterCompDiv .listTable th.eeCoWageItemColHdr {			/* Override default left text alignment of data rows wage item columns */
+	min-width: 90px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 90px */
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align:right;
+    vertical-align: baseline;
+}
+
+
+#enterCompDiv .listTable .eeCoWageItemColHdrText {
+	width: 72px;
+	display: inline-block;
+}
+
+#enterCompDiv .listTable th.eeCoMemoColHdr {			/* Override default left text alignment of data rows wage item columns */
+	min-width: 280px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 90px */
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align:right
+}
+
+#enterCompDiv .listTable th.ctPaymentColHdr,				/* Override default left text alignment of data rows Contractor Payment column */
+#enterCompDiv .listTable th.ctReimbursementColHdr {			/* Override default left text alignment of data rows Contractor Reimbursement column */
+	text-align: right;
+	min-width: 130px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 125px */
+	padding-right:5px
+}
+
+#enterCompDiv .listTable th.eeTotalPayColHdr {				/* ICEFaces bug: The <ice:column> */
+	text-align: center;										/* Override default left text alignment of data rows and Total Pay columns */
+	min-width: 90px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 90px */
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#enterCompDiv .listTable th.ctTotalPayColHdr {				/* ICEFaces bug: The <ice:column> */
+	text-align: right;										/* Override default left text alignment of data rows and Total Pay columns */
+	min-width: 125px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 125px */
+	padding-right: 9px;
+}
+
+#enterCompDiv .listTable .ctMemoColHdr {
+	text-align: left;										/* Override default left text alignment of data rows and Total Pay columns */
+	min-width: 275px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 275px */
+	padding-left:10px;
+}
+
+#enterCompDiv .listTable td.listTableCol {					/* This must be listed before "td.eeIsPaidCol" and "td.eeDisplayNameCol" so they can override this selector */
+	text-align: right;										/* Override default left text alignment of data rows wage item and Total Pay columns */
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align:right;
+	border:1px dotted #CCCCCC;
+}
+
+#enterCompDiv .listTable th{
+	border-left: 1px dotted #CCCCCC;
+	border-right: 1px dotted #CCCCCC;
+}
+
+#enterCompDiv .listTable td.listTableFtr{
+	border-left: 1px dotted #CCCCCC;
+	border-right: 1px dotted #CCCCCC;
+	border-top:2px solid #CCCCCC;
+}
+#enterCompDiv .listTable td.listTableHdr{
+	border-left: 1px dotted #CCCCCC;
+	border-right: 1px dotted #CCCCCC;
+	border-top:2px solid #CCCCCC;
+}
+
+#enterCompDiv .listTable td.eeIsPaidCol,
+#enterCompDiv .listTable td.ctIsPaidCol {					/* This must be listed after "td.listTableCol" so this can override that selector */
+	text-align: left;										/* Set left text alignment for data rows eeIsPaid checkbox column since "#enterCompDiv .listTable td.listTableCol" sets right text alignment */
+}
+
+#enterCompDiv .listTable td.eeDisplayNameCol,
+#enterCompDiv .listTable td.ctDisplayNameCol {				/* This must be listed after "td.listTableCol" so this can override that selector */
+	text-align: left;										/* Set left text alignment since "#enterCompDiv .listTable td.listTableCol" sets right text alignment */
+	white-space: normal;									/* Override default of not word-wrapping column data; word-wrap employee names that exceed 170px column width */
+}
+
+#enterCompDiv .listTable td.listTableCol input {				/* This must be listed after "td.listTableCol" so this can override that selector */
+	margin-right: -5px;										/* Override the default padding */
+}
+
+#enterCompDiv .listTable td.ctPaymentCol,
+#enterCompDiv .listTable td.ctReimbursementCol {			/* This must be listed after "td.listTableCol" so this can override that selector */
+	text-align: right;
+}
+
+#enterCompDiv .listTable td.ctMemoCol {
+	text-align: left;										/* Set left text alignment since "#enterCompDiv .listTable td.listTableCol" sets right text alignment */
+}
+
+#enterCompDiv .listTable td.ctMemoCol input {
+	text-align: left;										/* Set left text alignment since "#enterCompDiv .listTable .listTableCol input" sets right text alignment */
+}
+
+#enterCompDiv .listTable td.eeTotalPayCol,
+#enterCompDiv .listTable td.ctTotalPayCol {
+	/* Not technically necessary but defined here for completeness */
+	text-align: right;
+}
+
+#previewTableForm .listTableCol ,#previewTableForm .expandedColHdr,#previewTableForm  .expandedFtr  {
+	text-align: right;
+}
+#previewTableForm td.eeDisplayNameCol,#previewTableForm th.eeDisplayNameColHdr,#previewTableForm td.netPayMethodCol{
+	text-align: left;
+}
+
+
+#enterCompDiv .listTable .listTableFtr,						/* Specifies a <TD> column of table footer row when <TD> is generated by <ice:column> */
+#enterCompDiv .listTable td.listTableHdr {					/* Specifies a <TD> column of table footer row when <TD> is generated by <ice:columns> */
+	text-align: right;										/* Override default left text alignment of footer row columns */
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#enterCompDiv .listTable .eeDataTableSelectedRow,
+#enterCompDiv .listTable .ctDataTableSelectedRow {			/* Specifies "checked" table row */
+	/* Empty selector for completeness */
+}
+
+#enterCompDiv .listTable .eeDataTableSelectedRowEmptyData,	/* Specifies "checked" table row but no hours nor dollar amounts entered in row edit controls */
+#enterCompDiv .listTable .ctDataTableSelectedRowEmptyData {	/* Specifies "checked" table row but no dollar amounts entered in row edit controls */
+	background-color: #FFECEC;
+	border-top: 1px solid #CC0000;
+	border-bottom: 1px solid #CC0000;
+}
+
+#enterCompDiv .listTable .eeDataTableSelectedRowSalAdjusted,	/* Specifies "checked" table row but no hours nor dollar amounts entered in row edit controls */
+#enterCompDiv .listTable .ctDataTableSelectedRowSalAdjusted {	/* Specifies "checked" table row but no dollar amounts entered in row edit controls */
+	background-color: #EFF5FB;
+	
+}
+
+#enterCompDiv .listTable .eeDataTableUnselectedRow,
+#enterCompDiv .listTable .ctDataTableUnselectedRow {
+	background-color: #EEEEEE;								/* Specifies "unchecked" table row */
+}
+
+#enterCompDiv .listTable .listTableScrlHdrTbl,				/* Required override of header table class when scrolling is enabled */
+#enterCompDiv .listTable .listTableScrlBdyTbl,				/* Required override of data rows table class when scrolling is enabled */
+#enterCompDiv .listTable .listTableScrlSprFtr table {		/* Required override of footer table when scrolling is enabled; NOTE: No class is defined/must specify "table" */
+	border-spacing: 0px;									/* Required for equivalent to <table cellspacing=0>; Otherwise 1px padding shows up for each cell */
+	border-collapse: collapse;								/* Required for IE7 equivalent to <table cellspacing=0>; Otherwise 1px padding shows up for each cell */
+}
+
+#enterCompDiv .errorBox {
+	font-size: 11px;
+	color: #333333;
+	padding-top: 30px;
+	padding-left: 3px;
+	height: 55px;
+	text-align: left;
+}
+
+#enterCompDiv .errorBoxLocation {
+	float: right;
+}
+
+#enterCompDiv .errorBoxLocation .messageIcon {
+	float: left;
+	width: 13px;
+	padding-top: 2px;
+}
+
+#enterCompDiv .errorBoxLocation .messageText {
+	float: right;
+	width: 218px;
+}
+
+#enterCompDiv .errorBoxLocation .messageEnd {
+	clear: both;
+}
+
+#enterCompDiv .errorBoxEnd {
+	clear: both;
+}
+
+.enterCompDateLabel {
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+#enterCompDiv .listTable td:last-child,#enterCompDiv .listTable th:last-child {
+	border-right:none;
+}
+#enterCompDiv .listTable td:first-child,#enterCompDiv .listTable th:first-child {
+	border-left:none;
+}
+
+#payDayEmployeeForm .payDatesDropdownDiv {
+	float: left;
+}
+
+ #payDayEmployeeForm .helpDiv {
+	display: inline;
+	float: left;
+}
+
+#payDayEmployeeForm .helpDivEnd {
+	clear: both;
+}
+
+#payDayEmployeeForm .emptyWageItemIcon {
+    margin-left: 10px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Enter Compensation page - Pay Method/Deductions popup modal dialog (Lines from IFSP base.css 2590-2674)
+ *----------------------------------------------------------------------------*/
+#payMethodPopupForm #belowTitleText {
+	padding-left: 5px;
+}
+
+#payMethodPopupForm .payMethodSection,
+#payMethodPopupForm .deductionsSection {
+	margin-top: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#payMethodPopupForm .payMethodSection td.payMethodSectionCol1,
+#payMethodPopupForm .deductionsSection td.deductionsSectionCol1 {
+	min-width: 95px;
+}
+
+#payMethodPopupForm .payMethodSection td.payMethodSectionCol2 {
+	padding-left: 20px;
+}
+
+#payMethodPopupForm .payMethodLabel,
+#payMethodPopupForm .deductionsLabel {
+	font-weight: bold;
+	padding-right: 0px;
+}
+
+#payMethodPopupForm .payMethodControl {
+	padding-right: 15px;
+	padding-left: 0px;
+	width: 300px;
+}
+
+#payMethodPopupForm .listTable {
+	margin-left: 0px;												/* Push deductions checkboxes and controls to the right so they line up vertically with Pay Method radio buttons */
+}
+
+#payMethodPopupForm .listTable .listTableCol {						/* Remove default dotted line bottom border */
+	border-bottom: none;
+}
+
+#payMethodPopupForm .listTable .listTableCol input {				/* Right-align text (percentage and dollar values) inside <INPUT> edit controls */
+	text-align: right;
+}
+
+#payMethodPopupForm .listTable td.displayNameCol {
+	padding-right: 10px;
+}
+
+#payMethodPopupForm .eeEditPayMethodButtons {
+	padding-top: 20px;
+	padding-left: 150px;
+}
+
+#payMethodPopupForm .eeEditPayMethodButtons ul.tableDisabledDefaultButton {
+	float: left;													/* Override default float: right since dialog buttons are not split to left and right sides */
+}
+
+#payMethodPopupForm .eeEditPayMethodButtons ul.tableDisabledDefaultButton li a {	/* Copied from "ul.tableDisabledDefaultButton li span"; Must override to display a "disabled" Save button */
+	background: url("../resources/images/button_disabledDefaultRight.png") no-repeat right center;
+	font-size: 12px;
+	font-weight: bold;
+	color: #D9ECFA;
+	display: block;
+	line-height: 26px;
+	white-space: nowrap;
+	margin: 0px;
+	padding: 0px 18px;												/* 18px left and right padding from button edges to text */
+	text-decoration: none;
+}
+
+#payMethodPopupForm #spacerLine {
+	clear: both;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+
+ .taxControl {
+    float: left; 
+}
+
+ .taxHelp {
+    display: inline;
+	float: left;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - 1099 Contractor Enter Compensation page (Lines from IFSP base.css 2679-2687)
+ *----------------------------------------------------------------------------*/
+.divsSameLine .calendarPopup {								/* Display Payment Date calendar and "Bank Holidays" help link on the same line */
+	float: left;
+}
+
+.divsSameLine .helpWinPopup {								/* Display Payment Date calendar and "Bank Holidays" help link on the same line */
+	float: left;
+	position: relative;
+	top: 7px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Preview Payroll page (Lines from IFSP base.css 2693-2777)
+ *----------------------------------------------------------------------------*/
+#previewPayrollDiv #processBar #step_main {
+	 margin-left: 0px;
+ }
+ 
+#previewPayrollDiv .listTable th.eeDisplayNameColHdr {
+	text-align: left;										/* Not technically necessary since the default is left text alignment for header row columns, */
+	min-width: 300px;										/* but to be explicitly clear, set left text alignment for header row Employee Name column */
+}
+
+#previewPayrollDiv .listTable th.totalPayColHdr {
+	text-align: right;										/* Override default left text alignment for header row dollar value columns */
+	min-width: 100px;
+}
+
+#previewPayrollDiv .listTable th.taxesDeductionsColHdr {
+	text-align: right;										/* Override default left text alignment for header row dollar value columns */
+	min-width: 150px;
+}
+
+#previewPayrollDiv .listTable th.netPayValueColHdr {
+	text-align: right;										/* Override default left text alignment for header row dollar value columns */
+	min-width: 100px;
+}
+
+#previewPayrollDiv .listTable th.netPayMethodColHdr {
+	text-align: right;										/* Override default left text alignment for header row dollar value columns */
+	min-width: 65px;
+}
+
+#previewPayrollDiv .listTable th.compareToLastColHdr {
+	text-align: center;										/* Override default left text alignment for header row Compare To Last icon column */
+	min-width: 100px;
+}
+
+#previewPayrollDiv .listTable td.eeDisplayNameCol {			/* Not technically necessary since the default is left text alignment for data rows columns, */
+	text-align: left;										/* but to be explicitly clear, set left text alignment for data rows Employee Name column */
+}
+
+#previewPayrollDiv .listTable td.totalPayCol {
+	text-align: right;										/* Override default left text alignment for data row dollar value column */
+}
+
+#previewPayrollDiv .listTable td.taxesDeductionsCol {
+	text-align: right;										/* Override default left text alignment for data row dollar value column */
+}
+
+#previewPayrollDiv .listTable td.netPayValueCol {
+	text-align: right;										/* Override default left text alignment for data row dollar value column */
+}
+
+#previewPayrollDiv .listTable td.netPayMethodCol {
+	font-size: 11px;
+	color: #999999;
+	text-align: left;
+}
+
+#previewPayrollDiv .listTable td.compareToLastCol {
+	text-align: center;
+}
+
+#previewPayrollDiv .listTable .sigChangesIcon {
+	padding-left: 5px;
+}
+
+#previewPayrollDiv .listTable td.listTableFtr {				/* Specifies a <TD> column of table footer row when <TD> is generated by <ice:column> */
+	text-align: right;
+}
+
+#previewPayrollDiv .listTable .listTableScrlHdrTbl,			/* Required override of header table class when scrolling is enabled */
+#previewPayrollDiv .listTable .listTableScrlBdyTbl,			/* Required override of data rows table class when scrolling is enabled */
+#previewPayrollDiv .listTable .listTableScrlSprFtr table {	/* Required override of footer table when scrolling is enabled; NOTE: No class is defined/must specify "table" */
+	border-spacing: 0px;									/* Required for equivalent to <table cellspacing=0>; Otherwise 1px padding shows up for each cell */
+	border-collapse: collapse;								/* Required for IE7 equivalent to <table cellspacing=0>; Otherwise 1px padding shows up for each cell */
+}
+
+.previewDateLabel {
+	font-weight: bold;
+}
+
+.calendarTable .daysOfWeekCol {
+	font-size: 10px;
+	font-weight: normal;
+	color: #666666;
+	text-align: center;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Total Payroll Cost closed table/box (Lines from IFSP base.css 1292-1382)
+ *----------------------------------------------------------------------------*/
+.totalPayrollCostRoundedBoxClosed,
+.totalPayrollCostRoundedBoxOpened {
+	position: relative;
+/*	width: 600px;*/
+	width: 616px;
+	color: #333333;
+/*	max-width: 1000px;*/
+	max-width: 616px;
+/*	margin: 0px auto;*/
+	margin: 0px;
+	margin-left: 10px;					/* left edge of image to content well */
+	padding-bottom: 10px;
+}
+
+.totalPayrollCostRoundedBoxClosed .content,
+.totalPayrollCostRoundedBoxClosed .top,
+.totalPayrollCostRoundedBoxClosed .bottom,
+.totalPayrollCostRoundedBoxClosed .bottom div {
+	background: transparent url(../resources/images/totalPayrollCostClosed.png) no-repeat top right;
+/*	_background-image: url(../resources/images/popup.gif);*/
+}
+
+.totalPayrollCostRoundedBoxOpened .content,
+.totalPayrollCostRoundedBoxOpened .top,
+.totalPayrollCostRoundedBoxOpened .bottom,
+.totalPayrollCostRoundedBoxOpened .bottom div {
+	background: transparent url(../resources/images/totalPayrollCostOpened.png) no-repeat top right;
+/*	_background-image: url(../resources/images/popup.gif);*/
+}
+
+.totalPayrollCostRoundedBoxClosed .top,
+.totalPayrollCostRoundedBoxOpened .top {
+	position: absolute;
+	background-position: top left;
+/*	width: 10px;*/						/* left edge of image to content well */
+	width: 11px;						/* left edge of image to content well */
+	height: 100%;
+	_height: 1600px;					/* IE 6 hack */
+	top: 0px;
+	left: 0px;
+/*	margin-left: -10px;*/				/* left edge of image to content well */
+	margin-left: -11px;					/* left edge of image to content well */
+}
+
+.totalPayrollCostRoundedBoxClosed .content {
+	position: relative;
+	_overflow-y: hidden;
+/*	padding-top: 21px;*/				/* top edge of image to content well */
+/*	padding-top: 1px;*/					/* top edge of image to content well */
+/*	padding-right: 22px;*/				/* right edge of image to content well */
+}
+
+.totalPayrollCostRoundedBoxOpened .content {
+	position: relative;
+	_overflow-y: hidden;
+/*	padding-top: 21px;*/				/* top edge of image to content well */
+	padding-top: 2px;					/* top edge of image to content well */
+/*	padding-right: 22px;*/				/* right edge of image to content well */
+}
+
+.totalPayrollCostRoundedBoxClosed .bottom,
+.totalPayrollCostRoundedBoxClosed .bottom div {
+	font-size: 1px;
+	position: relative;
+/*	height: 16px;*/						/* bottom edge of image to content well */
+	height: 1px;						/* bottom edge of image to content well */
+}
+
+.totalPayrollCostRoundedBoxOpened .bottom,
+.totalPayrollCostRoundedBoxOpened .bottom div {
+	font-size: 1px;
+	position: relative;
+/*	height: 16px;*/						/* bottom edge of image to content well */
+	height: 6px;						/* bottom edge of image to content well */
+}
+
+.totalPayrollCostRoundedBoxClosed .bottom,
+.totalPayrollCostRoundedBoxOpened .bottom {
+	background-position: bottom right;
+	width: 100%;
+}
+
+.totalPayrollCostRoundedBoxClosed .bottom div,
+.totalPayrollCostRoundedBoxOpened .bottom div {
+	position: relative;
+/*	width: 10px;*/						/* left edge of image to content well */
+	width: 11px;						/* left edge of image to content well */
+/*	margin-left: -10px;*/				/* left edge of image to content well */
+	margin-left: -11px;					/* left edge of image to content well */
+	background-position: bottom left;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Total Payroll Cost table (Lines from IFSP base.css 2779-2886)
+ *----------------------------------------------------------------------------*/
+#totalPayrollCostTable {
+	font-size: 12px;
+	width: 605px;
+/*	border: 1px solid #9EB9D0;*/
+/*	margin-left: 15px;*/
+}
+
+#totalPayrollCostTable a:link:hover,
+#totalPayrollCostTable a:visited:hover {
+	text-decoration: none;
+}
+
+#totalPayrollCostTable a:link:hover #description,
+#totalPayrollCostTable a:visited:hover #description {
+	text-decoration: underline;
+}
+
+#totalPayrollCostTable span.descriptionTotalCost {
+	font-size: 14px;
+}
+
+#totalPayrollCostTable tr {
+	line-height: 28px;
+}
+
+#totalPayrollCostTable #openedHeader th {
+	font-weight: bold;
+/*	background-color: #D7E2EC;*/
+	color: #333333;
+	text-align: left;
+/*	border-bottom: 2px solid #9EB9D0;*/
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	white-space: nowrap;
+}
+
+#totalPayrollCostTable #closedHeader th {
+	font-weight: bold;
+/*	background-color: #D7E2EC;*/
+	color: #333333;
+	text-align: left;
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 8px;
+	white-space: nowrap;
+}
+
+#totalPayrollCostTable #footer td {
+	font-weight: bold;
+	color: #333333;
+	text-align: right;
+	border-bottom: none;
+	padding-top: 0px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	white-space: nowrap;
+}
+
+#totalPayrollCostTable #body td {
+	color: #333333;
+	border-bottom: 1px dotted #999999;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	white-space: nowrap;
+}
+
+#totalPayrollCostTable #body td.description {
+	width: 275px;
+	text-align: left;
+	padding-right: 8px;
+	padding-left: 8px;
+}
+
+#totalPayrollCostTable #body span.parensText {
+	font-size: 11px;
+	color: #787878;
+}
+
+#totalPayrollCostTable #footer td.amount,
+#totalPayrollCostTable #body td.amount {
+	font-weight: bold;
+	width: 125px;
+	text-align: right;
+	padding-right: 10px;
+	padding-left: 5px;
+}
+
+#totalPayrollCostTable #footer td.amount {
+	font-size: 14px;
+}
+
+#totalPayrollCostTable #body td.notes {
+	font-size: 11px;
+	font-weight: normal;
+	color: #545454;
+	width: 300px;
+	padding-right: 8px;
+	padding-left: 5px;
+}
+
+#totalPayrollCostTable #body #lastRow td {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Compare To Last Paycheck popup modal dialog tables (Lines from IFSP base.css 2889-3025)
+ *----------------------------------------------------------------------------*/
+#comparePaycheckPopup #titleTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	width: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#comparePaycheckPopup #titleTable #empNameColHdr {
+	font-size: 14px;
+	width: 300px;
+    display: inline-block;
+}
+
+#comparePaycheckPopup #titleTable #empNameColHdr #empName,
+#comparePaycheckPopup #titleTable #lastPayDayColHdr,
+#comparePaycheckPopup #titleTable #curPayDayColHdr {
+	font-weight: bold;
+}
+
+#comparePaycheckPopup #titleTable .lastPayDayCol,
+#comparePaycheckPopup #titleTable .curPayDayCol {
+	width: 150px;
+	text-align: right;
+}
+
+#comparePaycheckPopup #lineBeforeCompareWagesTable,
+#comparePaycheckPopup #lineBeforeTotalsTable {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	border-bottom: 2px solid #CCCCCC;
+}
+
+#comparePaycheckPopup #lineBeforeCompareWagesTable {
+	margin-bottom: 0px;
+}
+
+#comparePaycheckPopup .compareLineItemTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	width: 100%;						/* Setting width to 100% ensures that table automatically expands to modal dialog window width */
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#comparePaycheckPopup .compareLineItemTable .compareLineItemTableHdr {
+	font-weight: bold;
+	background-color: #E2EEF8;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+#comparePaycheckPopup .compareLineItemTable .descriptionColHdr {
+	width: 300px;
+	text-align: left;
+    display: inline-block;
+}
+
+#comparePaycheckPopup .compareLineItemTable .lastPayDayColHdr,
+#comparePaycheckPopup .compareLineItemTable .curPayDayColHdr {
+	width: 150px;
+	text-align: right;
+}
+
+#comparePaycheckPopup .compareLineItemTable .descriptionCol {
+	width: 300px;
+	text-align: left;
+	border-bottom: 1px dotted #CCCCCC;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+	white-space: nowrap;
+}
+
+#comparePaycheckPopup .compareLineItemTable .rateHoursDescriptionStyleClass {
+	padding-left: 15px;
+}
+
+#comparePaycheckPopup .compareLineItemTable .lastPayDayCol,
+#comparePaycheckPopup .compareLineItemTable .curPayDayCol {
+	width: 150px;
+	text-align: right;
+	border-bottom: 1px dotted #CCCCCC;
+	padding-top: 0px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	white-space: nowrap;
+}
+
+#comparePaycheckPopup .compareLineItemTable .lastLineItem .descriptionCol,
+#comparePaycheckPopup .compareLineItemTable .lastLineItem .lastPayDayCol,
+#comparePaycheckPopup .compareLineItemTable .lastLineItem .curPayDayCol {
+	border-bottom: none;	/* The last row of a compareLineItemTable should not have a bottom-border */
+}
+
+#comparePaycheckPopup .compareLineItemTable .compareLineItemTableRow {
+	height: 20px;
+}
+
+#comparePaycheckPopup #totalsTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	width: 100%;
+	line-height: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#comparePaycheckPopup #totalsTable .descriptionCol {
+	width: 300px;
+	text-align: left;
+	padding-left: 150px;
+}
+
+#comparePaycheckPopup #totalsTable .lastPayDayTotalCol,
+#comparePaycheckPopup #totalsTable .curPayDayTotalCol {
+	width: 150px;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+}
+
+#comparePaycheckPopup #totalsTable #netPayRow {
+	font-weight: bold;
+}
+
+#comparePaycheckPopup #totalsTable #netPayRow .lastPayDayTotalCol,
+#comparePaycheckPopup #totalsTable #netPayRow .curPayDayTotalCol {
+	font-size: 14px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Paystub popup modal dialog tables (Lines from IFSP base.css 3029-3244)
+ *----------------------------------------------------------------------------*/
+#paystubPopup {
+	margin-right: 10px;
+}
+
+#paystubPopup #titleTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	width: 98%;
+	margin-right: 10px;
+	padding-left: 10px;
+	text-align: left;
+}
+
+#paystubPopup #empTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	margin-left: 5px;
+}
+
+#paystubPopup #empTable .empAddress {
+	font-weight: bold;
+	text-align:	left;
+}
+
+#paystubPopup #empTable .empLabel {
+	font-weight: normal;
+	text-align:	right;
+	white-space: nowrap;
+}
+
+#paystubPopup #benefitsTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	width: 80%;
+	border: 1px dotted #CCCCCC;
+	text-align:	right;
+}
+
+#paystubPopup #benefitsTable td {
+	margin-left: 2px;
+	padding: 3px;
+}
+
+#paystubPopup #benefitsTable tr {
+	padding: 3px;
+}
+
+#paystubPopup #benefitsTable .benefitsHeaderLeft {
+	font-weight: bold;
+	text-align:	left;
+}
+
+#paystubPopup #benefitsTable .benefitsDataLeft {
+	font-weight: normal;
+	text-align:	left;
+}
+
+#paystubPopup #benefitsTable .benefitsHeaderCenter {
+	font-weight: bold;
+	text-align:	center;
+}
+
+#paystubPopup #benefitsTable .benefitsDataCenter {
+	font-weight: normal;
+	text-align:	center;
+}
+
+#paystubPopup #benefitsTable .benefitsHeaderRight {
+	font-weight: bold;
+	text-align:	right;
+}
+
+#paystubPopup #benefitsTable .benefitsDataRight {
+	font-weight: normal;
+	text-align:	right;
+}
+
+#paystubPopup #titleTable #empNameColHdr {
+	font-size: 14px;
+	width: 300px;
+}
+
+#paystubPopup #titleTable #empNameColHdr #empName,
+#paystubPopup #titleTable #lastPayDayColHdr,
+#paystubPopup #titleTable #curPayDayColHdr {
+	font-weight: bold;
+}
+
+#paystubPopup #titleTable .lastPayDayCol,
+#paystubPopup #titleTable .curPayDayCol {
+	width: 150px;
+	text-align: right;
+}
+
+#paystubPopup #lineBeforeCompareWagesTable,
+#paystubPopup #lineBeforeTotalsTable {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	border-bottom: 2px solid #CCCCCC;
+}
+
+#paystubPopup #lineBeforewagesTable {
+	border-bottom: 2px solid #CCCCCC;
+	margin-right: 10px;
+	line-height: 5px;
+}
+
+#paystubPopup #lineBeforeCompareWagesTable {
+	margin-bottom: 0px;
+}
+
+#paystubPopup .compareLineItemTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	width: 98%;						/* Setting width to 100% ensures that table automatically expands to modal dialog window width */
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#paystubPopup .compareLineItemTable .compareLineItemTableHdr {
+	font-weight: bold;
+	background-color: #E2EEF8;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+#paystubPopup .compareLineItemTable .descriptionColHdr {
+	width: 300px;
+	text-align: left;
+}
+
+#paystubPopup .compareLineItemTable .lastPayDayColHdr,
+#paystubPopup .compareLineItemTable .curPayDayColHdr {
+	width: 150px;
+	text-align: right;
+}
+
+#paystubPopup .compareLineItemTable .descriptionCol {
+	width: 300px;
+	text-align: left;
+	border-bottom: 1px dotted #CCCCCC;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+	white-space: nowrap;
+}
+
+#paystubPopup .compareLineItemTable .rateHoursDescriptionStyleClass {
+	padding-left: 15px;
+}
+
+#paystubPopup .compareLineItemTable .lastPayDayCol,
+#paystubPopup .compareLineItemTable .curPayDayCol {
+	width: 150px;
+	text-align: right;
+	border-bottom: 1px dotted #CCCCCC;
+	padding-top: 0px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	white-space: nowrap;
+}
+
+#paystubPopup .compareLineItemTable .lastLineItem .descriptionCol,
+#paystubPopup .compareLineItemTable .lastLineItem .lastPayDayCol,
+#paystubPopup .compareLineItemTable .lastLineItem .curPayDayCol {
+	border-bottom: none;	/* The last row of a compareLineItemTable should not have a bottom-border */
+}
+
+#paystubPopup .compareLineItemTable .compareLineItemTableRow {
+	height: 20px;
+}
+
+#paystubPopup #totalsTable {
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	width: 98%;
+	line-height: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#paystubPopup #totalsTable .descriptionCol {
+	width: 300px;
+	text-align: left;
+	padding-left: 150px;
+}
+
+#paystubPopup #totalsTable .lastPayDayTotalCol,
+#paystubPopup #totalsTable .curPayDayTotalCol {
+	width: 150px;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 5px;
+}
+
+#paystubPopup #totalsTable #netPayRow {
+	font-weight: bold;
+}
+
+#paystubPopup #totalsTable #netPayRow .lastPayDayTotalCol,
+#paystubPopup #totalsTable #netPayRow .curPayDayTotalCol {
+	font-size: 14px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Payday - Confirmation page (Lines from IFSP base.css 3251-3341)
+ *----------------------------------------------------------------------------*/
+.confirmationSuccess .messageIcon {
+	width: 32px;
+	padding-right: 3px;
+}
+
+.confirmationSuccess .successMsg {
+	font-size: 18px;
+	font-weight: bold;
+	color: #669900;
+}
+
+.confirmationSuccess .emailedPCREmps {
+	font-size: 12px;
+	font-weight: bold;
+	color: #669900;
+}
+
+#confirmationDiv {
+	padding-left: 35px;
+}
+
+#confirmationDiv #workDone {
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+}
+
+#confirmationDiv .ddChecksColRow1 {
+	width: 400px;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+
+#confirmationDiv .ddChecksColRow2 {
+	width: 400px;
+	vertical-align: top;
+	padding-right: 10px;
+}
+
+#confirmationDiv .printedChecksColRow1 {
+	max-width: 300px;
+    width: 300px;
+	vertical-align: middle;
+}
+
+#confirmationDiv .printedChecksColRow2 {
+	max-width: 300px;
+    width: 300px;
+	vertical-align: top;
+}
+
+#confirmationDiv .ddChecksColRow1 #ddChecks1 #ddCheckCount1,
+#confirmationDiv .ddChecksColRow1 #ddChecks1 #ddCheckCount2,
+#confirmationDiv .printedChecksColRow1 #printedChecks1 #printedCheckCount1,
+#confirmationDiv .printedChecksColRow1 #printedChecks1 #printedCheckCount2 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+
+#confirmationDiv .ddChecksColRow2 #ddChecks2 #ddDetails {
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+}bottom
+
+#confirmationDiv .ddChecksColRow2 #ddChecks2 #ddDetails #ddDetailsAmount {
+	font-weight: bold;
+}
+
+#confirmationDiv .printedChecksColRow2 #printedChecks2 .printedCheckCol {
+	font-size: 11px;
+	font-weight: bold;
+	color: #333333;
+}
+
+#confirmationDiv .printedChecksColRow2 #printedChecks2 #printedChecksNote {
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+}
+
+#confirmationDiv #deliveryDate {
+	font-weight: bold;
+}
+
+#confirmationDiv #confStep1Step2 {
+	padding-top: 10px;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	width:300px;
+}
+#confirmationDiv #important {
+	font-size: 11px;
+	font-weight: bold;
+	color: #CC6600;
+}
+
+.toDoButton {
+	padding-top: 10px;
+	padding-bottom: 28px;
+	padding-left: 320px;
+}
+/*----------------------------------------------------------------------------
+ *  Payday - Confirmation page - Print Paystubs/Print Paychecks popup (Lines from IFSP base.css 3347-3515)
+ *----------------------------------------------------------------------------*/
+#printPaychecksPopup .empTableScrollbarOn #startingVoucherNumber #textLabel {
+	width: 248px;											/* Width for "Starting Check #" <td> when main table is displaying a vertical scrollbar (more than six employees) */
+	text-align: right;
+}
+
+#printPaychecksPopup .empTableScrollbarOff #startingVoucherNumber #textLabel {
+	width: 258px;											/* Width for "Starting Check #" <td> when main table is not displaying a vertical scrollbar (six or fewer employees) */
+	text-align: right;
+}
+
+#printPaychecksPopup #startingVoucherNumber input {			/* Right-align text (check numbers) inside <INPUT> edit controls */
+    font-size: 12px;
+	text-align: right;
+}
+
+#printPaystubsPopup .listTable,
+#printPaychecksPopup .listTable,
+#checkPrintingReport .listTable {
+	padding-left: 10px;
+}
+
+#printPaychecksPopup .listTable .listTableCol input,
+#checkPrintingReport .listTable .listTableCol input {		/* Right-align text (check numbers) inside <INPUT> edit controls */
+    font-size: 12px;
+	text-align: right;
+}
+
+#printPaychecksPopup .listTable .listTableCol input.invalidEntry,
+#checkPrintingReport .listTable .listTableCol input.invalidEntry {	/* When input control contains an invalid entry, set border to 1px solid red */
+	border: 1px solid #CC0000;
+}
+
+#printPaystubsPopup .listTable th.eeSelectedToPrintColHdr,
+#printPaychecksPopup .listTable th.eeSelectedToPrintColHdr,
+#checkPrintingReport .listTable th.eeSelectedToPrintColHdr {/* Not technically necessary since the default is left text alignment for header row columns, but to be */
+	text-align: left;										/* explicitly clear, set it here again so it's more obvious how to override this */
+	width: 50px;
+}
+
+#printPaystubsPopup .listTable th.eeDisplayNameColHdr,
+#printPaychecksPopup .listTable th.eeDisplayNameColHdr,
+#checkPrintingReport .listTable th.eeDisplayNameColHdr {	/* Not technically necessary since the default is left text alignment for header row columns, but to be */
+	text-align: left;										/* explicitly clear, set it here again so it's more obvious how to override this */
+	width: 200px;
+}
+
+#printPaychecksPopup .listTable th.eeVoucherNumberColHdr,
+#checkPrintingReport .listTable th.eeVoucherNumberColHdr {
+	text-align: center;										/* Override default left text alignment of data rows Check Number column */
+	width: 120px;
+}
+
+#printPaystubsPopup .listTable th.eePayDateColHdr,
+#printPaychecksPopup .listTable th.eePayDateColHdr,
+#checkPrintingReport .listTable th.eePayDateColHdr {
+	text-align: right;										/* Override default left text alignment of data rows Pay Date column */
+	width: 100px;
+	padding-right: 10px;
+}
+
+#printPaystubsPopup .listTable th.eeNetPayColHdr,
+#printPaychecksPopup .listTable th.eeNetPayColHdr,
+#checkPrintingReport .listTable th.eeNetPayColHdr {
+	text-align: right;										/* Override default left text alignment of data rows Net Pay column */
+	width: 125px;
+	padding-right: 10px;									/* Display "Net Pay" more in the middle of the column */
+	padding-left: 5px;										/* Display "Net Pay" more in the middle of the column */
+}
+
+#printPaystubsPopup .listTable td.listTableCol,
+#printPaychecksPopup .listTable td.listTableCol,
+#checkPrintingReport .listTable td.listTableCol {			/* This must be listed before "td.eeSelectedToPrintCol" and "td.eeDisplayNameCol" so they can override this selector */
+	text-align: right;										/* Override default left text alignment of data rows columns */
+}
+
+#printPaystubsPopup .listTable td.eeSelectedToPrintCol,
+#printPaychecksPopup .listTable td.eeSelectedToPrintCol,
+#checkPrintingReport .listTable td.eeSelectedToPrintCol {	/* This must be listed after "td.listTableCol" so this can override that selector */
+	text-align: left;										/* Set left text alignment for data rows eeSelectedToPrintCol checkbox column since "#printPaychecksPopup .listTable td.listTableCol" sets right text alignment */
+	padding-left: 0px;
+}
+
+#printPaystubsPopup .listTable td.eeDisplayNameCol,
+#printPaychecksPopup .listTable td.eeDisplayNameCol,
+#checkPrintingReport .listTable td.eeDisplayNameCol {		/* This must be listed after "td.listTableCol" so this can override that selector */
+	text-align: left;										/* Set left text alignment for data rows eeDisplayNameCol text column since "#printPaychecksPopup .listTable td.listTableCol" sets right text alignment */
+	white-space: normal;									/* Override default of not word-wrapping column data; word-wrap employee names that exceed 170px column width */
+}
+
+#printPaychecksPopup .listTable td.eeVoucherNumberCol,
+#checkPrintingReport .listTable td.eeVoucherNumberCol {
+	text-align: center;
+	padding-left: 5px;
+}
+
+#printPaystubsPopup .listTable td.eePayDateCol,
+#printPaychecksPopup .listTable td.eePayDateCol,
+#checkPrintingReport .listTable td.eePayDateCol {
+	/*padding-left: 20px;*/
+}
+
+#printPaystubsPopup .listTable td.eeNetPayCol,
+#printPaychecksPopup .listTable td.eeNetPayCol,
+#checkPrintingReport .listTable td.eeNetPayCol {
+	padding-right: 5px;										/* Provide some padding betweeen column data and possible vertical scrollbar */
+}
+
+#printPaystubsPopup .listTable .eeDataTableSelectedRow,
+#printPaychecksPopup .listTable .eeDataTableSelectedRow,
+#checkPrintingReport .listTable .eeDataTableSelectedRow {	/* Specifies "checked" table rows */
+	/* Empty selector for completeness */
+}
+
+#printPaystubsPopup .listTable .eeDataTableUnselectedRow,
+#printPaychecksPopup .listTable .eeDataTableUnselectedRow,
+#checkPrintingReport .listTable .eeDataTableUnselectedRow {	/* Specifies "unchecked" table rows */
+	background-color: #EEEEEE;
+}
+
+#printPaystubsPopup .listTable .listTableScrlHdrTbl,			/* Required override of header table class when scrolling is enabled */
+#printPaystubsPopup .listTable .listTableScrlBdyTbl,			/* Required override of data rows table class when scrolling is enabled */
+#printPaystubsPopup .listTable .listTableScrlSprFtr table,
+#printPaychecksPopup .listTable .listTableScrlHdrTbl,			/* Required override of header table class when scrolling is enabled */
+#printPaychecksPopup .listTable .listTableScrlBdyTbl,			/* Required override of data rows table class when scrolling is enabled */
+#printPaychecksPopup .listTable .listTableScrlSprFtr table,
+#checkPrintingReport .listTable .listTableScrlHdrTbl,			/* Required override of header table class when scrolling is enabled */
+#checkPrintingReport .listTable .listTableScrlBdyTbl,			/* Required override of data rows table class when scrolling is enabled */
+#checkPrintingReport .listTable .listTableScrlSprFtr table {	/* Required override of footer table when scrolling is enabled; NOTE: No class is defined/must specify "table" */
+	border-spacing: 0px;										/* Required for equivalent to <table cellspacing=0>; Otherwise 1px padding shows up for each cell */
+	border-collapse: collapse;									/* Required for IE7 equivalent to <table cellspacing=0>; Otherwise 1px padding shows up for each cell */
+}
+
+#printPaystubsPopup .paragraph,
+#printPaychecksPopup .paragraph,
+#checkPrintingReport .paragraph {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+#checkStock {
+	margin-left: 15px;
+	vertical-align: middle;
+}
+
+#printPaystubsPopup #spacerLine,
+#printPaychecksPopup #spacerLine {
+	clear: both;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+
+#printPaystubsPopup #bottom,
+#printPaychecksPopup #bottom {
+	clear: both;
+	height: 0px;
+}
+
+.checkPrintingSpacer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.printIcon {
+	vertical-align: middle;
+}
+
+#checkStock .icons {
+	vertical-align: middle;
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports pages (Lines from IFSP base.css 3597-3788)
+ *----------------------------------------------------------------------------*/
+#mainContent #rptTable #content {
+     float: none;
+}
+
+.reportsContent {
+    margin-top: 24px;
+}
+
+.reportsMenuItems {							/* Secondary navigation links */
+    width: 120px;
+	margin: 0px;
+	padding-top: 5px;
+	white-space: nowrap;
+	border-top-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-right-style: none;
+}
+
+.reportsMenuItems td {
+    padding-left: 20px;
+	padding-right: 20px;
+    text-align: center;
+}
+
+.reportsMenuItems td a,
+.reportsMenuItems td a:hover {
+	color: #505050;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.reportCarat {
+    text-align: center;
+    margin-top: 9px;
+}
+
+.reportTitle {
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.reportHelpPrint {
+	text-align: right;
+    font-size: 10px;
+}
+
+.reportViewPrintHelp {
+	font-size: 12px;
+	color: #333333;
+}
+
+.reportViewPrintHelp .paragraph {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.reportViewPrintHelp .payTerm {
+	 font-weight: bold;
+}
+
+.reportImage {
+    padding: 0 10px 20px 20px;
+    vertical-align: middle;
+}
+
+.payrollSummaryToolTip {
+    margin-top: 75px;
+    margin-left: 43px;
+    background-color: transparent;
+}
+
+.payrollDetailsToolTip {
+    margin-top: 140px;
+    margin-left: 75px;
+    background-color: transparent;
+}
+
+.employeeDetailsToolTip {
+    margin-top: 85px;
+    margin-left: 50px;
+    background-color: transparent;
+}
+
+.taxPaymentsToolTip {
+    margin-top: 74px;
+    margin-left: 40px;
+    background-color: transparent;
+}
+
+.taxWageSummaryToolTip {
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: transparent;
+}
+
+.taxLiabilityToolTip {
+    margin-top: 95px;
+    margin-left: 50px;
+    background-color: transparent;
+}
+
+.totalCostToolTip {
+    margin-top: 170px;
+    margin-left: 90px;
+    background-color: transparent;
+}
+
+.contractorDetailsToolTip {
+    margin-top: 86px;
+    margin-left: 50px;
+    background-color: transparent;
+}
+
+.contractorPaymentDetailsToolTip {
+    margin-top: 74px;
+    margin-left: 44px;
+    background-color: transparent;
+}
+
+.workersCompToolTip {
+    margin-top: 100px;
+    margin-left: 50px;
+    background-color: transparent;   
+}
+
+.vacationAndSickToolTip {
+    margin-top: 74px;
+    margin-left: 40px;
+    background-color: transparent;   
+}
+
+.deductionsAndContributionsToolTip {
+    margin-top: 80px;
+    margin-left: 50px;
+    background-color: transparent;   
+}
+
+.reportLabel {
+	font-size: 14px;
+	font-weight: bold;
+    color: #2B73DD;
+}
+
+.reportDesc {
+	font-size: 12px;
+    color: #333333;
+    width: 360px;
+}
+
+.reportContactUs {
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.reportFilter {
+    font-size: 12px;
+    background-color: #EEEEEE;
+    padding-bottom: 4px;
+    border-top: 3px solid #72ACDF;
+	min-width: 620px;
+}
+
+.reportFilter td {
+	white-space: nowrap;
+    padding-top: 4px;
+	padding-bottom: 2px;
+	vertical-align: middle;
+}
+
+.reportFilter .homeDefaultButton {
+	padding-left: 10px;
+}
+
+.reportFilter .iceOutLbl {
+    display: block;
+    padding-left: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.reportFilter .fieldValue {
+    padding-left: 8px;
+    margin-bottom: 4px;
+}
+
+.reportFilterPrintSection {
+    display: none;
+}
+
+.reportPaginator {
+    margin-left: 75%;
+    margin-right: 5%;
+}
+
+.reportOddRow {
+    background-color: #FFFFFF; /*#CFFFFF;*/
+}
+
+.reportEvenRow {
+    background-color: #FFFFFF;
+}
+
+#reportFilter .trackingClassList .combobox-input{
+    text-overflow: ellipsis;
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Payroll Details report (Lines from IFSP base.css 3793-3788)
+ *----------------------------------------------------------------------------*/
+.payrollDetailsReport .name {
+     width: 100px;
+}
+
+.payrollDetailsReport .nameField {
+    font-weight: bold;
+}
+
+.payrollDetailsReport .description {
+     border-left: 1px solid #D0D0D0;
+     width: 100px;
+}
+
+.payrollDetailsReport .hours {
+     width: 25px;
+}
+
+.payrollDetailsReport .amount {
+     width: 45px;
+}
+
+.payrollDetailsReport .sectionReportCol1,
+.payrollDetailsReport .sectionReportCol2,
+.payrollDetailsReport .sectionReportTotalCol1,
+.payrollDetailsReport .sectionReportTotalCol2 {
+	white-space: normal;            /*-- overriding common component css class. Wrapping text on white-spaces in align with header columns. Otherwise it causes improper alignment of fields --*/
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Employee Details report (Lines from IFSP base.css 3793-3840)
+ *----------------------------------------------------------------------------*/
+.employeeDetailsReport .nameField {
+    font-weight: bold;
+}
+
+.employeeDetailsReport .description {
+     border-left: 1px solid #D0D0D0;
+     padding-right: 4px;
+     text-align: right;
+}
+
+.employeeDetailsReport .sectionReportHdr {
+    text-align: left;
+}
+.employeeDetailsReport .info {
+     padding-left: 4px;
+     font-weight: bold;
+}
+
+.employeeDetailsReport .sectionReportCol1,
+.employeeDetailsReport .sectionReportCol2 {
+	height: 13px;            /*--we don't want to use line borders in section reports--*/
+}
+
+.employeeDetailsReport .last {
+    height: 25px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Contractor Details report (Lines from IFSP base.css 3843-3868)
+ *----------------------------------------------------------------------------*/
+.contractorDetailsReport .nameField {
+    font-weight: bold;
+}
+
+.contractorDetailsReport .description {
+     border-left: 1px solid #D0D0D0;
+     padding-right: 4px;
+     text-align: right;
+}
+
+.contractorDetailsReport .sectionReportHdr {
+    text-align: left;
+}
+.contractorDetailsReport .info {
+     padding-left: 4px;
+     font-weight: bold;
+}
+
+.contractorDetailsReport .sectionReportCol1,
+.contractorDetailsReport .sectionReportCol2 {
+	height: 13px;            /*--we don't want to use line borders in section reports--*/
+}
+
+.contractorDetailsReport .last {
+    height: 25px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Total Cost report (Lines from IFSP base.css 3870-3902)
+ *----------------------------------------------------------------------------*/
+/* Description column alignment */
+.totalCostReport .desc,
+.totalCostReport .stdReportTotal:first-child {
+	width: 325px;
+	padding-left: 12px;
+	padding-right: 30px;
+	text-align: left;
+}
+
+.totalCostReport .description,
+.totalCostReport .stdReportSubtotal:first-child {
+	width: 325px;
+	padding-left: 30px;
+	padding-right: 12px;
+	text-align: left;
+}
+
+/* Amt column alignment */
+.totalCostReport .amount,
+.totalCostReport .numeric,
+.totalCostReport .stdReportSubtotal,
+.totalCostReport .stdReportTotal {
+	width: 75px;
+	padding-left: 30px;
+	padding-right: 12px;
+}
+
+.totalCostReport .stdReportHdr {
+	padding-top: 20px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Total Pay report
+ *----------------------------------------------------------------------------*/
+.totalPayReport .dataRow {
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+.totalPayReport .dataRow td,
+.totalPayReport .subTotalRow td,
+.totalPayReport .totalRow td {
+    padding-right: 12px;
+	line-height: 20px;
+	
+	font-family: Arial;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.totalPayReport .dataRow td:first-of-type,
+.totalPayReport .subTotalRow td:first-of-type {
+	padding-left: 30px;
+}
+
+.totalPayReport .subHeaderRow td:first-of-type,
+.totalPayReport .totalRow td:first-of-type {
+	padding-left: 12px;
+}
+
+.totalPayReport .subHeaderRow td {
+	padding-bottom: 5px;
+	border-bottom: 2px solid #CCCCCC;
+	
+	font-weight: bold;
+}
+
+.totalPayReport .subTotalRow td {
+    padding: 3px 12px 17px;
+
+	font-weight: bold;
+    white-space: nowrap;
+}
+
+.totalPayReport .totalRow td {
+    padding: 3px 12px 17px;
+	border-top: 2px solid #333333;
+	
+	font-size: 13px;
+	font-weight: bold;
+    white-space: nowrap;
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Payroll Summary report (Lines from IFSP base.css 3905-4011)
+ *----------------------------------------------------------------------------*/
+.reportPayrollSummaryHeaderTable,
+.reportPayrollSummaryFooterTable {
+    width: 1000px;                               /* overridden in boa_skin */
+}
+
+.reportPayrollSummaryDataTable {
+    border-bottom: 1px solid lightgrey;
+    width: 1000px;                               /* overridden in boa_skin */
+}
+
+.reportPayrollSummaryTableBox {
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+    width: 1020px;
+    height: auto;
+    overflow: auto;
+}
+
+.reportPayrollSummaryTableBoxPrinterFriendly {
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+    width: 1000px;                               /* overridden in boa_skin */
+}
+
+.reportPayrollSummaryTableBoxEmpty {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.reportPayrollSummaryHeaderDate,
+.reportPayrollSummaryFooterDate {
+    width: 100px;
+    font-weight: bold;
+}
+
+.reportPayrollSummaryHeaderName {
+    width: 150px;
+    font-weight: bold;
+}
+
+.reportPayrollSummaryFooterName {
+    width: 150px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.reportPayrollSummaryHeaderHours,
+.reportPayrollSummaryFooterHours {
+    width: 90px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.reportPayrollSummaryHeaderNetAmt,
+.reportPayrollSummaryFooterNetAmt,
+.reportPayrollSummaryHeaderTaxesWithheld,
+.reportPayrollSummaryFooterTaxesWithheld,
+.reportPayrollSummaryHeaderDeductions,
+.reportPayrollSummaryFooterDeductions,
+.reportPayrollSummaryHeaderTotalPay,
+.reportPayrollSummaryFooterTotalPay,
+.reportPayrollSummaryHeaderEmployerTaxes,
+.reportPayrollSummaryFooterEmployerTaxes,
+.reportPayrollSummaryHeaderTotalCost,
+.reportPayrollSummaryFooterTotalCost {
+    width: 110px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.reportPayrollSummaryColumnDate {
+    width: 100px;
+    height: 25px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.reportPayrollSummaryColumnName {
+    width: 150px;
+    height: 25px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.reportPayrollSummaryColumnHours {
+    width: 90px;
+    height: 25px;
+    text-align: right;
+    border-bottom: 1px solid lightgrey;
+}
+
+.reportPayrollSummaryColumnNetAmt,
+.reportPayrollSummaryColumnTaxesWithheld,
+.reportPayrollSummaryColumnDeductions,
+.reportPayrollSummaryColumnTotalPay,
+.reportPayrollSummaryColumnEmployerTaxes,
+.reportPayrollSummaryColumnTotalCost {
+    width: 110px;
+    height: 25px;
+    text-align: right;
+    padding-right: 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Tax Payments Report (Lines from IFSP base.css 4016-4091)
+ *----------------------------------------------------------------------------*/
+.reportTaxPaymentsHeaderTable {
+    width: 1000px;                               /* overridden in boa_skin */
+}
+
+.reportTaxPaymentsHeaderPaymentDate {
+    width: 200px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.reportTaxPaymentsHeaderTaxPayment,
+.reportTaxPaymentsHeaderPeriod {
+    width: 300px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.reportTaxPaymentsHeaderAmount {
+    width: 200px;
+    padding-right: 5px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.reportTaxPaymentsTableBox {
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+    width: 1020px;
+    height: 400px;
+    overflow: auto;
+}
+
+.reportTaxPaymentsTableBoxPrinterFriendly {
+    border-top: 2px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
+    border-left: 2px solid lightgrey;
+    border-right: 2px solid lightgrey;
+    width: 1000px;                               /* overridden in boa_skin */
+}
+
+.reportTaxPaymentsTableBoxEmpty {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.reportTaxPaymentsColumnPaymentDate {
+    width: 200px;
+    height: 25px;
+    padding-left: 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.reportTaxPaymentsColumnTaxPayment,
+.reportTaxPaymentsColumnPeriod {
+    width: 300px;
+    height: 25px;
+    padding-left: 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.reportTaxPaymentsColumnAmount {
+    width: 200px;
+    height: 25px;
+    padding-right: 5px;
+    border-bottom: 1px solid lightgrey;
+    text-align: right;
+}
+
+.reportTaxPaymentsDataTable {
+    border-bottom: 1px solid lightgrey;
+    width: 1000px;                               /* overridden in boa_skin */
+}
+
+/*----------------------------------------------------------------------------
+ *  Reports - Retirement Plans Report
+ *----------------------------------------------------------------------------*/
+/* borders */
+.retirementPlansReport .stdReportHdr,
+.retirementPlansReport .stdReportNoData {
+	border-top: solid 2px #333333;
+}
+
+.retirementPlansReport .stdReportCol {
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+/* name column alignment */
+.retirementPlansReport .stdReportTitle {
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 12px;
+}
+
+.retirementPlansReport .stdReportFtr.desc {
+	text-align: left;
+	padding-left: 12px;
+}
+
+.retirementPlansReport .stdReportNoData.desc {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+/* data columns alignment */
+.retirementPlansReport .stdReportHdr.desc,
+.retirementPlansReport .stdReportNoData.desc {
+	padding-left: 12px;
+	min-width: 200px;
+}
+
+.retirementPlansReport .stdReportCol.desc {
+	padding-left: 30px;
+	line-height: 20px;
+}
+
+.retirementPlansReport .stdReportHdr.numeric,
+.retirementPlansReport .stdReportHdr.total,
+.retirementPlansReport .stdReportNoData.numeric,
+.retirementPlansReport .stdReportNoData.total {
+	min-width: 100px;
+}
+
+.retirementPlansReport .total,
+.retirementPlansReport .numeric {
+	text-align: right;
+	padding-right: 12px;
+}
+
+/* space between tables */
+.retirementPlansReport .stdReportSpacer {
+	height: 40px;
+}
+
+.retirementPlansReport .stdReportTitle {
+	padding-top: 15px;
+}
+
+
+/*----------------------------------------------------------------------------
+ *  Reports - Error message (Lines from IFSP base.css 4094-4098)
+ *----------------------------------------------------------------------------*/
+.reportErrorMessage {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Employees - Common (Lines from IFSP base.css 4209-4287)
+ *----------------------------------------------------------------------------*/
+.eeContent {
+    padding-top: 10px;
+}
+
+.eeHeaderSec {
+    padding-bottom: 20px;
+}
+
+.eeNameFilter {
+    padding: 0 4px 0 200px;
+}
+
+.eeNameTitle {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.eeEditLabel,.eeEditValue,
+.eeEditLabelGroup,
+.eeEditValueGroup {
+    vertical-align: middle;
+}
+
+.eeEditLabel,
+.eeEditValue {
+    margin: 0 5px 5px 0;
+}
+
+.eeEditLabelGroup,
+.eeEditValueGroup {
+    margin: 0 5px 0 0;
+}
+
+.eeEditLabel,
+.eeEditLabelGroup {
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+.eeTextValue {
+    padding: 5px 0 5px 0;
+}
+
+.eeEditReqFootNote {
+    padding-top: 15px;
+}
+
+.eeEditCmdPanel {
+    padding-left: 100px;
+	padding-top: 20px;
+}
+
+.eeEditCmdPanel .tableDefaultButton {
+    float: left;
+}
+
+.eeInline {
+    display: inline;
+}
+
+.eeHelpLink {
+    float: right;
+    padding-top: 5px;
+}
+
+.eeEditLink {
+	float: right;
+}
+
+.eeAddHourlyRateEditLinkWidth {
+    width: 150px;
+}
+.hourlyPayRate {
+    width: 100px;
+    float: left;
+    margin-left: 200px;
+}
+
+.additionalPayType {
+    width: 300px;
+}
+
+.eeEditLink a {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.eeEditLink a:hover {
+	font-weight: normal;
+}
+
+.eeEditLabelSpacer {
+    padding-left: 12px;
+}
+
+.eeEditFieldSpacer { 
+   margin-left: 5px;
+}
+
+.eeEditTitle {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	border-bottom: 3px solid #7BB2E3;
+	padding: 0 5px 5px 0;
+}
+
+.eeContent a:hover {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.eeMissingText {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: normal;
+	color: #CC6600;
+}
+
+/*----------------------------------------------------------------------------
+ *  Employees - Employee List
+ *
+ *	Employee List uses listTable, listTableCol as the base look and feel. 
+ *	This section defines some specific styles for Employee List.
+ *----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------
+ *  Extend standard listTableTitle (Lines from IFSP base.css 4296-4326)
+ *----------------------------------------------------------------------------*/
+#employeeListDiv {
+    padding-left: 15px;
+}
+
+#employeeListDiv .employeeListTitle {
+	padding-bottom: 8px;
+	float: left;
+}
+
+#employeeListDiv #employeeListEmpty1 {
+    width: 647px;
+    display: inline-block;
+}
+
+#employeeListDiv .noEmployee {
+    width: 647px;
+    display: inline-block;
+}
+
+#employeeListDiv .missingNoIcon {
+    padding-left:20px; 
+}
+
+#employeeListDiv .missingIcon{
+    padding-right: 2px; 
+}
+
+#employeeListDiv .missingIconHeader {
+    margin-left: 24px;
+    display: inline-block;
+}
+/*----------------------------------------------------------------------------
+ *  Warning section (Lines from IFSP base.css 4313-4315)
+ *----------------------------------------------------------------------------*/
+#employeeListDiv #eeWarningSec {
+   padding-bottom: 20px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Filter section (Lines from IFSP base.css 4317-4322)
+ *----------------------------------------------------------------------------*/
+#employeeListDiv .filterCmdPanel {
+    font-size: 12px;
+    color: #000000;
+    float: right;
+    padding-bottom: 5px;
+}
+
+#employeeListDiv .label {
+    font-weight: normal;
+}
+
+/*----------------------------------------------------------------------------
+ *  Column Headers (Lines from IFSP base.css 4328-4349)
+ *----------------------------------------------------------------------------*/
+#employeeListDiv .eeIndicatorColHdr {
+	text-align: left;
+	width: 17px;
+    padding-left: 0px;
+}
+
+#employeeListDiv .eeDisplayNameColHdr {
+	text-align: left;
+	min-width: 170px;
+    padding: 0 5px 4px 5px;
+}
+
+#employeeListDiv .eeDisplayClassColHdr {
+	text-align: left;
+	min-width: 170px;
+    padding: 0 5px 4px 5px;
+	border-bottom: 2px solid #CCCCCC;
+}
+
+#employeeListDiv .eePayRateColHdr {
+	text-align: right;
+	min-width: 90px;
+    padding: 0 5px 4px 30px;
+}
+
+#employeeListDiv .eeDefaultColHdr {
+	text-align: left;
+	min-width: 90px;
+    padding: 0 5px 4px 30px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Command Header - Clickable, Sortable headers (Lines from IFSP base.css 4352-4357)
+ *----------------------------------------------------------------------------*/
+#employeeListDiv .iceCmdSrtHdr  {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------
+ *  Override Data Column (Lines from IFSP base.css 4360-4387)
+ *----------------------------------------------------------------------------*/
+#employeeListDiv .eePayRateCol {
+    padding: 0 5px 0 30px;
+    text-align: right;
+    font-weight: normal;
+}
+
+#employeeListDiv .eeDefaultDataCol {
+    text-align: left;
+    padding: 0 5px 0 30px;
+}
+
+#employeeListDiv .eeNameCol {
+    padding: 0 5px 0 5px;
+}
+
+.eeDefaultDataCol a {
+    font-weight: normal;
+}
+
+.eePayRateCol a {
+    font-weight: normal;
+}
+
+#employeeListEmpty {
+    padding-top: 20px;
+}
+
+#employeeListDiv .eeIndicatorCol {
+    vertical-align: middle;
+}
+/* Edit classes page */
+
+#employeeListContent .eeNameHeader {
+	text-align: left;
+}
+
+.editClassRadios > table > tbody > tr > td {
+	padding-bottom: .5em;
+	
+}
+
+.inactiveClassMsg {
+	margin-top:3px;
+	padding-bottom: 1em;
+	width: 700px;
+	word-wrap: break-word;
+}
+
+/*----------------------------------------------------------------------------
+ *  Employee Detail (Lines from IFSP base.css 4390-4470)
+ *----------------------------------------------------------------------------*/
+#employeeDetailDiv {
+    padding-left: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#employeeDetailDiv .eesection,
+#employeeDetailDiv .eerightsection {
+    float: left;
+    width: 249px;
+}
+
+#employeeDetailDiv .eerightsection {
+    width: 280px;
+}
+
+#employeeDetailDiv .eevsectiondivider {
+    width: 79px;
+    float: left;
+}
+
+#employeeDetailDiv .eehsectiondivider {
+    content: "&nbsp;";
+    display: block;
+    height: 40px;
+    clear: both;
+}
+
+#employeeDetailDiv .eeSecTitle {
+    width: 249px;
+    font-size: 14px;
+	font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    border-bottom: 2px solid #CCCCCC;
+}
+
+#employeeDetailDiv .ccSecTitle {
+    width: 280px;
+    font-size: 14px;
+	font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    border-bottom: 2px solid #CCCCCC;
+}
+
+#employeeDetailDiv .eeLabel,
+#employeeDetailDiv .eeLabelGroup {
+   font-weight: bold;
+   white-space: nowrap;
+}
+
+#employeeDetailDiv .eeLabel,
+#employeeDetailDiv .eeValue,
+#employeeDetailDiv .missingSecContactLink {
+   padding: 10px 4px 0 4px;
+}
+
+#employeeDetailDiv .eeLabel,
+#employeeDetailDiv .eeValue,
+#employeeDetailDiv .eeLabelGroup,
+#employeeDetailDiv .eeValueGroup  {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.eesection td,
+.eerightsection td {
+  vertical-align: top;
+}
+
+#employeeDetailDiv .eeMsg { 
+  display: inline-block;
+  vertical-align: top;
+  width:199px;
+ }
+
+#employeeDetailDiv .eeLabelGroup,
+#employeeDetailDiv .eeValueGroup {
+   padding: 2px 4px 2px 4px;
+}
+
+#employeeDetailDiv .icons {
+	vertical-align: middle;
+}
+
+#employeeDetailDiv .noAccess,
+#employeeDetailDiv #eenotes {
+    padding-top: 10px;
+    display: inline-block;
+    width: 249px;
+}
+
+#employeeDetailDiv .eeHeaderSec {
+   padding: 0;
+}
+
+#employeeDetailDiv .eeHeaderSecNoError {
+   margin-bottom: 50px;
+}
+
+.eeEditNotesButtons {
+	overflow: hidden;
+	padding-top: 12px;
+}
+
+.eeEditNotesButtons .tableDefaultButton {
+	float: left;
+}
+
+.eeEditNotesArea {
+	width: 485px;
+	height: 215px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/*----------------------------------------------------------------------------
+ *  Signup Form (Lines from IFSP base.css 4473-4512)
+ *----------------------------------------------------------------------------*/
+#signupForm {
+	width: 725px;
+}
+
+#acAddPayrollForm .fieldLabel,
+#acAddPayrollForm .fieldValue,
+#signupForm .fieldLabel,
+#signupForm .fieldValue {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 7px 7px 0;
+}
+
+#acAddPayrollForm .fieldLabel,
+#signupForm .fieldLabel {
+    font-weight: bold;
+	padding-right: 10px;
+}
+
+#acAddPayrollForm .fieldValue,
+#signupForm .fieldValue {
+    padding: 5px 0 5px 0;
+}
+
+#signupForm .welcomeTitleText {
+	margin: 10px;
+}
+
+#signupForm form {
+	margin-left: 15px;
+}
+
+#signupForm .footNote {
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+#signupForm .buttonDiv {
+	padding-left: 140px;
+	padding-top: 20px;
+}
+
+#signupForm .hint, #acAddPayrollForm .hint{
+	color: #C0C0C0;
+}
+
+/*----------------------------------------------------------------------------
+ *  Employee Edit (Lines from IFSP base.css 4514-4831)
+ *----------------------------------------------------------------------------*/
+.eeEditDiv {
+    padding-left: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.eeEditDiv .missingSecContactLink {
+    float: right;
+    margin-top: 3px;
+    padding-left: 15px;
+}
+
+#eeEditBasicDiv .missingSecContactLink {
+    margin-top: -20px;
+}
+
+#eeEditPtoDiv .eeFieldGroup {
+    padding: 5px 0 5px 0;
+}
+
+.eeColumnClasses {
+	vertical-align: middle;
+}
+
+#eeEditPtoDiv .eeEditLabel {
+    vertical-align: top;
+    margin-bottom: 8px;
+    padding-right: 2px;
+}
+
+#eeEditPtoDiv .missingSecContactLink {
+    float: left;
+}
+
+#employeeEditEmploymentDiv .missingSecContactLink {
+    margin-top: 0px;
+}
+
+#employeeEditEmploymentDiv .calendarPopup {
+	display: inline;
+	margin-bottom: 5px;
+}
+
+.eeEditPayMethodButtons {
+	overflow: hidden;
+	padding-left: 148px;
+}
+
+.eeEditPayMethodButtons .tableDefaultButton {
+	float: left;
+}
+
+.eeEditDiv .eeEditPayLabel {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.eeEditDiv .eeEditPayValue {
+    width: 700px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.eeEditDiv .eeEditPayrecordLabel {
+    width: 50px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.eeEditDiv .eeFieldGroupDivider {
+    padding-top: 15px;
+}
+
+.eeEditDiv .icons {
+	vertical-align: middle;
+}
+
+.eePayMethodEdit .eeIcon {
+	width: 18px;
+	vertical-align: middle;
+}
+
+.eePayMethodEdit .eeEditPayMethodLabel {
+	width: 120px;
+    vertical-align: middle;
+}
+
+.eePayMethodEdit .eeEditPayMethodValue {
+    width: 145px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.eePayMethodEdit .eePayMethodRowStandalone {
+	width: 265px;				/* = eeEditPayMethodLabel width + eeEditPayMethodValue width */
+	padding: 0 0 0 18px;		/* = eeIcon width */
+}
+
+.eePayMethodEdit .eeInfoTextGroup {
+    margin: 0 0 5px 0;
+}
+
+.eePayMethodEdit .eeInfoText {
+    padding: 5px 0 5px 0;
+}
+
+.eePayMethodEdit .eeInfoText,
+.eePayMethodEdit .eeInfoTextGroup,
+.eePayMethodEdit .eeBankName {
+	font-size: 10px;
+}
+
+.eePayMethodEdit .eeInfoText,
+.eePayMethodEdit .eeInfoTextGroup {
+	padding: 0 0 0 10px;
+	color: #736F6E;
+}
+
+.eePayMethodEdit .eeInfoIcon {
+	padding: 0 2px 0 2px;
+	border: none;
+	vertical-align: middle;
+}
+
+.eePayMethodEdit .eeBankName {
+	color: #006600;
+}
+
+.eePayMethodEdit .eeEditValue {
+	margin: 0 5px 5px 13px;
+}
+
+.eePayMethodEdit .eeRoutingInput,
+.eePayMethodEdit .eeAccountInput {
+	vertical-align: middle;
+    display: inline-block;
+}
+
+.eePayMethodEdit .eeRoutingInput {
+	background-color: #D9E5BF;
+	margin: 0 0 5px 0;
+}
+
+.eePayMethodEdit .eeAccountInput {
+	background-color: #BFE5FF;
+	margin: 0 0 5px 13px;
+}
+
+.eePayMethodEdit .eeBankInfoMsg {
+	padding: 10px 0 10px 0;
+}
+
+.eePayMethodEdit .eeBankInfoMsgCheckRemainder {
+	padding: 10px 0 25px 0;
+}
+
+.eePayMethodEdit .eeBankInfoLabel {
+	font-weight: bold;
+	padding: 0 0 5px 0;
+	display: block;
+    vertical-align: middle;
+}
+
+.eePayMethodEdit .eeBankInfoSection {
+	margin: 0 0 0 10px;
+	overflow: hidden;
+}
+
+.eePayMethodEdit .popupRoundedBox {
+	max-width: 850px;
+}
+
+.eePayMethodEdit .validateError {
+	color: #CC0000;
+	font-size: 11px;
+	padding: 5px 5px 5px 1px;
+	vertical-align: middle;
+}
+
+.eePayMethodEdit .fieldMessageIconWithText {
+	vertical-align: middle;
+}
+
+#employeeEditEmploymentDiv .combobox-input {
+	 text-overflow: ellipsis;
+}
+#eeEditTaxImplicationsDiv .eeHeaderSec {
+    padding-bottom: 0;
+}
+
+#eeEditTaxImplicationsDiv .eeContent {
+    padding-top: 0;
+}
+
+#eeEditTaxImplicationsDiv .eeEditCmdPanel,
+#eeEditDeductionDiv .eeEditCmdPanel {
+    padding-left: 0;
+}
+
+.employeeCreatedPopupButtons .tableDefaultButton {
+	overflow: hidden;
+	float: left;
+    padding: 20px 0 0 3px;
+}
+
+#eeCreatedPopup .successMsg {
+	color: #669900;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 18px;
+	display: block;
+	padding-left: 5px;
+}
+
+#eeCreatedPopup .eeSubHeadingText {
+	display: block;
+	font-size: 16px;
+	padding-left: 5px;
+}
+
+#eeCreatedPopup .eeBodyText {
+	padding: 20px 0 15px 5px;
+}
+
+#eeCreatedPopup b {
+	font-weight: bold;
+}
+
+.eeCreatedPopupTextSection {
+	width: 500px;
+	float: left;
+}
+
+.eeEditDiv .eeSectionDivider {
+    margin-top: 45px;
+}
+
+.eeEditDiv .eeHeaderDivider {
+    margin: 10px 0 10px 0;
+}
+
+.eePayMethodEdit .bt-content b {
+	font-weight: bold;
+	width: 400px;
+}
+
+.eeDeductionTable,
+.eeGarnishmentTable {
+	border-width: 0 0 1px 0;
+}
+
+.eeDeductionTable,
+.eeDeductionTable .headerBorder,
+.eeGarnishmentTable,
+.eeGarnishmentTable .headerBorder {
+	border-style: solid;
+	border-color: #CCCCCC;
+}
+
+.eeDeductionTable .sectionBorder {
+	border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #CCCCCC;
+}
+
+.eeDeductionTable .headerSplitBorder {
+	border-right-style: dotted;
+    border-right-width: 1px;
+    border-right-color: #CCCCCC;
+}
+
+.eeDeductionTable .headerBorder,
+.eeGarnishmentTable .headerBorder {
+	border-bottom-width: 2px;
+}
+
+.eeGarnishmentTable .headerBorder {
+    text-align: left;
+}
+
+.eeColumnHeaderText {
+	font-weight: bold;
+}
+
+.eeDeductionHeader {
+	background-color: #EEEEEE;
+}
+
+.eeContributionHeader {
+	background-color: #E0EBD6;
+}
+
+.eeDeductionHeader,
+.eeContributionHeader,
+.eeDeductionColumns,
+.eeClassColumns {
+	text-align: left;
+	padding: 5px 0 5px 10px;
+}
+
+.eeCategoryHeader,
+.eeDeductionLastColumn {
+	text-align: center;
+	padding: 5px 0 5px 0;
+}
+
+.eeDeductionColumns,
+.eeClassColumns {
+	width: 150px;
+}
+
+.eeDeductionLastColumn {
+	width: 100px;
+}
+
+.eeDeductionRows,
+.eeDeductionColumns,
+.eeGarnishmentColumns,
+.eeClassColumns {
+	border-style: dotted;
+	border-color: #CCCCCC;
+	border-width: 0 0 1px 0;
+}
+
+.eeGarnishmentColumns {
+	text-align: left;
+	padding: 5px 0 5px 0;
+    width: 190px;
+}
+
+.eeDeductionFirstColumn {
+	text-align: left;
+	padding: 5px 0 5px 20px;
+}
+
+.eeDeductionFirstColumn b {
+	font-weight: bold;
+}
+
+.eePopupButtons {
+	overflow: hidden;
+    padding: 20px 0 0 0;
+}
+
+.eePopupButtons .tableDefaultButton {
+	float: left;
+}
+
+.eeAddDeduction {
+	padding: 10px 0 0 0;
+}
+
+.eeAddDeductionNone,
+.eeHelpIconLink {
+    display: inline-block;
+}
+
+.eeAddDeduction .link,
+.eeAddDeductionNone .link,
+.eeDeductionFirstColumn .link {
+	font-weight: normal;
+}
+
+.eeHelpIconLink .helpWinPopup .hicon,
+.eeHelpIconLink .hicon .icons {
+	padding: 0 0 0 0;
+	width: initial;
+}
+
+.eeHelpIconLink .helpWinPopup {
+	margin: 0;
+}
+
+.eeDedContribCol {
+    vertical-align: top;
+}
+
+.eeColumnPopupClasses {
+	vertical-align: middle;
+    width: 124px;
+}
+
+.eeColumnPopupClasses2 {
+	vertical-align: middle;
+    width: 300px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Save Changes Popup (Lines from IFSP base.css 4841-4848)
+ *----------------------------------------------------------------------------*/
+.saveChangesPopupButtons {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.saveChangesPopupButtons .tableDefaultButton {
+	float: left;
+}
+
+/*----------------------------------------------------------------------------
+ *  Paycheck Deduction Calculator and state tax ID help - Rounded Corners (Lines from IFSP base.css 4994-5026)
+ *----------------------------------------------------------------------------*/
+.taxIdHelpRoundedContainer,
+.pcdCalRoundedContainer {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #9EB9D0;
+
+}
+
+.taxIdHelpHeaderCollapse,
+.taxIdHelpHeader,
+.pcdCalHeaderCollapse,
+.pcdCalHeader {
+    color: #2A71D8;
+    background-color: #D7E2EC;
+	padding: 4px 5px 5px 5px;
+}
+
+.taxIdHelpHeader,
+.pcdCalHeader {
+	border-bottom: 2px solid #9EB9D0;
+}
+
+.pcdCalContent td {
+	/*border-bottom: 1px dotted #000000;*/
+	text-align: right;
+    padding: 5px;
+}
+
+.pcdCalRow td {
+    border-bottom: 1px dotted #000000;
+}
+
+.pcdCalContent .pcdCalLastColumn {
+	text-align: left;
+}
+
+.pcdCalResult {
+	font-weight: bold;
+}
+
+/*----------------------------------------------------------------------------
+ *  Signup Welcome Setup Portal page (auth forms, uploads, downloads) (Lines from IFSP base.css 5034-5284)
+ *----------------------------------------------------------------------------*/
+#setupPortal #downloadUpload .listTableTitle {
+	padding-top: 15px;						/* Give it a bit more separation than default */
+	border-bottom: none;					/* Suppress the bottom border in this section */
+}
+
+#setupPortal #downloadUpload .listTableTitle img {
+	vertical-align: middle;
+}
+
+#setupPortal #downloadUpload .verticalSep {
+    background: url("../resources/images/divider.gif") repeat-y center center;
+	min-width: 60px;						/* Required min-width 40px for whitespace padding */
+	width: 60px;							/* Required for IE7 since this selector is used inside a <TABLE> tag */
+}
+
+#setupPortal #downloadsTable img {
+	padding-top: 5px;
+	padding-left: 8px;
+}
+
+#setupPortal .faxUs .header {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 28px;
+}
+
+#setupPortal .faxUs .number {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 28px;
+	color: #CC6600;
+}
+
+#setupPortal .faxUs .leadTime {
+}
+
+#setupPortal .infoRoundedBoxContent .messageText,		/* We need a bit more width in the popup */
+#setupPortal .warningRoundedBoxContent .messageText {
+	width: 550px;
+}
+
+#setupPortal .downloadUploadContent {
+	padding-top: 10px;
+	padding-left: 40px;
+	padding-bottom: 20px;
+}
+
+#setupPortal .downloadUploadContent .uploadCells {
+	vertical-align: middle;
+}
+
+#setupPortal .inactiveBullet {
+    color: #999999;
+}
+
+#setupPortal .checkMarkText {
+    font-weight: bold;
+    font-size: 12px;
+    color: #669900;
+}
+
+#setupPortal .formsExpandLink {
+    font-size: 11px;
+    margin-left: 40px;
+}
+
+.setupPortalContent,
+.eSignContent,
+.eSignSigningContent {
+    width: 660px;
+    -moz-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding: 15px;
+    position: relative;
+    top: -40px;
+    z-index: 1;
+    margin-left: 23px;
+    -webkit-box-shadow: 0px 0px 4px 0px #333333;
+    -moz-box-shadow: 0px 0px 4px 0px #333333;
+    box-shadow: 0px 0px 4px 0px #333333;
+    background-color: white;
+    border: 1px solid #CCCCCC;  /* Add some border so that in IE there is something */
+}
+
+#activeStateSetupPortal {
+	top: 0px;
+}
+
+.eSignSigningContent {
+	/* Same as regular eSignContent but needs to be wider to accommodate EchoSign widget */
+	width: 775px;
+}
+
+.eSignIntro .title {
+	font-family: Arial;
+	font-size: 18px;
+	padding-top: 24px;
+}
+
+.eSignIntro .body {
+	font-family: Arial;
+	font-size: 12px;
+	padding-top: 14px;
+}
+
+.conversionBanner {
+    margin: 30px 40px -25px 28px;
+    padding: 10px 20px 10px 20px;
+    border: solid 1px #CCCCCC;
+    -moz-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #F8F8F8;        /* fallback for where gradient not supported */
+    background: -moz-linear-gradient(left, #F8F8F8, #FFFFFF);
+    background: -webkit-gradient(linear, left top, right top, from(#F8F8F8), to(#FFFFFF));
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#F8F8F8', EndColorStr='#FFFFFF', GradientType=1);
+}
+
+.conversionBannerTitle,
+.conversionBannerText {
+    display: block;
+    font-family: Arial;
+}
+
+.conversionBannerTitle {
+    font-size: 16px;
+    color: #333333;
+}
+
+.conversionBannerText {
+    font-size: 12px;
+    color: #666666;
+}
+
+.conversionBannerList {
+    padding-left: 40px;
+    list-style-type: disc;
+}
+
+.welcomeContactTitle {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+.welcomeContactThankYou {
+	font-size: 12px;
+	margin-right: 5px;
+	margin-bottom: 15px;
+	margin-left: 5px;
+}
+
+.welcomeContactGetStarted {
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+.welcomeContactNoHurry {
+	font-size: 12px;
+	margin-right: 5px;
+	margin-bottom: 25px;
+	margin-left: 5px;
+}
+
+.uploadedFilesTable {
+    width: 600px;
+    table-layout: fixed;
+}
+
+.uploadedFilesTable .listTableHdr {
+    border-bottom-width: 1px;
+    padding-top: 0px;
+}
+
+.uploadedFilesTable td.uploadedFileDateCol,
+.uploadedFilesTable th.uploadedFileDateCol {
+	text-align: right;
+    padding-right: 5px;
+    width: 175px;
+}
+
+.uploadedFilesTable td.uploadedFileNameCol,
+.uploadedFilesTable th.uploadedFileNameCol {
+    padding-left: 5px;
+}
+
+.uploadedFilesTable .uploadedFileNameCol {
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.uploadedFilesTable .iceCmdSrtHdr span {
+    display: inline-block;
+}
+
+.uploadedFileDateCol {
+}
+
+.uploadErrorStatus {
+	color: red;
+}
+
+.uploadInfoStatus {
+	color: #76818C;
+}
+
+.uploadedFileName,
+.uploadedFileImage,
+.uploadedFileDate {
+    vertical-align: middle;
+}
+
+.uploadedFileImage {
+    padding-right: 5px;
+}
+
+.uploadedFileDate {
+	color: #76818C;
+}
+
+.uploadFileSizeLabel {
+	color: #76818C;
+	font-size: 10px;
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.fileUploadButtons {
+	overflow: hidden;
+	padding-left: 0px;
+}
+
+.fileUploadButtons .tableDefaultButton {
+	float: left;
+}
+
+.uploadAnotherLink {
+    color: #2A71D9;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------------------
+ *  New Feature Discovery (Lines from IFSP base.css 5288-5303)
+ *----------------------------------------------------------------------------*/
+.banner_single_feature {
+    width: 616px;
+    height: 56px;
+    background: url("../resources/images/banner_single_feature.png") no-repeat;
+}
+
+.banner_multi_feature {
+    width: 650px;
+    height: 100px;
+    background: url("../resources/images/banner_multi_features.png") no-repeat;
+}
+
+.banner_yearEnd_feature {
+    width: 616px;
+    height: 125px;
+    background: url("../resources/images/bannerYearEnd2013.png") no-repeat;
+}
+
+/*----------------------------------------------------------------------------
+ *  Pay Method Selection page (Lines from IFSP base.css 5306-5382)
+ *----------------------------------------------------------------------------*/
+#paymethodForm .listTable {
+    margin-left: 20px;
+}
+
+#paymethodForm .listTable .listTableCol input {				/* Right-align text (hours and dollar values) inside <INPUT> edit controls (only wage item columns have <INPUT> edit controls) */
+    font-size: 12px;
+    text-align: left;
+}
+
+#paymethodForm .listTable .eeDisplayNameColHdr {			/* Not technically necessary since the default is left text alignment for header row columns, but to be */
+	text-align: left;										/* explicitly clear, set it here again so it's more obvious how to override this */
+	min-width: 170px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 170px */
+}
+
+#paymethodForm .listTable .paymethodTableColHdr {			/* Not technically necessary since the default is left text alignment for header row columns, but to be */
+	text-align: left;										/* explicitly clear, set it here again so it's more obvious how to override this */
+	min-width: 170px;										/* Set min-width so browser width narrowing doesn't automatically narrow column width from default 170px */
+	background-color: #F0F0F0;
+}
+
+#paymethodForm .listTable td.paymethodCol {					/* This must be listed before "td.eeIsPaidCol" and "td.eeDisplayNameCol" so they can override this selector */
+	text-align: left;										/* Override default left text alignment of data rows wage item and Total Pay columns */
+	background-color: #F0F0F0;
+}
+
+#paymethodForm .listTable tr {								/* This must be listed before "td.eeIsPaidCol" and "td.eeDisplayNameCol" so they can override this selector */
+    line-height: 22px;
+}
+
+#paymethodForm .listTable td.eeDisplayNameCol {				/* This must be listed after "td.listTableCol" so this can override that selector */
+	text-align: left;										/* Set left text alignment since "#enterCompDiv .listTable td.listTableCol" sets right text alignment */
+	white-space: normal;									/* Override default of not word-wrapping column data; word-wrap employee names that exceed 170px column width */
+	background-color: white;
+}
+
+#paymethodForm .selectRadioTable {
+	width: 450px;
+}
+
+#paymethodForm .selectRadioTable td {
+	text-align: center;
+	width: 200px;
+	border-right: solid 3px white;
+}
+
+#paymethodForm .listTableHdr {
+	padding: 0px;
+}
+
+#paymethodForm .selectRadioTableCol1{
+	border-right: solid 3px white;
+}
+
+#paymethodForm .paymethodHiddenRow {
+	display: none;
+}
+
+#paymethodForm .dateRow {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#paymethodForm .delayText {
+	padding-left: 10px;
+	color: red;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#paymethodForm .notes {
+	color: #545454;
+}
+
+#paymethodForm .desc {
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+/*----------------------------------------------------------------------------
+ *  To Dos (Lines from IFSP base.css 5385-5612)
+ *----------------------------------------------------------------------------*/
+.todoRemainingText {
+	float: left;
+    font-size: 24px;
+    color: #999999;
+    font-family: Arial;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+.todoTableContainer {
+    padding: 40px 40px 0 17px;   
+}
+
+.todoTable,
+.todoHeader,
+.receivedFilesHeader {
+    width: 600px;
+    padding-left: 2px;
+	padding-bottom: 5px;
+}
+
+.todoTable {
+    padding: 0 20px 0 0;
+    table-layout: fixed;
+}
+
+.todoTable .checkColumn {
+    width: 47px;
+    vertical-align: top;
+}
+
+.todoTable .checkColumn {
+	display: inline-block;
+}
+
+.todoHeader,
+.receivedFilesHeader {
+    text-align: left;
+    border-top: #CCCCCC solid 2px;
+}
+
+.todoColumn {
+    padding: 10px 0 10px 0;
+    border-bottom: #999999 dotted 1px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.contentColumn {
+    width: 530px;
+    word-wrap: break-word;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.todo-row {
+	display: table;
+}
+
+.todo-note-callout {
+	margin-bottom: 10px;
+	background-color: #FFFBCC;
+}
+
+.todo-note-callout .callout-notch-background-color {
+	border-color: #FFFBCC;
+}
+
+.todo-note-callout .callout-border-color {
+	border-color: #FEC828;
+}
+
+.todo-note-callout .notch-bottom,
+.todo-note-callout .border-notch-bottom {
+	left: 30px;
+}
+
+.todo-note-callout .border-callout-bottom {
+	padding: 10px;
+}
+
+.todoHeaderText,
+.receivedFilesHeaderText {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 11px;
+    padding: 3px 18px 3px 18px; 
+    border: #CCCCCC solid;
+    border-width:  0 1px 1px 1px;
+    display: inline-block;
+    -moz-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+#openTodos .todoHeaderText {
+    background-color: #E17000;
+}
+
+#doneTodos .todoHeaderText {
+    background-color: #669933;
+}
+
+.todoLessMoreLink{
+    font-weight: bold;
+    font-size: 11px;
+	float: right;
+}
+
+.receivedFilesHeaderText {
+    color: #333333;
+}
+
+.todoTitleText {
+    font-weight: bold;
+    color: #2A71D8;
+    font-size: 16px;
+}
+
+.todoTitleText:link:hover,
+.todoTitleText:visited:hover {
+	text-decoration: none;
+}
+
+.todoDescriptionText,
+.todoEmptyTableText {
+    color: #666666;
+    font-size: 14px;
+	width:100%;
+}
+
+.todoDescriptionText ul, 
+.taxIdModuleNotesBullet {
+    margin-left: 15px;
+	list-style-type: disc;
+}
+
+.todo-description { 
+	padding-top: 2px;
+}
+
+.todo-modulecontent {
+	margin-top: 20px;
+}
+
+.todoDescriptionTextPayDay {
+	float:left;
+	color: #666666;
+    font-size: 16px;
+	width:100%;
+	padding-top: 10px;
+	width: 100%;
+	font-weight: bold
+}
+
+.todoEmptyTableText {
+    padding-top: 10px;
+    display: block;
+}
+
+.todoReviewStatusText {
+    font-size: 14px;
+    color: #D87000;
+}
+
+.todoCheck {
+    background: url("../resources/images/Unchecked.gif") left top no-repeat;
+    height: 34px;
+    width: 34px;
+    padding: 0;
+    border: none;
+}
+
+.todoCheck:hover {
+    background-image: url("../resources/images/Checked.gif");
+}
+
+.todoTopSection {
+    text-align: right;
+}
+
+.todoTopSection a:link {
+    font-weight: normal;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.todoTopSectionLink img {
+    width: 16px;
+}
+
+.todoTopSectionLink span,
+.todoTopSectionLink img {
+    vertical-align: middle;
+    color: #333333;
+}
+
+.todoConfirmClosePopupButtons {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.todoConfirmClosePopupButtons .tableDefaultButton {
+    float: left;
+}
+
+.todoHelpTopic .helpWinPopup {
+    margin-left: 0;
+}
+
+.vbdAmountField {
+    width: 40px;
+}
+
+.embeddedModuleChildText {
+    padding-left: 20px;
+    display: block;
+    font-family: Arial;
+    font-size: 14px;
+    color: #333333;
+}
+
+.embeddedModuleChildText .contactUsLink a:hover {
+    font-weight: normal;
+}
+
+.textEntryModuleTextarea {
+    width: 300px; 
+    height: 38px; 
+    resize: none; 
+    overflow: hidden;
+}
+
+.enterEservicesPinModuleText {
+    width: 100px;
+    height: 15px;
+    resize: none;
+    overflow: hidden;
+}
+
+.textEntryModule .tableDefaultButton {
+    float: none;
+    padding: 0;
+}
+
+
+
+.taxIdModuleNotesTitleImportant {
+    color: #CC6600;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+.taxIdModuleNotesTitle {
+    color: #515151;
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+
+.taxIdModuleNotesLine {
+    font-size: 14px;
+}
+
+.taxIdModuleHeading {
+    color: #515151;
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 30px;
+    border-top-style: solid;
+    border-top-color: #FFFFFF;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #7CB2E1;
+}
+
+.taxIdModuleRow td {
+    padding-top: 25px;
+    vertical-align: top;
+    padding-left: 5px;
+}
+
+.taxIdModuleSUIRow td {
+    padding-top: 25px;
+    vertical-align: top;
+    padding-left: 5px;
+    border-bottom: 1px;
+    border-bottom-style: inset;
+    border-bottom-color: #E4E4E4;
+    padding-bottom: 15px;
+}
+
+.taxIdModuleSUINoteHelp {
+    margin-left: 0px;
+}
+
+.quickBooksPayrollImportModule .stepNumberCol {
+    display: inline-block;
+    width: 34px;
+    vertical-align: top;
+}
+
+.quickBooksPayrollImportModule .stepContentCol {
+    display: inline-block;
+    width: 496px;
+    padding-top: 9px;
+}
+
+.quickBooksPayrollImportModule .stepNumberBackground {
+    background: url('../resources/images/step_circle.png') repeat;
+    width: 34px;
+    height: 34px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.quickBooksPayrollImportModule .stepNumberText {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #6699CC;
+    font-weight: bold;
+}
+
+.quickBooksPayrollImportModule .stepText {
+    padding-left: 10px;
+}
+
+.quickBooksPayrollImportModule .subStepNumber {
+    display: inline-block;
+    width: 20px;
+    vertical-align: top;
+}
+
+.quickBooksPayrollImportModule .subStepText {
+    padding-left: 0px;
+    display: inline-block;
+    width: 455px;
+}
+
+.quickBooksPayrollImportModule .embeddedModuleChildText {
+    padding-bottom: 21px;
+}
+
+.historyUploadContent {
+	padding-top: 21px;
+    padding-bottom: 21px;
+}
+
+.historyUploadContent .expandHeader {
+    color: #666666;
+    font-size: 14px;
+	padding-bottom: 21px;
+}
+
+.historyUploadContent .stepNumberBackground {
+    background: url('../resources/images/step_circle.png');
+	background-repeat:no-repeat;
+    width: 34px;
+    height: 34px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.historyUploadContent .stepNumberText {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #6699CC;
+    font-weight: bold;
+}
+
+.historyUploadContent .stepHeader {
+    display:table-cell;
+	color: #666666;
+    font-size: 14px;
+	padding-top: 5px;
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+.historyUploadContent .stepMessage{
+	display: block;
+	color: #666666;
+    font-size: 14px;
+	padding-top: 5px;
+	padding-left: 45px;
+}
+
+.historyStepContent {
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/*----------------------------------------------------------------------------
+ *  Unscheduled Check Settings Global page (Lines from IFSP base.css 5615-5645)
+ *----------------------------------------------------------------------------*/
+#unscheduledCheckSettings {
+	margin-left: 10px;
+	width: 620px;
+}
+
+#unscheduledCheckSettings .selectDesc {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#unscheduledCheckSettings .deducDesc {
+	float: left;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#unscheduledCheckSettings .helpDiv {
+	display: inline;
+	float: left;
+}
+
+#unscheduledCheckSettings .spacer10{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#unscheduledCheckSettings .deductionsSelect {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: 10px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Bonus Check Settings page (Lines from IFSP base.css 5648-5744)
+ *----------------------------------------------------------------------------*/
+#bonusCheckSettings {
+	margin-left: 10px;
+	width: 620px;
+}
+
+#bonusCheckSettings .selectDesc {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#bonusCheckSettings #selectRow,#bonusCheckSettings .selectRow {
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+#bonusCheckSettings .empRow {
+    margin-left: 25px;
+}
+
+#bonusCheckSettings .desc,
+#bonusCheckSettings .descLabel {
+	float: left;
+	font-size: 13px;
+}
+
+#bonusCheckSettings .descLabel {
+	font-weight: bold;
+}
+
+#bonusCheckSettings .helpDiv {
+	display: inline;
+	float: left;
+}
+
+#bonusCheckSettings .spacer10{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#bonusCheckSettings .deductionsSelect {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: 10px;
+}
+
+#bonusCheckSettings #bonusTable .listTable {
+    border: 1px #CCCCCC solid;
+    padding-left: 5px;
+    width: 390px;
+}
+
+#bonusCheckSettings #bonusTable .listTable td.eeDisplayNameCol,
+#bonusCheckSettings #bonusTable .listTable th.eeDisplayNameColHdr {
+    text-align: left;
+    width: 200px;
+}
+
+#bonusCheckSettings #bonusTable .listTable td.rateCol,
+#bonusCheckSettings #bonusTable .listTable th.rateTableColHdr {
+    text-align: left;
+    width: 170px;    
+}
+
+#bonusCheckSettings #bonusTable .listTableCol {
+   text-align: left; 
+}
+
+#bonusCheckSettings #bonusTable .listTable td.eeCheckBox,
+#bonusCheckSettings #bonusTable .listTable th.eeCheckBox {
+    text-align: left;
+    width: 15px;
+}
+
+#bonusCheckSettings #bonusTable .eeSuppRateSelected {
+}
+
+#bonusCheckSettings #bonusTable .eeSuppRateNotSelected {
+	background-color: #EEEEEE;								/* Specifies "unchecked" table row */
+}
+
+#bonusCheckSettings input {
+	vertical-align: middle;
+}
+
+/*----------------------------------------------------------------------------
+ *  Credentials drop off (Lines from IFSP base.css 5732-5744)
+ *----------------------------------------------------------------------------*/
+.credInputLabelColumn {
+    width: 200px;
+	vertical-align: middle;
+}
+
+.credInputColumn {
+    width: 150px;
+	vertical-align: middle;
+}
+
+.credInputRow {
+    height: 35px;
+}
+
+.customerQuestion {
+	width: 450px;
+	margin-left:200px;
+	
+}
+
+
+.customerQuestionGrey{
+	color: grey;
+	padding-left: 200px;
+	margin-bottom: 20px;
+}
+
+
+.customerQuestionHelp {
+	display:inline;
+	width: 200px;
+	word-wrap: break-word;
+}
+.questionLabel {
+	margin-left : 0px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	vertical-align: middle;
+
+}
+
+.questionDropDown{
+	margin-bottom: 5px;
+	margin-left : 93px;
+}
+
+.questionDropDownMore {
+	margin-bottom: 5px;
+	margin-left : 83px;
+}
+.question2{
+	margin-left : 95px;
+}
+
+.answerLabel {
+	margin-left : 0px;
+}
+.answerValue{
+	width: 300px;
+	margin-left : 98px;
+	margin-top: 12px;
+}
+
+.answerValueMore{
+	width: 300px;
+	margin-left : 87px;
+	margin-top: 12px;
+}
+
+.answerValueGrey{
+	color: grey;
+}
+.questionButton {
+	margin-bottom: 50px;
+	margin-top: -5px;
+	color: #2B73DD;
+	padding: 0;
+	border: none;
+	background: none;
+}
+.questionImage {
+	margin-left:201px;
+	
+}
+
+
+
+/*----------------------------------------------------------------------------
+ *  Tax Records (Lines from IFSP base.css 5747-5773)
+ *----------------------------------------------------------------------------*/
+.taxRecordDiv .description {
+    margin-bottom: 20px;
+    padding-top: 5px
+}
+.taxRecordDiv .listTableCol {
+    padding-right: 1em;
+    text-align: left;
+}
+/** Align with year */
+.taxRecordDiv .taxRecordNameCol {
+    padding-left: 20px;
+}
+
+.taxRecordDiv .listTable .listTableHdr {					
+	padding-top: 8px;
+    padding-bottom: 8px;
+}
+.taxRecordDiv .tableHeader {
+    font-size: 1em;
+    color: #333;
+}
+/** TODO: Have consistent left padding. */
+#content.contentSingle {
+    padding-top: 20px;
+    padding-left: 15px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Company Level Pay Schedule (Lines from IFSP base.css 5778-5786)
+ *----------------------------------------------------------------------------*/
+.psTable th {
+    border-bottom: 2px solid #9EB9D0;
+	text-align: left;
+}
+
+.psTable td {
+    border-bottom: 1px dotted #000000;
+	padding: 5px 0 5px 0;
+	text-align: left;
+}
+
+.artype .iceSelOneRb td {
+    padding: 4px 0 4px 0;
+}
+
+/*----------------------------------------------------------------------------
+ *  Review company info ToDo page (Lines from IFSP base.css 5790-5813)
+ *----------------------------------------------------------------------------*/
+.reviewCompanyInfoheader {
+    margin-top: -25px;
+    margin-left: 40px;
+    width: 500px;
+}
+
+.reviewCompanyInfoContent {
+    margin-left: 40px;    
+    padding-top: 10px;
+}
+
+.reviewCompanyInfoLabel {
+    margin-top: 100px;
+}
+
+.reviewCompanyInfoValue {
+    padding-top: 10px;
+}
+
+.breadcrumb {
+    background-color: #ECF4FD;
+    height: 25px;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+
+/*----------------------------------------------------------------------------
+ *  Year end Rollover Messaging (Lines from IFSP base.css 5817-5824)
+ *----------------------------------------------------------------------------*/
+#yearEndMessage .closeoutSelector {
+    float: left;
+}
+
+#yearEndMessage .closeoutMessage {
+    float: left;
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------------------------
+ *  Year End Page and Banner styles (Lines from IFSP base.css 5828-6049)
+ *----------------------------------------------------------------------------*/
+.yearEndContentTitle {
+	font-family: BookmanoldStyle;
+	font-weight: bold;
+	font-size: 28px;
+	color: #666666;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+#yearEndContent .subTitle {
+	font-family: ArialMT;
+	font-size: 16px;
+	color: #333333;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+
+#yearEndContent #section {
+	width: 600px;
+	margin-left: 10px;
+	padding: 5px 0px 5px 0px;
+}
+
+#yearEndContent #main {
+	float: left;
+	width: 600px;
+}
+
+#yearEndContent #rightColSeperator {
+	float: left;
+	height: 250px;
+	width: 10px;
+	border-left: #E8E8E8 solid 1px;
+	margin-left: 60px;
+}
+
+#yearEndContent #rightContent {
+	float: left;
+	width: 190px;
+}
+
+#yearEndContent #complete {
+	margin-bottom: 10px;
+}
+
+#yearEndContent #complete .line {
+	border-top: #222222 solid 1px;
+}
+
+#yearEndContent #complete .content {
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	width: 80px;
+	padding: 2px;
+}
+
+#yearEndContent #section #dateSection {
+	float: left;
+	width: 50px;
+}
+
+#yearEndContent #section #contentSection {
+	float: left;
+	width: 550px;
+} 
+
+#yearEndContent .strongText {
+	font-weight: bold;
+}
+
+#yearEndContent #section .separator {
+	clear: both;
+	border-bottom: #333333 dotted 1px;
+}
+
+#yearEndContent #section #dateSection #month {
+	font-family: ArialMT;
+	font-size: 12px;
+	color: #666666;	
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#yearEndContent #section #dateSection #day {
+	font-family: "Times New Roman";
+	font-size: 26px;
+	color: #0099CC;
+	text-align: center;
+}
+
+#yearEndContent #section #contentSection #noteBox {
+	border: #333333 solid 1px;
+	padding: 5px;
+	height: auto;
+	width: 450px;
+	margin: 10px 0px 5px 0px;
+}
+
+#yearEndContent #section #contentSection #subContent {
+	margin-left: 25px;
+}
+
+#yearEndContent #section #contentSection #noteBox .label {
+	float: left;
+	font-family: ArialMT;
+	font-size: 12px;
+	color: #CC6600;
+	width: 30px;
+}
+
+#yearEndContent #section #contentSection #noteBox .content {
+	float: left;
+	width: 400px;
+}
+
+#yearEndContent #section #contentSection #title {
+	font-family: "Arial BoldMT";
+	font-size: 18px;
+	color: #666666;
+}
+
+#yearEndContent #section #contentSection #footerLinks {
+	font-weight: bold;
+	color: #2B73DD;
+	padding: 10px 0px 5px 0px;
+}
+
+#yearEndContent #section #contentSection #footerLinks .learn {
+	font-weight: bold;
+}
+
+#yearEndContent #rightContent #section {
+	width: 200px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#yearEndContent #rightContent #section #rightContentSection {
+	float: left;
+	width: 130px;
+} 
+
+#yearEndContent #rightContent #section #seperator {
+	float: left;
+	height: 40px;
+	width: 5px;
+	border-left: #D0D0D0 solid 1px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#yearEndContent #rightContent #rightTitle {
+	font-family: "Arial-BoldMT";
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+#yearEndContent #printDiv {
+	text-align: right;
+	font-size: 10px;
+	vertical-align: top;
+}
+
+#yearendBanner {
+	background: none;
+}
+
+.yearendBannerTitle {
+	font-family: "ArialMT";
+	font-size: 20px;
+	color: #666666;
+	margin-left: 25px;
+	padding-right: 5px;
+	float: left;
+}
+
+.yearendBannerContent {
+	font-family: "ArialMT";
+	font-size: 22px;
+	color: #666666;
+	float: left;
+}
+
+.businessProfileCol {
+	text-align: left;
+	padding: 5px 0 5px 10px;
+    width: 300px;
+    border: 1px dotted #CCCCCC;
+	border-width: 0 0 1px 0;
+}
+
+.classesListTable tbody {
+	 border-top: 2px solid #CCCCCC;
+}
+
+.classHelpLink {
+    display: inline-block;
+}
+
+.classHelpLinkEnd {
+	clear: both;
+}
+
+.classTextContent {
+    width: 600px;
+    display: inline-block;
+}
+
+.classRoundedBox {
+	position: relative;
+	color: #F9F9F9;
+	max-width: 300px;
+	margin: 0px;
+	margin-left: 11px;					/* left edge of image to content well */
+	padding-bottom: 10px;
+}
+
+/*----------------------------------------------------------------------------
+ *  AC Client List (Lines from IFSP base.css 6052-6087)
+ *----------------------------------------------------------------------------*/
+.clContent {
+    padding-top: 10px;
+}
+
+.clContent a:hover {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+#clientListDiv,
+#addNewClientDiv {
+    padding-left: 15px;
+}
+
+#clientListDiv .clientListTitle {
+     padding-top: 20px;
+     padding-bottom: 8px;
+     float: left;
+}
+
+#clientListDiv .noClient {
+    width: 487px;
+    display: inline-block;
+}
+
+/*----------------------------------------------------------------------------
+ *  Filter section (Lines from IFSP base.css 6077-6083)
+ *----------------------------------------------------------------------------*/
+#clientListDiv .filterCmdPanel {
+    font-size: 12px;
+    color: #000000;
+    float: right;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+#clientListDiv .label {
+    font-weight: normal;
+}
+
+/*----------------------------------------------------------------------------
+ *  Column Headers (Lines from IFSP base.css 6090-6094)
+ *----------------------------------------------------------------------------*/
+#clientListDiv .clDefaultColHdr {
+	text-align: left;
+	min-width: 90px;
+	padding: 0 5px 6px 30px;
+}
+
+/*----------------------------------------------------------------------------
+ *  Command Header - Clickable, Sortable headers (Lines from IFSP base.css 6097-6117)
+ *----------------------------------------------------------------------------*/
+#clientListDiv .iceCmdSrtHdr  {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+}
+
+#clientListDiv .clDefaultDataCol {
+    text-align: left;
+    padding: 0 5px 0 30px;
+}
+
+.clDefaultDataCol a {
+    font-weight: normal;
+}
+
+#addNewClientDiv .addNewClientTitle {
+     padding-top: 20px;
+     padding-bottom: 8px;
+     float: left;
+}
+
+/*----------------------------------------------------------------------------
+/*  AC add payroll
+ *----------------------------------------------------------------------------*/
+#addAcPayrollDiv {
+    padding-left: 15px;
+    padding-bottom: 10px
+}
+
+#addAcPayrollDiv .addPayrollTitle {
+     padding-top: 20px;
+     padding-bottom: 8px;
+     float: left;
+}
+
+#acAddPayrollForm .fieldLabel{
+    max-width: 150px;
+}
+
+/*----------------------------------------------------------------------------
+/*  Pay Tracking Entry Popup (classes, job costing)
+ *----------------------------------------------------------------------------*/
+#trackingPopup .popupRoundedBoxContent .title ,#confirmTrackingPopup .popupRoundedBoxContent .title,.sendFilesModule .popupRoundedBoxContent .title, .deleteCheckConfirmation .popupRoundedBoxContent .title{
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	border-bottom: 3px solid #7BB2E3;
+	padding: 0 5px 5px 0;
+	margin-bottom: 25px;
+}
+
+#trackingPopup .popupRoundedBoxContent .title,.sendFilesModule .popupRoundedBoxContent .title
+{
+	padding-left: 5px;
+	padding-bottom: 20px
+}
+
+#trackingPopup .contentDiv,#confirmTrackingPopup .popupRoundedBoxContent .title {
+	padding-left: 5px;
+}
+
+#confirmTrackingPopup .popupRoundedBoxContent .contentDiv .contentHeader,.sendFilesModule .popupRoundedBoxContent .contentDiv .contentHeader {
+	font-size: 13px;
+	font-weight: bold;
+	color: #333333;
+	padding: 0 25px 0 10px;
+	margin-bottom: 15px;
+	width: 500px;
+}
+.deleteCheckConfirmation .popupRoundedBoxContent .contentDiv .contentHeader {
+	font-size: 13px;
+	color: #333333;
+	padding: 0 25px 0 10px;
+	margin-bottom: 15px;
+	width: 500px;
+}
+
+#confirmTrackingPopup .popupRoundedBoxContent .contentDiv .contentText,.sendFilesModule .popupRoundedBoxContent .contentDiv .contentText,.deleteCheckConfirmation .popupRoundedBoxContent .contentDiv .contentText  {
+	padding: 0 25px 0 10px;
+	width: 500px;
+}
+
+#trackingPopup ul.tableCancelButton {
+	padding-left: 0;
+}
+
+#trackingPopup .ui-datatable .ui-header-column {
+	padding: 0;
+}
+
+#trackingPopup .ui-datatable th {
+	text-align: left;
+	padding-right: 10px;
+}
+
+#trackingPopup th.billableCol,
+#trackingPopup th.hoursCol {
+	text-align: center;
+}
+
+#trackingPopup th.amountCol {	
+	text-align: right;
+}
+
+/** Column contents. */
+#trackingPopup td.hoursCol {
+	text-align: center;
+}
+#trackingPopup td.amountCol {
+	text-align: right;
+}
+
+#trackingPopup td.customerJobCol,
+#trackingPopup td.serviceItemCol,
+#trackingPopup td.classCol,
+#trackingPopup td.payItemCol {
+	text-align: left;
+}
+
+#trackingPopup .notesCol,
+#trackingPopup .copyCol,
+#trackingPopup .removeCol {
+	vertical-align: middle;
+}
+
+#trackingPopup .removeCol {
+	width: 20px;
+}
+
+#trackingPopup .buttonLink {
+	display: inline-block;
+}
+
+#trackingPopup .removeCol .buttonLink {
+	margin-bottom: 2px;
+}
+
+#trackingPopup .notesExpansion {
+	text-align: left;
+}
+
+#trackingPopup .notesTitle {
+	display: block; 
+	padding: 5px 0 5px 0; 
+	font-weight: bold;
+}
+
+#trackingPopup .notesExpansion .tableDefaultButton {
+	float: none; 
+	display: inline-block;
+}
+
+#trackingPopup .selectMenu,
+#trackingPopup .payItemLastRow {
+	width: 125px;
+}
+
+#trackingPopup .popupRoundedBox {
+	max-width: 1250px;
+}
+
+#trackingPopup .ui-datatable tbody.ui-datatable-data > tr > td,
+#trackingPopup .ui-datatable tbody.ui-datatable-data-empty > tr > td {
+	padding: 4px 10px 4px 0;
+	border: none;
+}
+
+#trackingPopup .cmdPanel ,#confirmTrackingPopup .cmdPanel,.sendFilesModule .cmdPanel,.deleteCheckConfirmation .cmdPanel{
+	overflow: hidden;
+	padding: 10px 0 15px 0;
+	border-top: 1px #CCCCCC solid;
+    margin-top: 30px;
+}
+
+#trackingPopup .cmdPanel .tableDefaultButton,#confirmTrackingPopup .cmdPanel .tableDefaultButton,.sendFilesModule .cmdPanel .tableDefaultButton,.deleteCheckConfirmation .cmdPanel .tableDefaultButton,
+#trackingPopup .cmdPanel .tableDisabledDefaultButton {
+	padding-right: 5px;
+}
+
+#trackingPopup .cmdPanel .tableCancelButton,#confirmTrackingPopup .cmdPanel .tableCancelButton,.sendFilesModule .cmdPanel .tableCancelButton,.deleteCheckConfirmation .cmdPanel .tableCancelButton  {
+	padding-left: 5px;
+}
+
+#trackingPopup .addPayLine {
+	font-weight: normal;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 8px;
+}
+#trackingPopup .copyPayLines {
+	font-weight: normal;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 11px;
+	padding-left: 20px;
+	float:right;
+	
+}
+
+#trackingPopup .addPayLine span {
+	vertical-align: middle;
+	line-height: 14px;
+    margin-left: 0.5em;
+}
+
+#trackingPopup .hoursInput,
+#trackingPopup .hoursLastRow {
+	margin: 0;
+	width: 50px;
+	text-align: center;
+}
+
+#trackingPopup input:disabled {
+    color: #a8a8a8 /* lightGray */;
+}
+
+#trackingPopup .amountText,
+#trackingPopup .amountInput,
+#trackingPopup .amountLastRow {
+	margin: 0;
+	width: 75px;
+	text-align: right;
+	display: inline-block;
+}
+
+#trackingPopup .amountColContent {
+	display: inline-block;
+}
+ 
+#trackingPopup .amountText,
+#trackingPopup .amountLastRow {
+	padding: 1px 3px;
+}
+
+#trackingPopup .amountText {
+	padding: 3px 3px;
+	margin: 2px 0;
+}
+
+#trackingPopup .payItemLastRow {
+	text-align: right;
+}
+
+#trackingPopup .totalsLabel,
+#trackingPopup .totalHours,
+#trackingPopup .totalAmount {
+	font-weight: bold;
+}
+
+#trackingPopup .hoursLastRow {
+	padding: 0 3px;
+        margin-left: 10px;
+}
+  
+
+#trackingPopup .fieldMsgPadLeft {
+	padding-left: 20px;
+}
+
+#trackingPopup .lastRow {
+	position: absolute;
+	display: block;
+	margin-top: 15px;
+}
+
+#trackingPopup .ui-expanded-row .lastRow {
+	margin-top: 108px;
+}
+
+#trackingPopup table tbody.ui-datatable-data-empty td {
+	text-align: left;
+	padding: 5px 0 5px 0;
+}
+
+#trackingPopup .combobox {
+	margin: 2px 0;
+}
+
+#trackingPopup .emptyFieldsHelpLink {
+	margin: 30px 0 0 0;
+}
+
+#trackingPopup .nominalHoursWarning {
+	margin-right: 5px;
+}
+
+#trackingPopup .deleteAllButton li {
+	margin-left: 10px;
+}
+
+#trackingPopup .titleHelpLink {
+	margin-left: 5px;
+	float:left;
+}
+
+#trackingPopup .showRemainingSalary {
+	border-bottom: dotted 1px #CCCCCC;
+	padding-bottom: 30px; 
+}
+
+#trackingPopup .remainingSalaryInfo {
+	display: block;
+	margin-bottom: 19px; 
+}
+
+#trackingPopup .remainingSalaryText {
+	display: block;
+	width: 300px;
+	position: relative;
+	left: -175px;
+}
+
+#trackingPopup .paycheckHintsCheckbox {
+	display: inline-block;
+	padding: 5px 0 0 20px;
+}
+
+#trackingPopup .combobox-input{
+    text-overflow: ellipsis;
+}
+
+#trackingPopup .combobox-input-highlight{
+    	background-color: #E5F0FC;
+}
+
+#trackingPopup .totalPercentageError {
+	width: 300px; 
+	padding-top: 5px; 
+	text-align: right; 
+	float: right;
+}
+
+/*----------------------------------------------------------------------------
+/*  Email preferences
+ *----------------------------------------------------------------------------*/
+#acEditEmailPrefDiv .selectRadioTable td {
+	width: 100px;
+    text-align: center;
+}
+
+#acEditEmailPrefDiv .selectRadioTable table {
+	width: 100%;
+}
+
+.editEmailPrefTable{
+    table-layout: fixed;
+}
+
+.editEmailPrefTable tr {
+	height: 25px;
+}
+
+.editEmailPrefTable td {
+	padding-left: 5px;
+}
+
+.editEmailPrefSubHeader {
+     font-weight: bold;
+     font-family: Arial; 
+     font-size: 12px;
+     color: #333333;
+	 padding-top:5px;
+	 padding-left: 5px;
+	 text-align: left;
+}
+
+#editEmailPrefDiv .editEmailPrefTable td {
+	width: 300px;
+    padding-top: 5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+#editEmailPrefDiv .editEmailPrefTable tr {
+	height: 25px;
+    border-bottom: 1px dotted #CCCCCC;
+}
+
+/*
+ * Taxes&Form overview styles
+ */
+
+#finishSpinner {
+	width: 100%;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.7);
+    display:none;
+    position: absolute;
+    left:0px;
+    top:0px;
+    z-index: 9999;
+}
+
+#finishSpinnerInner {
+    border: solid 10px white;
+	width: 400px;
+    height: 200px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left:-200px;
+    margin-top:-100px;
+    z-index: 9999;
+}
+
+
+/*
+ * Taxes&Form overview styles
+ */
+
+ div#taxes {
+	float: left;
+	width: 40%;
+}
+
+ div#forms {
+	float: right;
+	margin-right: 20px;
+	width: 55%;
+}
+
+ div#taxes span,  div#taxes a,  div#forms td,  div#forms td a {
+	font-size: 14px;
+}
+
+ div#taxes a {
+	font-weight: normal;
+}
+
+ #paytaxesSection {
+	margin-bottom: 20px;
+}
+
+ .formList {
+	padding-left: 10px;
+}
+
+ .formList .normal {
+	font-weight: normal;
+}
+
+ .formSection {
+	margin-bottom: 20px;
+	margin-left: 15px;
+}
+
+/*
+ * payTaxes detail and approve taxes styles
+ */
+
+ .taxDetailHeader {
+	display: block;
+	line-height: 20px;
+	margin-top: 10px;
+}
+
+
+ .taxDetailSectionHeader {
+	margin-bottom: 20px;
+	margin-left: 13px;
+	width: 100%;
+}
+
+ .taxDetailSectionHeader .leftSection {
+	float: left;
+	width: 400px;
+}
+
+ .taxDetailSectionHeader .rightSection {
+	float: right;
+	margin-right: 200px;
+}
+
+ .taxDetailBottomSection {
+	margin-top: 40px;
+	margin-left: 13px;
+}
+
+ .paymentSelection select {
+	font-size: 1.4rem !important;
+}
+
+ .taxDetail .money-column {
+	width: 140px;
+}
+
+ .taxDetail .adjustment {
+	background-color: #ebebeb;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+ .paymentSelection {
+	width: 100px;
+}
+
+ .paymentCalendar {
+	margin-left: 10px;
+}
+
+ table.selectPaymentTypeTable label {
+	font-weight: bold;
+}
+
+#selectPaymentTypeDiv {
+	margin-bottom: 25px;
+	margin-left: 13px;
+	width: 400px;
+}
+
+ .checkAndNoteSection {
+	position: relative;
+	left: 0px;
+	right: 0px;
+	width: auto;
+	top: 100px;
+
+}
+
+body table.selectPaymentTypeTable {
+	width: 400px;
+}
+
+body table.selectPaymentTypeTable td:first-child {
+	margin-right: 20px;
+}
+
+body .select.top.taxPaymentDetailComboButtonLong {
+	min-width: 180px;
+}
+
+body .select.top.taxPaymentDetailComboButtonShort {
+	width: 115px;
+}
+
+body .select.bottom.savePreviewComboBtn {
+	width: 155px;
+}
+
+body .select.bottom.savePreviewComboBtn.fr {
+	width: 195px;
+}
+
+body .select.bottom.savePreviewComboBtn span {
+	display: inline;
+}
+
+body .select.bottom.submitComboBtn {
+	width: 130px;
+}
+
+body .select.bottom.submitComboBtn.fr {
+	width: 195px;
+}
+
+body.harmony #approveAction {
+	width: 170px;
+}
+
+/*end payTaxes detail styles*/
+
+/*
+ * payTaxes page styles
+ */
+
+body tr.section-empty + tr {
+	display: none !important;
+}
+
+body #taxPaymentDues {
+	margin-bottom: 20px;
+}
+
+body #taxPaymentDues .notes{
+	margin-top: 20px;
+}
+
+body .payTaxesBlockerPopupButtons {
+	padding-bottom: 10px;
+}
+
+body .blocker-dialog-title {
+	text-align: left;
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 18px;
+}
+body div.blocker-dialog-title, 
+body .dialogContainer div.title{
+    border-bottom: 2px solid #7BB2E3;
+    padding-bottom: 5px;
+}
+
+body .dialogContainer div.title{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+body .blocker-dialog-body {
+	text-align: left;
+}
+
+body .listTableTaxPayment {
+	padding: 0px !important;
+}
+
+body .editPaymentLabel {
+	text-align: right;
+	padding-right: 10px;
+}
+
+body .editPaymentTbl .table-cell{
+	padding-bottom: 5px;
+}
+
+/*end pay taxes*/
+
+/*
+ * forms page styles
+ */
+body .formCategoryFootNote {
+	margin-top: 10px;
+}
+
+body .formCategoryRow {
+	-moz-box-shadow: inset 0 -1px #e3eaf3;
+	-webkit-box-shadow: inset 0 -1px #e3eaf3;
+	box-shadow: inset 0 -1px #e3eaf3;
+	border-top: 4px solid #f1f1f5;
+	border-bottom: 1px solid #f1f1f5;
+	color: #393939;
+	background-color: #fAfAfA;
+}
+
+body .formCategoryFormCell {
+	padding-right: 10px;
+	background: url('../resources/images/nav-forward-icon.png') right center no-repeat;
+	text-align: right;
+	padding-left: 20px;
+	margin-right: 20px;
+	padding-right: 15px;
+}
+
+body .formCategoryFootNote {
+	display: inline-block; margin-right: 10px;
+}
+
+body .form-cat-table-layout {
+	width: 100%;
+}
+
+body .form-cat-table-cell {
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+body .formWarningOrBlockerSection {
+	border: 1px solid red;
+	border-radius: 2px;
+	padding: 10px;
+}
+
+body .retirementCheckbox .table-cell {
+	padding:10px;
+}
+
+body .formButton {
+	width: 90px;
+	text-align: center;
+}
+
+/*end forms*/
+
+/*historical time worked confirmation*/
+body .confirmMessage {
+	width: 720px;
+	margin-bottom: 10px;
+}
+
+body .histTimeWorked .table-cell {
+	padding-bottom: 5px;
+}
+/*END historical time worked confirmation*/
+
+/*record local taxes list*/
+.editPaymentListDateFilter .table-cell {
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+/*END record local taxes list*/
+
+/*-- Export Preferences --*/
+
+.exportWizardSubsectionTitle {
+	font-family: Arial;
+	font-size: 12px;
+	color: #333333;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    display: block;
+    width: 100%;
+    margin: 10px 0 10px -5px;
+}
+
+.exportWizardSection .exportWizardSubsectionTitle {
+    font-weight: bold;
+	padding-bottom: 5px;
+	padding-top: 5px;
+    padding-left: 10px;
+    display: block;
+    width: 100%;
+	margin: 10px 0 10px 10px;
+}
+
+.exportWizardSection .helpWinPopup {
+    margin-left: 0px;
+}
+
+#exportWizardContent {
+	margin: 0 0 0 10px;
+}
+
+#exportWizardContent .exportWizardPageTitle {
+	font-size: 18px; 
+	font-weight: bold; 
+	display: inline-block;
+	margin: 20px 0 20px 0; 
+}
+
+#exportWizardContent .exportWizardBreadcrumb {
+	margin: 0 0 15px 0;
+}
+
+#exportWizardContent .exportWizardSection,
+#exportWizardContent .exportWizardNumberedSection {
+	padding: 15px 0 0 0;
+}
+
+#exportWizardContent .exportWizardNumberedSection .exportWizardSectionNumber {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#exportWizardContent .exportWizardNumberedSection .exportWizardSection {
+	display: inline-block;
+	padding: 0;
+}
+
+#exportWizardContent .exportWizardSectionTitle {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#exportWizardContent .exportWizardSectionContent {
+	margin: 10px 0 0 0;
+}
+
+#exportWizardContent #cmdPanel {
+	border-top: solid 1px #CCCCCC;
+	padding: 15px 0 0 0;
+	margin: 40px 0 0 0;
+}
+
+#exportWizardContent #cmdPanel .tableCancelButton {
+	display: inline-block;
+	padding: 0 5px 0 0;
+}
+
+#exportWizardContent .accountSelect .combobox-input {
+        height: 22px;     /* As per spec it should be 28 pixels. Here 22px is specified because padding and border are adding another 6 pixels to combobox, so total 28px (22px + 6px) */
+	width: 400px;
+	text-overflow: ellipsis;
+}
+#exportWizardContent .accountInput {
+	width: 400px;
+}
+
+/* Support older browsers without placeholder support. */
+#exportWizardContent span.combobox input.combobox-input.placeholder {
+	font-style: italic;
+}
+/* Support browsers who support placeholder attribute natively. */
+#exportWizardContent span.combobox input.combobox-input::-webkit-input-placeholder { font-style: italic; }
+#exportWizardContent span.combobox input.combobox-input::-moz-placeholder { font-style: italic; } /* firefox 19+ */
+#exportWizardContent span.combobox input.combobox-input:-ms-input-placeholder { font-style: italic; } /* ie */
+#exportWizardContent span.combobox input.combobox-input:-moz-placeholder { font-style: italic; }
+
+/* Custom no match UI. */
+#exportWizardContent .addItemToAccountQuestion {
+    display: block;
+}
+#exportWizardContent .accountFormatReminder {
+    display: block;
+    margin: 1rem 0;
+}
+#exportWizardContent .noAccountsList {
+    color: #666666;
+    display: block;
+    list-style: disc;
+    margin-top: 1em;
+    min-width: 300px;
+}
+#exportWizardContent ol.noAccountsList {
+    list-style: decimal;
+}
+#exportWizardContent .noAccountsList li {
+	margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+#exportWizardContent .combobox-nomatch {
+    padding: 8px;
+}
+#exportWizardContent hr.newAccountButtonsDivider {
+    margin: 1rem 0;
+}
+	    
+#exportWizardContent .prefsTable {
+	margin: 10px 0 10px 18px;
+}
+
+#exportWizardContent .prefsTable td {
+	text-align: left;
+	border: none;
+}
+
+#exportWizardContent .prefsTable td.nameCol,
+#exportWizardContent .prefNameLabel {
+	width: 135px;
+	padding: 8px 10px 8px 0;
+}
+
+#exportWizardContent .prefsTable .prefNameLabel {
+	padding: 0;
+}
+
+#exportWizardContent .prefsTable td.accountCol {
+	padding: 8px 0;
+}
+
+#exportWizardContent .prefNameLabel {
+	font-weight: bold;
+}
+
+#exportWizardContent .contribByEmployeeTable td.nameCol .prefNameLabel
+{
+    font-weight: normal;
+}
+
+#exportWizardContent .categorizationSection {
+	display: block;
+
+}
+
+/*************
+contribution page
+***************/
+#exportWizardContent .contribByEmployeeTable {
+	margin: 10px 0 10px 18px;
+}
+#exportWizardContent .contribByEmployeeTable tr {
+	height: 25px;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+#exportWizardContent .contribByEmployeeTable td {
+	text-align: left;
+	border: none;
+}
+
+#exportWizardContent .contribByEmployeeTable td.nameCol,
+#exportWizardContent .prefNameLabel {
+	width: 115px;
+	padding: 4px 10px 4px 0;
+}
+
+#exportWizardContent .contribByEmployeeTable .prefNameLabel {
+	padding: 0;
+}
+
+#exportWizardContent .contribByEmployeeTable td.accountCol {
+	padding: 4px 0;
+}
+
+/*************
+wizard review page
+***************/
+#exportWizardContent .reviewPrefTable{
+	table-layout: fixed;
+	width: 700px;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+#exportWizardContent .reviewPrefTable tr {
+	height: 25px;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+.reviewPrefTable .section-header {
+	background-color: #E2EEF8;
+	text-align: left;
+	padding-left: 3px;
+	font-weight: bold
+}
+.reviewPrefTable .ui-widget-header {
+	text-align: left;
+}
+
+#exportWizardContent .reviewPrefTable td {
+	padding-left: 5px;
+	width: 300px;
+	padding-top: 0px 10px;
+	overflow-wrap: break-word;
+	word-wrap: break-word; /* Internet Exporer 5.5+ */
+	vertical-align: middle;
+	border-left: 1px dotted rgb(204, 204, 204);
+	border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+#exportWizardContent .reviewPrefSubHeader {
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 12px;
+	color: #333333;
+}
+#exportWizardContent .exportError {
+    position: relative;
+    top: 2px;
+}
+
+/*-- END -- Export Preferences --*/
+
+/*-- Export Setup --*/
+
+#exportQuickBooksSetup .manualWarning .cmdPanel {
+	overflow: hidden;
+	padding-top: 15px;
+	border-top: 1px solid #CCCCCC;
+	margin: 15px 5px 0 5px;
+}
+
+#exportQuickBooksSetup .manualWarning .tableCancelButton {
+	float: left;
+	padding: 0;
+	margin-left: 5px;
+}
+
+#exportQuickBooksSetup .manualWarning .tableDefaultButton {
+	margin-right: 5px;
+}
+
+#exportQuickBooksSetup .manualWarning .popupTitle {
+	border-bottom: solid 2px #7BB2E3;
+	padding-bottom: 10px;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#exportQuickBooksSetup .manualWarning .popupTitle .titleText {
+	margin-left: 5px;
+}
+
+#exportQuickBooksSetup .manualWarning .contentDiv .contentText {
+	padding: 0 5px;
+	display: inline-block;
+}
+
+#lightbulbtip .infoRoundedBox .lightbulbtip{
+    width: 766px;
+}
+.errorRoundedBoxContent .message .exportErrorMsg, 
+.infoRoundedBoxContent .message .exportErrorMsg{
+    width:199px;
+    display: inline-block;
+}
+.exportErrorBox .errorRoundedBoxContent .messageText{
+    width: 199px;
+}
+/*-- END -- Export Setup --*/
+
+/*-- prorate salary non jcs--*/
+
+#prorateJcs{
+
+}
+
+#prorateNonjcs .popupRoundedBoxContent .title{
+	padding-left: 5px;
+	padding-bottom: 20px
+}
+
+#prorateNonjcs .contentDiv{
+	padding-left: 5px;
+}
+#prorateNonjcs ul.tableCancelButton {
+	padding-left: 0;
+}
+
+
+#prorateNonjcs .popupRoundedBox {
+	max-width: 950px;
+}
+
+
+#prorateNonjcs .separator{
+	border-top: 1px solid #CCCCCC;
+
+}
+
+#prorateNonjcs .subsectionTitle{
+	margin-bottom: 10px;
+}
+
+#prorateNonjcs .hoursRow{
+
+	display: block;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align:center;
+}
+
+#prorateNonjcs .fieldTitle{
+	margin-right: 5px;
+	text-align: right;
+	display: inline-block;
+	min-width : 150px;
+	width: 150px;
+
+}
+
+#prorateNonjcs .fieldInput{
+	display : inline-block;
+	min-width: 160px;
+	width: 160px;
+	text-align: left;
+	margin-left: 31px;
+}
+
+#prorateNonjcs .unpaidHoursInput{
+	display : inline-block;
+	min-width: 160px;
+	width: 160px;
+	text-align: left;
+}
+
+#prorateNonjcs .cmdPanel 
+{
+	overflow: hidden;
+	padding: 10px 0 15px 0;
+	border-top: 1px #CCCCCC solid;
+    margin-top: 30px;
+}
+
+#prorateNonjcs .cmdPanel .tableDefaultButton,
+
+#prorateNonjcs .cmdPanel .tableDisabledDefaultButton {
+	padding-right: 5px;
+}
+
+#prorateNonjcs .cmdPanel .tableCancelButton{
+	padding-left: 5px;
+}
+
+#prorateNonjcs .hoursInput{
+	margin: 0;
+	width: 50px;
+	text-align: center;
+}
+
+#prorateNonjcs input:disabled {
+    color: #a8a8a8 /* lightGray */;
+}
+
+#prorateNonjcs .rateOutput{
+	color:#999999;
+	font-style: italic; 
+}
+
+#prorateNonjcs .dash{
+	margin-right:4px; 
+	font-weight:bold;
+}
+
+#prorateNonjcs .multiplyX{
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+#prorateNonjcs .totalHoursEnhanced{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+
+#prorateNonjcs .nominalHoursWarning {
+	margin-right: 5px;
+}
+
+#prorateJcs .popupRoundedBoxContent .title
+{
+	padding-left: 5px;
+	padding-bottom: 20px
+}
+
+#prorateJcs .contentDiv{
+	padding-left: 5px;
+}
+
+#prorateJcs .popupRoundedBox {
+	max-width: 700px;
+}
+
+
+#prorateJcs .separator{
+	border-top: 1px solid #CCCCCC;
+	margin-bottom: 3px;
+	line-height: 3px;
+}
+
+
+#prorateJcs .subsectionTitle{
+	margin-bottom: 5px;
+}
+
+#prorateJcs .hoursRow{
+	padding-left: 5px;
+	display: block;
+	margin-bottom: 3px;
+	text-align:center;
+}
+
+#prorateJcs .fieldTitle{
+	margin-right: 10px;
+	text-align:right;
+	display: inline-block;
+	width: 130px;
+}
+
+#prorateJcs .fieldInput{
+	margin-left: 10px;
+	display: inline-block;		
+	width: 100px;
+}
+
+
+#prorateJcs .unPaidfieldInput{
+	margin-left: 5px;
+	display: inline-block;		
+	width: 100px;
+}
+
+#prorateJcs .hoursInput{
+	margin: 0;
+	width: 50px;
+	text-align: center;
+}
+
+#prorateJcs input:disabled {
+    color: #a8a8a8 /* lightGray */;
+}
+
+
+/**-- end of prorate sal jcs --**/
+
+.entercomp{
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+.paydaytableBorder{
+	border-top: 3px solid #7BB2E3;
+}
+
+#checkPrintingReport .listTable{
+	min-width: 800px; 
+	width:auto; 
+	max-width: 100%;
+}
+#checkPrintingReport .listTable table{
+	border-bottom: 2px solid #CCCCCC;
+}
+
+#checkPrintingReport .listTable td.deletePaycheckNoBorderRightAlignNoPadding{
+	border:0px;
+	text-align: right;
+	padding:0px
+}
+#checkPrintingReport .selectAllColumnHeader .ui-header-column {
+	padding:0px
+}
+#checkPrintingReport .listTable td.deletePaycheckNoBorderLeftAlign{
+	border:0px;
+}
+#checkPrintingReport .listTable td.deletePaycheckNoBorderRightAlign{
+	border:0px;
+	text-align: right;
+}
+#checkPrintingReport .listTable td.deletePaycheckNoBorderCenterAlign{
+	border:0px;
+	text-align: center;
+}
+#checkPrintingReport .listTable tr{
+	border-bottom:1px dotted #CCCCCC;
+	height: 37px;
+}
+#checkPrintingReport .listTable th{
+	border-bottom: 2px solid #CCCCCC;
+	text-align:left;
+}
+
+#checkPrintingReport .listTable td{
+	text-align:left;
+}
+
+#checkPrintingReport .listTable td.eePayDateCol {
+	/*padding-left:20px*/
+}
+#checkPrintingReport .listTable th.deletePaycheckCenterAlign{
+	text-align: center;
+	width:20px;
+}
+#checkPrintingReport .listTable td.deletePaycheckCenterAlign{
+	text-align: center;
+	width:20px;
+	vertical-align: middle;
+}
+#checkPrintingReport .listTable td{
+	border:0px;
+	vertical-align: middle;
+}
+#checkPrintingReport .assistantIconList {
+	text-align:right;
+	padding-right: 20px;
+}
+
+#checkPrintingReport .assistantIcons .paycheckListGearIcon{
+	background-position: 0px -1368px;
+	background-size: 72px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+}
+
+#checkPrintingReport .paycheckListGearPopover:before{
+	display: none;
+}
+
+#checkPrintingReport .paycheckListGearContent{
+	white-space: nowrap;
+}
+
+.italicGray{
+	font-style: italic;color: grey
+}
+
+#taxPaymentContainer .taxBankInfo{
+	padding-bottom:10px;
+}
+
+/*----------------------------------------------------------------------------
+ *  VBD todo module (both ibav and vbd)
+ *----------------------------------------------------------------------------*/
+
+.bold-text{
+    font-weight: bold;
+}
+
+.round-corner-6px{
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border:1px solid #CDCDCD;
+    background-color:#EEEEEE;
+}
+.ConfirmBankAccountToDo{
+    padding-top:15px;
+    float:left;
+    width:520px;
+    padding-left:7px;
+    padding-bottom:15px;
+}
+.ConfirmBankAccountToDo .heading{
+    font-weight:bold;
+    clear:both;
+    padding-left:15px;
+}
+.ConfirmBankAccountToDo .icons{
+    display: block; 
+    padding-left: 1px;
+    float:left;
+}
+.ConfirmBankAccountToDo .module{
+    float:left;
+    padding-left:15px;
+}
+
+.ConfirmBankAccountToDo .module .description{
+    font-size:11px;
+}
+
+.ConfirmBankAccountToDo .module .separator{
+    border-right:1px solid #cdcdcd;
+    padding-right:10px;
+}
+
+.ConfirmBankAccountToDo .module .descriptionBox{
+    float:left;
+    padding-left:8px;
+}
+
+.vbdPanelPopup{
+    width: 440px;
+}
+.vbdPanelPopup .vbdPanelPopupBody{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.vbdPanelPopup .title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    border-bottom: 3px solid #7BB2E3;
+    padding: 0 5px 13px 0px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 440px;
+}
+.vbdPanelPopup .contentDiv{
+    margin-left: 10px;
+}
+
+.vbdPanelPopup .cmdPanel{
+    overflow: hidden;
+    padding: 10px 0 15px 0;
+    border-top: 1px #CCCCCC solid;
+    margin-top: 30px;
+}
+.vbdPanelPopup ul.tableCancelButton li input{
+    background: url("../resources/images/button_standardRight.png") no-repeat right center;
+    font-weight: normal;
+    color: #333333;
+    text-decoration: none;
+}
+#vbdPopup .errorMsg .messageText {
+    width: 378px;
+    padding-left: 3px;
+}
+
+.ibavPanelPopup{
+    font-family: Arial;
+}
+.ibavPanelPopup .ibavPanelPopupBody{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.ibavPanelPopup .title{
+    border-bottom: 3px solid #7BB2E3;
+    padding: 0 5px 13px 0px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 590px;
+}
+.ibavPanelPopup .title .heading{
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    padding-left:4px;
+}
+.ibavPanelPopup .contentDiv{
+    margin-left: 10px;
+}
+
+.ibavPanelPopup .cmdPanel{
+    overflow: hidden;
+    padding: 10px 0 15px 0;
+    border-top: 1px #CCCCCC solid;
+    margin-top: 30px;
+}
+.ibavPanelPopup ul.tableCancelButton li input{
+    background: url("../resources/images/button_standardRight.png") no-repeat right center;
+    font-weight: normal;
+    color: #333333;
+    text-decoration: none;
+}
+.ibavPanelPopup .selectRadioTable td {
+    padding-bottom: 7px;
+}
+
+.ibavPanelPopup .message{
+    width:540px;
+}
+.ibavPanelPopup .privacyLink label, .ibavPanelPopup .privacyLink a {
+    font-family: Arial;
+    font-size: 10px; 
+    font-weight: bold;
+    color: #999999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ibavPanelPopup .homeLink {
+    float:left;
+}
+.ibavPanelPopup .homeLink label, .ibavPanelPopup .homeLink a {
+    font-family: Arial;
+    font-size: 11px; 
+    color: #B4B4B4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ibavPanelPopup .safeLink {
+    float:right;
+    font-size: 9px;
+}
+
+.ibavPanelPopup .errorMsg .messageText {
+    width: 530px;
+    padding-left: 3px;
+}
+
+.bankTTTitle{
+    font-size:25px;
+    font-weight: bold;
+}
+
+.bankTTcontent{
+    padding-top:20px;
+    width:500px;
+}
+.bankTTFont{
+    font-weight: normal;
+    font-family: Arial;
+    font-size: 14px;   
+}
+.bankTTTopDiv{
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 50px
+}
+
+.bankTTDoneBtn{
+    padding-top: 40px;
+    width:500px;
+}
+
+.bankTTbutton{
+    padding-top: 40px;
+    padding-left: 120px;
+}
+.bankTTSaveInfo{
+    padding:35px 25px;
+    width:500px;
+}
+
+.bankTTReenterInfo{
+   font-weight:normal;
+   text-decoration: none 
+}
+
+.yeleft {  
+    width: 50%;
+   /* background: url("../resources/images/divider.gif") repeat-y center left;  */
+}
+
+
+.yeleftcontent { 
+    padding-left: 20px;
+    padding-right: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    display: inline-block;
+}
+
+.yemiddle {
+    width: 5%;   
+     padding-top: 0px;
+     background: url("../resources/images/divider.gif") repeat-y center ;   
+}
+
+.roundcornordiv {
+    border: 1px solid #cccccc;
+    /* 
+    background:#dddddd; 
+    border-radius:25px;
+    */
+	display: table;
+    width: 621px;   
+}
+
+ 
+
+.yectableheader {
+    border-top: 2px solid #2A71D8 ;
+    border-bottom: 1px solid #2A71D8 ; 
+    background-color: #BFE5FF;
+    font: 14px bold;
+    height: 10px;
+   font-family: Arial, Helvetica, sans-serif;
+    width:auto;
+    /* 
+    padding: 20px 20px 20px 20px ; 
+    background:#dddddd; 
+    border-radius:25px;
+    */ 
+}
+
+.yeright {
+    width: 50%;  
+    /* background: url("../resources/images/divider.gif") repeat-y center right;   */
+} 
+
+.yerightcontent {
+    padding-left: 10px;
+    padding-right: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    display: inline-block; 
+}
+
+.yecontent {
+    padding-left: 10px;
+    padding-right: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    display: inline-block; 
+    font-family: Arial, Helvetica, sans-serif;
+} 
+.spancontent {
+    padding-left: 20px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 10px;
+    width: auto;
+    display: inline-block;  
+}
+
+.yetable {
+    border-bottom: #333333;
+    border-top:  #333333;
+    border-left: #333333;
+    border-right: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 95%;
+     
+}
+
+.yectitle {
+    	font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	padding-top: 0px;
+	padding-bottom: 9px;
+        color: #333333;
+} 
+
+.yecdatetitle {
+    padding-bottom: 3px; 
+    font-weight: bold;
+}
+
+.yecdivider {
+    line-height: 48px;
+}
+
+
+#yecsectiontable {
+    width: 100%;
+    font-family: Arial;
+}
+
+#yecsectiontable th {
+        font-family: Arial;
+	font-weight: bold; 
+	color: #333333;
+	text-align: left;
+        vertical-align: central; 
+	padding-top: 11px; 
+	padding-bottom: 4px;
+	padding-left: 15px; 
+        border-top: 2px solid #2A71D8 ;
+        border-bottom: 0px none #7CB2E1 ; 
+        background-color: #E2EEF8;
+        font: 14px bold; 
+        height: 20px;
+        width:auto; 
+}
+  
+#yectablehead {
+        font-family: Arials;
+	font-weight: bold; 
+	color: #333333;
+	text-align: left;
+        vertical-align: central; 
+	padding-top: 11px; 
+	padding-bottom: 4px;
+	padding-left: 15px; 
+        border-top: 2px solid #2A71D8 ;
+        border-bottom: 0px none #7CB2E1 ; 
+        background-color: #E2EEF8;
+        font: 14px bold; 
+        height: 20px;
+        width:auto; 
+}
+ 
+ 
+#yecsectiontable tr { 
+	color: #333333; 
+        vertical-align: central;    
+        padding-left: 15px; 
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 4px;   
+        border-bottom: 1px dotted #666666 ;  
+        font: 12px bold;
+        min-height: 30px; 
+}
+
+#yecsectiontable td { 
+	color: #333333; 
+        vertical-align: central; 
+        text-align: left;
+        padding-left: 15px; 
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 4px;  
+        font: 12px; 
+        font-family: Arial;
+}
+
+#yecsectiontable #yeclabel {  
+        font-family: Arial;  
+        font-weight: bold;
+}
+
+#yecsectiontable td #yecdescription {  
+        font-family: Arial;
+        width: auto;
+}
+
+#yecsectiontable #sub { 
+        width: 100%;
+	color: #333333; 
+        vertical-align: central; 
+        padding-left: 15px; 
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 4px; 
+	white-space: nowrap;  
+        font: 14px bold; 
+        font-family: Arial;
+}
+
+#yecsectiontable .multistate {
+        /* color: #333333; */
+        vertical-align: central; 
+        /* padding-left: 35px; */
+	padding-top: 8px;
+	/*padding-right: 8px; */
+	padding-bottom: 10px;  
+        font: 12px ;    
+        /*background-color: #F0F0F8; */
+         width: auto;
+         font-family: Arial;
+}
+
+#yecsectiontable #multistate  #lastRow tr { 
+        border-bottom: none;  
+        font: 14px bold;
+        min-height: 25px;  
+}
+
+
+.yecpagesubtitle {
+        font-family: Arial;
+        font-size: 12px; 
+	padding-bottom: 9px;
+        color: #333333;   
+}
+
+.yecpagetitle {
+        font-size: 14px; 
+	font-weight: bold;
+	padding-top: 20px;
+	padding-bottom: 9px;
+        color: #333333;   
+}
+
+.ratenoticeText{
+	padding: 15px 0px 0px 7px; 
+}
+
+.yePrepareEmailDiv {
+	padding: 0px 0px 15px 0px;
+}
+
+.yePrepareSubTitle{
+	padding: 12px 0px 0px 0px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 12px;
+	color: #333333;
+}
+
+.yePrepareContent{
+	font-family: Arial;
+	font-size: 12px; 
+	padding: 0px 5px 0px 1px;
+}
+
+.yePrepareNoChangesDesc{
+	font-family: Arial;
+	font-size: 12px;
+	color: #666666;
+	padding: 0px 5px 0px 1px;
+	font-style:italic;
+}
+
+.yePrepareSubTitle{
+	font-family: Arial;
+}
+
+.yePrepareNew{
+	font-family: Helveticaneue-CondensedBold;
+	font-size: 10px;
+	color: #cc0000;
+}
+
+.yePrepareFaxtext{
+	font-size:12px;
+	font-weight: bold;
+}
+
+.yecbannertitle {
+    font-size: 14px; 
+    font-family: Arial;
+    font-weight: bold; 
+    color: #000000;
+    padding-bottom: 6px; 
+    vertical-align: middle;
+}
+
+.yecline {
+    font-size: 12px; 
+    font-family: Arial; 
+    color: #000000;
+    padding-bottom: 2px; 
+}
+
+.yecdatesectiontitle { 
+    font-size: 16px; 
+    font-family: Arial; 
+    color: #333333; 
+    padding-bottom: 3px; 
+    font-weight: bold; 
+    padding-left: 15px;	
+    
+}
+
+.yeNoticeLinks{
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.yePrepareNoChangesSection{
+	margin-top:11px;
+	line-height:1px;
+}
+
+.yePrepareDescription{
+	padding-top: 15px;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.yePayrollActivitiesSection {
+	display: inline-block;
+	width: 49%;
+}
+
+.yePayrollActivitiesSection .border-callout {
+	border-top-width: 0;
+	border-bottom-width: 0;
+	border-left-width: 0;
+	border-right-width: 2px;
+}
+
+.yePayrollActivitiesSection .callout .notch-right, .yePayrollActivitiesSection .callout .border-notch-right {
+	border-top: 21px solid transparent;
+	border-bottom: 21px solid transparent;
+	top: 28px;
+}
+
+.yePayrollActivitiesSection .border-callout .border-notch-right {
+	border-left-width: 15px;
+	right: -15px;
+}
+
+.yePayrollActivitiesSection .callout .notch-right {
+	right: -12px;
+	border-left-width: 15px;
+}
+
+.yePayrollActivitiesSection .callout-notch-background-color {
+	border-color: white;
+}
+
+.yeW2Section {
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+}
+
+.yeW2SectionOnly,
+.yeW2SectionOnly table {
+	width: 100%;
+}
+
+.yecFAQ{
+	margin-left:0px;
+}
+			
+.topcenterline { 
+    background: url("../resources/images/divider.gif") repeat-y top center;   
+    height: 10px; 
+}
+
+.rightarrow {
+    width: 0; 
+    height: 0; 
+    margin-left: 15px;
+    margin-right: 5px;
+    border-top: 15px transparent dashed;
+    border-bottom: 15px transparent solid;  
+    border-left: 15px solid #cccccc;  
+}
+
+.bottomcenterline {
+    background: url("../resources/images/divider.gif") repeat-y top center;    
+    height: 100%
+}
+
+#asyncIcon{
+	float:left;
+}
+
+#asyncSuccessIcon{
+	float:left;
+	padding: 0 2px 0px 2px;
+}
+
+.width130{
+	width:130px
+}
+.width180{
+	width:180px
+}
+.width100{
+	width:100px
+}
+.width150{
+	width:150px
+} 
+.width500{
+	width:500px
+} 
+
+.placeholderStyleGray{
+	color:#C0C0C0;
+	font-style: italic;
+}
+.placeholderStyleBlack{
+	color:#000000;
+	font-style:normal;
+}
+.reviewPrefTable tr#bottomBorderRow{
+	border-bottom: 2px solid #0056EA;
+}
+
+.showForHarmony{
+	display: none;
+}
+
+.editEmailPrefTable tr.blueBackground{
+	background-color: #E2EEF8
+}
+
+/** POPOVER styles **/
+/* try to undo the above bad selector for the popover component */
+ #enterCompDiv .listTable .listTableCol div div.popover,
+ #enterCompDiv .listTable .listTableCol  div div.popover div {
+	overflow: visible;
+	-o-text-overflow: clip; /* Opera */
+	text-overflow: clip;
+	white-space: normal;
+}
+
+ #enterCompDiv .salaryOverridePopover .listTable .listTableCol td td.headerNumber {
+	font-family: "DINNextLTPro-Regular", "Arial", sans-serif;
+	font-size: 22px;
+	color: #404040;
+	display: block;
+	margin-bottom: 20px;
+	text-align: right;
+}
+ 
+ #enterCompDiv .fieldLabel.fixPayMethodPopover {
+	margin-top: 0px;
+}
+
+ #enterCompDiv .payMethodPopover .radioGroup input[disabled] + label {
+	color: rgba(45, 45, 45, 0.3);
+}
+
+ #enterCompDiv .salaryOverridePopover {
+	max-width: 250px;
+}
+
+ #enterCompDiv .salaryOverridePopover .unpaidHours[id$=unpaidHours][type=text] {
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 8px;
+	width: 50px;
+}
+
+ #enterCompDiv .salaryOverridePopover .header {
+	width: 100%
+}
+
+ body #enterCompDiv .listTable td .salaryOverridePopover td.headerText {
+	font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 20px;
+	color: #404040;
+	text-align: left;
+}
+
+ body #enterCompDiv .listTable td .salaryOverridePopover td.headerNumber{
+	font-family: "DINNextLTPro-Regular", "Arial", sans-serif;
+	font-size: 22px;
+	color: #404040;
+	display: block;
+	margin-bottom: 20px;
+	text-align: right;
+}
+/** POPOVER styles end **/
+
+body #payDates span {
+	font-weight: bold;
+	padding-left: 30px;
+}
+
+#salaryOverridePopover label {
+	padding-left: 4px;
+	line-height: 18px;
+	display: inline;
+}
+
+.displayNameColumnHeader {
+    float:left;
+    margin-left : 14px;
+}
+
+#enterCompDiv .listTable .eeIsPaidColHdr span {
+    float: left;
+}
+.verticalDivider {
+    display:block;
+    min-height:170px;
+    width:1px;
+    float:left;
+}
+
+.accountSettingsFieldLabel {
+    font-family: "HelveticaNeue-Bold", "HelveticaNeueBold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 1.0rem;
+	display: inline-block;
+	padding-left: 2px;
+	margin: 12px 4px 4px 0;
+}
+
+.taxLiabilityMessage {
+    padding: 20px 10px 20px 10px;
+}
+
+body .smallSectionSeparation {
+    margin-top: 5px;
+}
+
+body .circleBullet {
+    display: inline-block;
+    -moz-border-radius: 50px/50px;
+    -webkit-border-radius: 50px 50px;
+    border-radius: 50px/50px;
+    width: 5px;
+    height: 5px;
+    margin-bottom: 2px;
+    background: #dddddd;
+}

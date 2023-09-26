@@ -1,0 +1,3 @@
+/* Copyright (c) 2014 Intuit Inc. All rights reserved. Unauthorized reproduction is a violation of applicable law. This material contains certain confidential and proprietary information and trade secrets of Intuit Inc. *///>>built
+define("qbo/services/AclService",["dojo/_base/declare","neo/BaseService"],function(a,b){return a([b],{getCompanyAdmins:function(){var a=this.getUIServiceUrl("user/adminUsersList");return this.doXHRGet(a)}})});
+//@ sourceMappingURL=AclService.js.map
